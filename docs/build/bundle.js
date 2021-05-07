@@ -1297,7 +1297,7 @@ var app = (function () {
     const file$j = "node_modules\\smelte\\src\\components\\Button\\Button.svelte";
 
     // (153:0) {:else}
-    function create_else_block$2(ctx) {
+    function create_else_block$3(ctx) {
     	let button;
     	let t;
     	let current;
@@ -1411,7 +1411,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block: block_1,
-    		id: create_else_block$2.name,
+    		id: create_else_block$3.name,
     		type: "else",
     		source: "(153:0) {:else}",
     		ctx
@@ -1428,7 +1428,7 @@ var app = (function () {
     	let current;
     	let mounted;
     	let dispose;
-    	let if_block = /*icon*/ ctx[3] && create_if_block_1$3(ctx);
+    	let if_block = /*icon*/ ctx[3] && create_if_block_1$4(ctx);
     	const default_slot_template = /*#slots*/ ctx[34].default;
     	const default_slot = create_slot(default_slot_template, ctx, /*$$scope*/ ctx[43], null);
 
@@ -1497,7 +1497,7 @@ var app = (function () {
     						transition_in(if_block, 1);
     					}
     				} else {
-    					if_block = create_if_block_1$3(ctx);
+    					if_block = create_if_block_1$4(ctx);
     					if_block.c();
     					transition_in(if_block, 1);
     					if_block.m(button, t);
@@ -1570,7 +1570,7 @@ var app = (function () {
     			props: {
     				class: /*iClasses*/ ctx[7],
     				small: /*small*/ ctx[4],
-    				$$slots: { default: [create_default_slot_1$4] },
+    				$$slots: { default: [create_default_slot_1$5] },
     				$$scope: { ctx }
     			},
     			$$inline: true
@@ -1621,7 +1621,7 @@ var app = (function () {
     }
 
     // (166:6) <Icon class={iClasses} {small}>
-    function create_default_slot_1$4(ctx) {
+    function create_default_slot_1$5(ctx) {
     	let t;
 
     	const block_1 = {
@@ -1641,7 +1641,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block: block_1,
-    		id: create_default_slot_1$4.name,
+    		id: create_default_slot_1$5.name,
     		type: "slot",
     		source: "(166:6) <Icon class={iClasses} {small}>",
     		ctx
@@ -1651,7 +1651,7 @@ var app = (function () {
     }
 
     // (147:6) {#if icon}
-    function create_if_block_1$3(ctx) {
+    function create_if_block_1$4(ctx) {
     	let icon_1;
     	let current;
 
@@ -1700,7 +1700,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block: block_1,
-    		id: create_if_block_1$3.name,
+    		id: create_if_block_1$4.name,
     		type: "if",
     		source: "(147:6) {#if icon}",
     		ctx
@@ -1744,7 +1744,7 @@ var app = (function () {
     	let if_block;
     	let if_block_anchor;
     	let current;
-    	const if_block_creators = [create_if_block$8, create_else_block$2];
+    	const if_block_creators = [create_if_block$8, create_else_block$3];
     	const if_blocks = [];
 
     	function select_block_type(ctx, dirty) {
@@ -2972,7 +2972,7 @@ var app = (function () {
     const file$f = "node_modules\\smelte\\src\\components\\List\\ListItem.svelte";
 
     // (59:2) {#if icon}
-    function create_if_block_1$2(ctx) {
+    function create_if_block_1$3(ctx) {
     	let icon_1;
     	let current;
 
@@ -3020,7 +3020,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_if_block_1$2.name,
+    		id: create_if_block_1$3.name,
     		type: "if",
     		source: "(59:2) {#if icon}",
     		ctx
@@ -3138,7 +3138,7 @@ var app = (function () {
     	let current;
     	let mounted;
     	let dispose;
-    	let if_block0 = /*icon*/ ctx[0] && create_if_block_1$2(ctx);
+    	let if_block0 = /*icon*/ ctx[0] && create_if_block_1$3(ctx);
     	const default_slot_template = /*#slots*/ ctx[20].default;
     	const default_slot = create_slot(default_slot_template, ctx, /*$$scope*/ ctx[22], null);
     	const default_slot_or_fallback = default_slot || fallback_block$6(ctx);
@@ -3200,7 +3200,7 @@ var app = (function () {
     						transition_in(if_block0, 1);
     					}
     				} else {
-    					if_block0 = create_if_block_1$2(ctx);
+    					if_block0 = create_if_block_1$3(ctx);
     					if_block0.c();
     					transition_in(if_block0, 1);
     					if_block0.m(li, t0);
@@ -3620,7 +3620,7 @@ var app = (function () {
     });
 
     // (55:4) {:else}
-    function create_else_block$1(ctx) {
+    function create_else_block$2(ctx) {
     	let current;
     	const item_slot_template = /*#slots*/ ctx[12].item;
     	const item_slot = create_slot(item_slot_template, ctx, /*$$scope*/ ctx[18], get_item_slot_context_1);
@@ -3664,7 +3664,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_else_block$1.name,
+    		id: create_else_block$2.name,
     		type: "else",
     		source: "(55:4) {:else}",
     		ctx
@@ -3728,7 +3728,7 @@ var app = (function () {
     }
 
     // (57:8) <ListItem           bind:value           {selectedClasses}           {itemClasses}           {...item}           tabindex={i + 1}           id={id(item)}           selected={value === id(item)}           {dense}           on:change           on:click>
-    function create_default_slot_1$3(ctx) {
+    function create_default_slot_1$4(ctx) {
     	let t_value = getText(/*item*/ ctx[6]) + "";
     	let t;
 
@@ -3749,7 +3749,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_default_slot_1$3.name,
+    		id: create_default_slot_1$4.name,
     		type: "slot",
     		source: "(57:8) <ListItem           bind:value           {selectedClasses}           {itemClasses}           {...item}           tabindex={i + 1}           id={id(item)}           selected={value === id(item)}           {dense}           on:change           on:click>",
     		ctx
@@ -3784,7 +3784,7 @@ var app = (function () {
     	}
 
     	let listitem_props = {
-    		$$slots: { default: [create_default_slot_1$3] },
+    		$$slots: { default: [create_default_slot_1$4] },
     		$$scope: { ctx }
     	};
 
@@ -4001,7 +4001,7 @@ var app = (function () {
     	let if_block;
     	let if_block_anchor;
     	let current;
-    	const if_block_creators = [create_if_block$6, create_else_block$1];
+    	const if_block_creators = [create_if_block$6, create_else_block$2];
     	const if_blocks = [];
 
     	function select_block_type(ctx, dirty) {
@@ -5690,7 +5690,7 @@ var app = (function () {
     }
 
     // (213:8) <Icon           reverse={appendReverse}           class="{focused ? txt() : ""} {iconClass}"         >
-    function create_default_slot_1$2(ctx) {
+    function create_default_slot_1$3(ctx) {
     	let t;
 
     	const block = {
@@ -5710,7 +5710,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_default_slot_1$2.name,
+    		id: create_default_slot_1$3.name,
     		type: "slot",
     		source: "(213:8) <Icon           reverse={appendReverse}           class=\\\"{focused ? txt() : \\\"\\\"} {iconClass}\\\"         >",
     		ctx
@@ -5728,7 +5728,7 @@ var app = (function () {
     			props: {
     				reverse: /*appendReverse*/ ctx[15],
     				class: "" + ((/*focused*/ ctx[1] ? /*txt*/ ctx[27]() : "") + " " + /*iconClass*/ ctx[19]),
-    				$$slots: { default: [create_default_slot_1$2] },
+    				$$slots: { default: [create_default_slot_1$3] },
     				$$scope: { ctx }
     			},
     			$$inline: true
@@ -5779,7 +5779,7 @@ var app = (function () {
     }
 
     // (223:2) {#if prepend}
-    function create_if_block_1$1(ctx) {
+    function create_if_block_1$2(ctx) {
     	let div;
     	let current;
     	let mounted;
@@ -5843,7 +5843,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_if_block_1$1.name,
+    		id: create_if_block_1$2.name,
     		type: "if",
     		source: "(223:2) {#if prepend}",
     		ctx
@@ -6013,7 +6013,7 @@ var app = (function () {
     	let current_block_type = select_block_type(ctx);
     	let if_block1 = current_block_type && current_block_type(ctx);
     	let if_block2 = /*append*/ ctx[7] && create_if_block_2$1(ctx);
-    	let if_block3 = /*prepend*/ ctx[8] && create_if_block_1$1(ctx);
+    	let if_block3 = /*prepend*/ ctx[8] && create_if_block_1$2(ctx);
 
     	underline = new Underline({
     			props: {
@@ -6129,7 +6129,7 @@ var app = (function () {
     						transition_in(if_block3, 1);
     					}
     				} else {
-    					if_block3 = create_if_block_1$1(ctx);
+    					if_block3 = create_if_block_1$2(ctx);
     					if_block3.c();
     					transition_in(if_block3, 1);
     					if_block3.m(div, t3);
@@ -7371,7 +7371,7 @@ var app = (function () {
     const get_label_slot_context = ctx => ({});
 
     // (73:8) {:else}
-    function create_else_block(ctx) {
+    function create_else_block$1(ctx) {
     	let icon;
     	let current;
 
@@ -7423,7 +7423,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_else_block.name,
+    		id: create_else_block$1.name,
     		type: "else",
     		source: "(73:8) {:else}",
     		ctx
@@ -7442,7 +7442,7 @@ var app = (function () {
     				class: /*disabled*/ ctx[4]
     				? "text-gray-500 dark:text-gray-600"
     				: `text-${/*color*/ ctx[3]}-500 dark:text-${/*color*/ ctx[3]}-100`,
-    				$$slots: { default: [create_default_slot_1$1] },
+    				$$slots: { default: [create_default_slot_1$2] },
     				$$scope: { ctx }
     			},
     			$$inline: true
@@ -7522,7 +7522,7 @@ var app = (function () {
     }
 
     // (69:10) <Icon             class={disabled ? 'text-gray-500 dark:text-gray-600' : `text-${color}-500 dark:text-${color}-100`}>
-    function create_default_slot_1$1(ctx) {
+    function create_default_slot_1$2(ctx) {
     	let t;
 
     	const block = {
@@ -7539,7 +7539,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_default_slot_1$1.name,
+    		id: create_default_slot_1$2.name,
     		type: "slot",
     		source: "(69:10) <Icon             class={disabled ? 'text-gray-500 dark:text-gray-600' : `text-${color}-500 dark:text-${color}-100`}>",
     		ctx
@@ -7554,7 +7554,7 @@ var app = (function () {
     	let if_block;
     	let if_block_anchor;
     	let current;
-    	const if_block_creators = [create_if_block$4, create_else_block];
+    	const if_block_creators = [create_if_block$4, create_else_block$1];
     	const if_blocks = [];
 
     	function select_block_type(ctx, dirty) {
@@ -9544,7 +9544,7 @@ var app = (function () {
     	let dispose;
     	const default_slot_template = /*#slots*/ ctx[20].default;
     	const default_slot = create_slot(default_slot_template, ctx, /*$$scope*/ ctx[24], null);
-    	let if_block = !/*noAction*/ ctx[5] && create_if_block_1(ctx);
+    	let if_block = !/*noAction*/ ctx[5] && create_if_block_1$1(ctx);
 
     	const block = {
     		c: function create() {
@@ -9596,7 +9596,7 @@ var app = (function () {
     						transition_in(if_block, 1);
     					}
     				} else {
-    					if_block = create_if_block_1(ctx);
+    					if_block = create_if_block_1$1(ctx);
     					if_block.c();
     					transition_in(if_block, 1);
     					if_block.m(div0, null);
@@ -9658,7 +9658,7 @@ var app = (function () {
     }
 
     // (123:8) {#if !noAction}
-    function create_if_block_1(ctx) {
+    function create_if_block_1$1(ctx) {
     	let spacer;
     	let t;
     	let current;
@@ -9714,7 +9714,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_if_block_1.name,
+    		id: create_if_block_1$1.name,
     		type: "if",
     		source: "(123:8) {#if !noAction}",
     		ctx
@@ -10889,11 +10889,198 @@ var app = (function () {
 
     /* src\components\FFNN.svelte generated by Svelte v3.37.0 */
 
-    const { console: console_1$1 } = globals;
-
     const file$1 = "src\\components\\FFNN.svelte";
 
-    // (614:12) {#if running}
+    // (512:12) {:else}
+    function create_else_block_1(ctx) {
+    	let button;
+    	let current;
+
+    	button = new Button({
+    			props: {
+    				block: true,
+    				outlined: true,
+    				disabled: /*running*/ ctx[2] || /*training*/ ctx[3],
+    				$$slots: { default: [create_default_slot_1$1] },
+    				$$scope: { ctx }
+    			},
+    			$$inline: true
+    		});
+
+    	button.$on("click", /*train*/ ctx[0]);
+
+    	const block = {
+    		c: function create() {
+    			create_component(button.$$.fragment);
+    		},
+    		m: function mount(target, anchor) {
+    			mount_component(button, target, anchor);
+    			current = true;
+    		},
+    		p: function update(ctx, dirty) {
+    			const button_changes = {};
+    			if (dirty[0] & /*running, training*/ 12) button_changes.disabled = /*running*/ ctx[2] || /*training*/ ctx[3];
+
+    			if (dirty[2] & /*$$scope*/ 262144) {
+    				button_changes.$$scope = { dirty, ctx };
+    			}
+
+    			button.$set(button_changes);
+    		},
+    		i: function intro(local) {
+    			if (current) return;
+    			transition_in(button.$$.fragment, local);
+    			current = true;
+    		},
+    		o: function outro(local) {
+    			transition_out(button.$$.fragment, local);
+    			current = false;
+    		},
+    		d: function destroy(detaching) {
+    			destroy_component(button, detaching);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_else_block_1.name,
+    		type: "else",
+    		source: "(512:12) {:else}",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (510:12) {#if training}
+    function create_if_block_1(ctx) {
+    	let progresscircular;
+    	let current;
+    	progresscircular = new ProgressCircular({ $$inline: true });
+
+    	const block = {
+    		c: function create() {
+    			create_component(progresscircular.$$.fragment);
+    		},
+    		m: function mount(target, anchor) {
+    			mount_component(progresscircular, target, anchor);
+    			current = true;
+    		},
+    		p: noop,
+    		i: function intro(local) {
+    			if (current) return;
+    			transition_in(progresscircular.$$.fragment, local);
+    			current = true;
+    		},
+    		o: function outro(local) {
+    			transition_out(progresscircular.$$.fragment, local);
+    			current = false;
+    		},
+    		d: function destroy(detaching) {
+    			destroy_component(progresscircular, detaching);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_if_block_1.name,
+    		type: "if",
+    		source: "(510:12) {#if training}",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (513:16) <Button                      block                      outlined                      on:click={train}                      disabled={running || training}                  >
+    function create_default_slot_1$1(ctx) {
+    	let t;
+
+    	const block = {
+    		c: function create() {
+    			t = text("train");
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, t, anchor);
+    		},
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(t);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_default_slot_1$1.name,
+    		type: "slot",
+    		source: "(513:16) <Button                      block                      outlined                      on:click={train}                      disabled={running || training}                  >",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (555:12) {:else}
+    function create_else_block(ctx) {
+    	let button;
+    	let current;
+
+    	button = new Button({
+    			props: {
+    				block: true,
+    				outlined: true,
+    				disabled: /*running*/ ctx[2] || /*training*/ ctx[3] || !/*itemSelected*/ ctx[4],
+    				$$slots: { default: [create_default_slot$1] },
+    				$$scope: { ctx }
+    			},
+    			$$inline: true
+    		});
+
+    	button.$on("click", /*predict*/ ctx[1]);
+
+    	const block = {
+    		c: function create() {
+    			create_component(button.$$.fragment);
+    		},
+    		m: function mount(target, anchor) {
+    			mount_component(button, target, anchor);
+    			current = true;
+    		},
+    		p: function update(ctx, dirty) {
+    			const button_changes = {};
+    			if (dirty[0] & /*running, training, itemSelected*/ 28) button_changes.disabled = /*running*/ ctx[2] || /*training*/ ctx[3] || !/*itemSelected*/ ctx[4];
+
+    			if (dirty[2] & /*$$scope*/ 262144) {
+    				button_changes.$$scope = { dirty, ctx };
+    			}
+
+    			button.$set(button_changes);
+    		},
+    		i: function intro(local) {
+    			if (current) return;
+    			transition_in(button.$$.fragment, local);
+    			current = true;
+    		},
+    		o: function outro(local) {
+    			transition_out(button.$$.fragment, local);
+    			current = false;
+    		},
+    		d: function destroy(detaching) {
+    			destroy_component(button, detaching);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_else_block.name,
+    		type: "else",
+    		source: "(555:12) {:else}",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (553:12) {#if running}
     function create_if_block(ctx) {
     	let progresscircular;
     	let current;
@@ -10907,6 +11094,7 @@ var app = (function () {
     			mount_component(progresscircular, target, anchor);
     			current = true;
     		},
+    		p: noop,
     		i: function intro(local) {
     			if (current) return;
     			transition_in(progresscircular.$$.fragment, local);
@@ -10925,20 +11113,20 @@ var app = (function () {
     		block,
     		id: create_if_block.name,
     		type: "if",
-    		source: "(614:12) {#if running}",
+    		source: "(553:12) {#if running}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (618:12) <Button                  block                  outlined                  on:click={run}                  disabled={running || training || !itemSelected}              >
+    // (556:16) <Button                      block                      outlined                      on:click={predict}                      disabled={running || training || !itemSelected}                  >
     function create_default_slot$1(ctx) {
     	let t;
 
     	const block = {
     		c: function create() {
-    			t = text("train & predict");
+    			t = text("predict");
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, t, anchor);
@@ -10952,7 +11140,7 @@ var app = (function () {
     		block,
     		id: create_default_slot$1.name,
     		type: "slot",
-    		source: "(618:12) <Button                  block                  outlined                  on:click={run}                  disabled={running || training || !itemSelected}              >",
+    		source: "(556:16) <Button                      block                      outlined                      on:click={predict}                      disabled={running || training || !itemSelected}                  >",
     		ctx
     	});
 
@@ -10962,417 +11150,382 @@ var app = (function () {
     function create_fragment$2(ctx) {
     	let h30;
     	let t1;
-    	let div8;
+    	let div6;
     	let div1;
     	let h50;
     	let t3;
-    	let div0;
-    	let t4;
-    	let div3;
-    	let h51;
-    	let t6;
-    	let div2;
-    	let t7;
-    	let div5;
-    	let h52;
-    	let t9;
-    	let div4;
-    	let t10;
-    	let div7;
-    	let h53;
-    	let t12;
-    	let div6;
-    	let t13;
-    	let br;
-    	let t14;
-    	let h31;
-    	let t16;
-    	let div15;
-    	let div10;
-    	let h54;
-    	let t18;
-    	let div9;
-    	let select0;
-    	let t19;
     	let h60;
-    	let t20;
-    	let t21;
-    	let t22;
-    	let t23;
+    	let t4;
+    	let t5;
+    	let t6;
+    	let t7;
     	let slider0;
     	let updating_value;
-    	let t24;
+    	let t8;
+    	let div0;
+    	let t9;
+    	let div3;
+    	let h51;
+    	let t11;
+    	let div2;
     	let h61;
-    	let t25;
-    	let t26;
-    	let t27;
-    	let t28;
+    	let t12;
+    	let t13;
+    	let t14;
+    	let t15;
     	let slider1;
     	let updating_value_1;
-    	let t29;
+    	let t16;
     	let h62;
+    	let t17;
+    	let t18;
+    	let t19;
+    	let t20;
+    	let slider2;
+    	let updating_value_2;
+    	let t21;
+    	let h63;
+    	let t22;
+    	let t23;
+    	let t24;
+    	let t25;
+    	let slider3;
+    	let updating_value_3;
+    	let t26;
+    	let select0;
+    	let updating_value_4;
+    	let t27;
+    	let select1;
+    	let updating_value_5;
+    	let t28;
+    	let h64;
+    	let t29;
     	let t30;
     	let t31;
     	let t32;
-    	let t33;
-    	let slider2;
-    	let updating_value_2;
-    	let t34;
-    	let h63;
-    	let t35;
-    	let t36;
-    	let t37;
-    	let t38;
-    	let slider3;
-    	let updating_value_3;
-    	let t39;
-    	let h64;
-    	let t40;
-    	let t41;
-    	let t42;
-    	let t43;
     	let slider4;
-    	let updating_value_4;
-    	let t44;
-    	let select1;
-    	let updating_value_5;
-    	let t45;
-    	let select2;
     	let updating_value_6;
-    	let t46;
-    	let h65;
-    	let t47;
-    	let t48;
-    	let t49;
-    	let t50;
-    	let slider5;
-    	let updating_value_7;
-    	let t51;
-    	let t52;
-    	let button;
-    	let t53;
-    	let div12;
-    	let h55;
-    	let t55;
-    	let div11;
-    	let t56;
+    	let t33;
+    	let current_block_type_index;
+    	let if_block0;
+    	let t34;
+    	let div5;
+    	let h52;
+    	let t36;
+    	let div4;
+    	let t37;
+    	let br;
+    	let t38;
+    	let h31;
+    	let t40;
+    	let div10;
+    	let div7;
+    	let t41;
+    	let div8;
+    	let t42;
+    	let div9;
+    	let t43;
+    	let h32;
+    	let t45;
     	let div14;
-    	let h56;
-    	let t58;
     	let div13;
+    	let div11;
+    	let select2;
+    	let t46;
+    	let current_block_type_index_1;
+    	let if_block1;
+    	let t47;
+    	let div12;
     	let current;
 
-    	select0 = new Select({
-    			props: {
-    				label: /*labelUserdataset*/ ctx[30],
-    				items: /*selectUserDatasets*/ ctx[36]
-    			},
-    			$$inline: true
-    		});
-
-    	select0.$on("change", /*change_handler*/ ctx[44]);
-
     	function slider0_value_binding(value) {
-    		/*slider0_value_binding*/ ctx[45](value);
+    		/*slider0_value_binding*/ ctx[39](value);
     	}
 
     	let slider0_props = {
-    		min: "32",
-    		step: "30",
-    		max: "512",
-    		disabled: /*running*/ ctx[1] || /*training*/ ctx[2]
+    		min: "10",
+    		step: "10",
+    		max: "10000",
+    		disabled: /*running*/ ctx[2] || /*training*/ ctx[3]
     	};
 
-    	if (/*batchSize*/ ctx[10] !== void 0) {
-    		slider0_props.value = /*batchSize*/ ctx[10];
+    	if (/*trainingDatasetSize*/ ctx[5] !== void 0) {
+    		slider0_props.value = /*trainingDatasetSize*/ ctx[5];
     	}
 
     	slider0 = new Slider({ props: slider0_props, $$inline: true });
     	binding_callbacks.push(() => bind(slider0, "value", slider0_value_binding));
+    	slider0.$on("change", /*change_handler*/ ctx[40]);
 
     	function slider1_value_binding(value) {
-    		/*slider1_value_binding*/ ctx[46](value);
+    		/*slider1_value_binding*/ ctx[42](value);
     	}
 
     	let slider1_props = {
-    		min: "10",
-    		step: "10",
-    		max: "200",
-    		disabled: /*running*/ ctx[1] || /*training*/ ctx[2]
+    		min: "32",
+    		step: "30",
+    		max: "512",
+    		disabled: /*running*/ ctx[2] || /*training*/ ctx[3]
     	};
 
-    	if (/*epochs*/ ctx[11] !== void 0) {
-    		slider1_props.value = /*epochs*/ ctx[11];
+    	if (/*batchSize*/ ctx[6] !== void 0) {
+    		slider1_props.value = /*batchSize*/ ctx[6];
     	}
 
     	slider1 = new Slider({ props: slider1_props, $$inline: true });
     	binding_callbacks.push(() => bind(slider1, "value", slider1_value_binding));
 
     	function slider2_value_binding(value) {
-    		/*slider2_value_binding*/ ctx[47](value);
+    		/*slider2_value_binding*/ ctx[43](value);
     	}
 
     	let slider2_props = {
-    		min: "1",
-    		step: "1",
-    		max: "50",
-    		disabled: /*running*/ ctx[1] || /*training*/ ctx[2]
+    		min: "10",
+    		step: "10",
+    		max: "200",
+    		disabled: /*running*/ ctx[2] || /*training*/ ctx[3]
     	};
 
-    	if (/*hiddenLayerCount*/ ctx[12] !== void 0) {
-    		slider2_props.value = /*hiddenLayerCount*/ ctx[12];
+    	if (/*epochs*/ ctx[7] !== void 0) {
+    		slider2_props.value = /*epochs*/ ctx[7];
     	}
 
     	slider2 = new Slider({ props: slider2_props, $$inline: true });
     	binding_callbacks.push(() => bind(slider2, "value", slider2_value_binding));
 
     	function slider3_value_binding(value) {
-    		/*slider3_value_binding*/ ctx[48](value);
+    		/*slider3_value_binding*/ ctx[44](value);
     	}
 
     	let slider3_props = {
-    		min: "0",
-    		step: ".1",
-    		max: "1",
-    		disabled: /*running*/ ctx[1] || /*training*/ ctx[2]
+    		min: "1",
+    		step: "1",
+    		max: "1000",
+    		disabled: /*running*/ ctx[2] || /*training*/ ctx[3]
     	};
 
-    	if (/*minWeight*/ ctx[13] !== void 0) {
-    		slider3_props.value = /*minWeight*/ ctx[13];
+    	if (/*hiddenLayerCount*/ ctx[8] !== void 0) {
+    		slider3_props.value = /*hiddenLayerCount*/ ctx[8];
     	}
 
     	slider3 = new Slider({ props: slider3_props, $$inline: true });
     	binding_callbacks.push(() => bind(slider3, "value", slider3_value_binding));
+
+    	function select0_value_binding(value) {
+    		/*select0_value_binding*/ ctx[45](value);
+    	}
+
+    	let select0_props = {
+    		label: /*labelActivationFunction*/ ctx[24],
+    		items: /*activationList*/ ctx[35]
+    	};
+
+    	if (/*activationFunction*/ ctx[9] !== void 0) {
+    		select0_props.value = /*activationFunction*/ ctx[9];
+    	}
+
+    	select0 = new Select({ props: select0_props, $$inline: true });
+    	binding_callbacks.push(() => bind(select0, "value", select0_value_binding));
+    	select0.$on("change", /*change_handler_1*/ ctx[46]);
+
+    	function select1_value_binding(value) {
+    		/*select1_value_binding*/ ctx[47](value);
+    	}
+
+    	let select1_props = {
+    		label: /*labelOptimizer*/ ctx[25],
+    		items: /*optimizerList*/ ctx[36]
+    	};
+
+    	if (/*selectedOptimizer*/ ctx[10] !== void 0) {
+    		select1_props.value = /*selectedOptimizer*/ ctx[10];
+    	}
+
+    	select1 = new Select({ props: select1_props, $$inline: true });
+    	binding_callbacks.push(() => bind(select1, "value", select1_value_binding));
+    	select1.$on("change", /*change_handler_2*/ ctx[48]);
 
     	function slider4_value_binding(value) {
     		/*slider4_value_binding*/ ctx[49](value);
     	}
 
     	let slider4_props = {
-    		min: "0",
-    		step: ".1",
-    		max: "1",
-    		disabled: /*running*/ ctx[1] || /*training*/ ctx[2]
+    		min: ".001",
+    		step: ".001",
+    		max: ".1",
+    		disabled: /*running*/ ctx[2] || /*training*/ ctx[3]
     	};
 
-    	if (/*maxWeight*/ ctx[14] !== void 0) {
-    		slider4_props.value = /*maxWeight*/ ctx[14];
+    	if (/*learningRate*/ ctx[11] !== void 0) {
+    		slider4_props.value = /*learningRate*/ ctx[11];
     	}
 
     	slider4 = new Slider({ props: slider4_props, $$inline: true });
     	binding_callbacks.push(() => bind(slider4, "value", slider4_value_binding));
+    	const if_block_creators = [create_if_block_1, create_else_block_1];
+    	const if_blocks = [];
 
-    	function select1_value_binding(value) {
-    		/*select1_value_binding*/ ctx[50](value);
+    	function select_block_type(ctx, dirty) {
+    		if (/*training*/ ctx[3]) return 0;
+    		return 1;
     	}
 
-    	let select1_props = {
-    		label: /*labelActivationFunction*/ ctx[24],
-    		items: /*activationList*/ ctx[34]
-    	};
+    	current_block_type_index = select_block_type(ctx);
+    	if_block0 = if_blocks[current_block_type_index] = if_block_creators[current_block_type_index](ctx);
 
-    	if (/*activationFunction*/ ctx[15] !== void 0) {
-    		select1_props.value = /*activationFunction*/ ctx[15];
-    	}
-
-    	select1 = new Select({ props: select1_props, $$inline: true });
-    	binding_callbacks.push(() => bind(select1, "value", select1_value_binding));
-    	select1.$on("change", /*change_handler_1*/ ctx[51]);
-
-    	function select2_value_binding(value) {
-    		/*select2_value_binding*/ ctx[52](value);
-    	}
-
-    	let select2_props = {
-    		label: /*labelOptimizer*/ ctx[25],
-    		items: /*optimizerList*/ ctx[35]
-    	};
-
-    	if (/*selectedOptimizer*/ ctx[16] !== void 0) {
-    		select2_props.value = /*selectedOptimizer*/ ctx[16];
-    	}
-
-    	select2 = new Select({ props: select2_props, $$inline: true });
-    	binding_callbacks.push(() => bind(select2, "value", select2_value_binding));
-    	select2.$on("change", /*change_handler_2*/ ctx[53]);
-
-    	function slider5_value_binding(value) {
-    		/*slider5_value_binding*/ ctx[54](value);
-    	}
-
-    	let slider5_props = {
-    		min: ".001",
-    		step: ".001",
-    		max: ".1",
-    		disabled: /*running*/ ctx[1] || /*training*/ ctx[2]
-    	};
-
-    	if (/*learningRate*/ ctx[17] !== void 0) {
-    		slider5_props.value = /*learningRate*/ ctx[17];
-    	}
-
-    	slider5 = new Slider({ props: slider5_props, $$inline: true });
-    	binding_callbacks.push(() => bind(slider5, "value", slider5_value_binding));
-    	let if_block = /*running*/ ctx[1] && create_if_block(ctx);
-
-    	button = new Button({
+    	select2 = new Select({
     			props: {
-    				block: true,
-    				outlined: true,
-    				disabled: /*running*/ ctx[1] || /*training*/ ctx[2] || !/*itemSelected*/ ctx[3],
-    				$$slots: { default: [create_default_slot$1] },
-    				$$scope: { ctx }
+    				label: /*labelDataset*/ ctx[30],
+    				items: /*datasets*/ ctx[16]
     			},
     			$$inline: true
     		});
 
-    	button.$on("click", /*run*/ ctx[0]);
+    	select2.$on("change", /*change_handler_3*/ ctx[54]);
+    	const if_block_creators_1 = [create_if_block, create_else_block];
+    	const if_blocks_1 = [];
+
+    	function select_block_type_1(ctx, dirty) {
+    		if (/*running*/ ctx[2]) return 0;
+    		return 1;
+    	}
+
+    	current_block_type_index_1 = select_block_type_1(ctx);
+    	if_block1 = if_blocks_1[current_block_type_index_1] = if_block_creators_1[current_block_type_index_1](ctx);
 
     	const block = {
     		c: function create() {
     			h30 = element("h3");
-    			h30.textContent = `${/*labelDatasets*/ ctx[19]}`;
+    			h30.textContent = `${/*labelTraining*/ ctx[22]}`;
     			t1 = space();
-    			div8 = element("div");
+    			div6 = element("div");
     			div1 = element("div");
     			h50 = element("h5");
-    			h50.textContent = `${/*selectUserDatasets*/ ctx[36][0].text}`;
+    			h50.textContent = `${/*labelTrainingDataset*/ ctx[33]}`;
     			t3 = space();
+    			h60 = element("h6");
+    			t4 = text(/*labelTrainingDatasetSize*/ ctx[34]);
+    			t5 = text(": ");
+    			t6 = text(/*trainingDatasetSize*/ ctx[5]);
+    			t7 = space();
+    			create_component(slider0.$$.fragment);
+    			t8 = space();
     			div0 = element("div");
-    			t4 = space();
+    			t9 = space();
     			div3 = element("div");
     			h51 = element("h5");
-    			h51.textContent = `${/*selectUserDatasets*/ ctx[36][1].text}`;
-    			t6 = space();
+    			h51.textContent = `${/*labelTrainingSettings*/ ctx[32]}`;
+    			t11 = space();
     			div2 = element("div");
-    			t7 = space();
+    			h61 = element("h6");
+    			t12 = text(/*labelBatchSize*/ ctx[27]);
+    			t13 = text(": ");
+    			t14 = text(/*batchSize*/ ctx[6]);
+    			t15 = space();
+    			create_component(slider1.$$.fragment);
+    			t16 = space();
+    			h62 = element("h6");
+    			t17 = text(/*labelEpoch*/ ctx[28]);
+    			t18 = text(": ");
+    			t19 = text(/*epochs*/ ctx[7]);
+    			t20 = space();
+    			create_component(slider2.$$.fragment);
+    			t21 = space();
+    			h63 = element("h6");
+    			t22 = text(/*labelHiddenLayer*/ ctx[29]);
+    			t23 = text(": ");
+    			t24 = text(/*hiddenLayerCount*/ ctx[8]);
+    			t25 = space();
+    			create_component(slider3.$$.fragment);
+    			t26 = space();
+    			create_component(select0.$$.fragment);
+    			t27 = space();
+    			create_component(select1.$$.fragment);
+    			t28 = space();
+    			h64 = element("h6");
+    			t29 = text(/*labelLearningRate*/ ctx[26]);
+    			t30 = text(": ");
+    			t31 = text(/*learningRate*/ ctx[11]);
+    			t32 = space();
+    			create_component(slider4.$$.fragment);
+    			t33 = space();
+    			if_block0.c();
+    			t34 = space();
     			div5 = element("div");
     			h52 = element("h5");
-    			h52.textContent = `${/*selectUserDatasets*/ ctx[36][2].text}`;
-    			t9 = space();
+    			h52.textContent = `${/*labelTrainingResult*/ ctx[31]}`;
+    			t36 = space();
     			div4 = element("div");
-    			t10 = space();
-    			div7 = element("div");
-    			h53 = element("h5");
-    			h53.textContent = `${/*selectUserDatasets*/ ctx[36][3].text}`;
-    			t12 = space();
-    			div6 = element("div");
-    			t13 = space();
+    			t37 = space();
     			br = element("br");
-    			t14 = space();
-    			h31 = element("h3");
-    			h31.textContent = `${/*labelFFNN*/ ctx[20]}`;
-    			t16 = space();
-    			div15 = element("div");
-    			div10 = element("div");
-    			h54 = element("h5");
-    			h54.textContent = `${/*labelSettinngs*/ ctx[21]}`;
-    			t18 = space();
-    			div9 = element("div");
-    			create_component(select0.$$.fragment);
-    			t19 = space();
-    			h60 = element("h6");
-    			t20 = text(/*labelBatchSize*/ ctx[27]);
-    			t21 = text(": ");
-    			t22 = text(/*batchSize*/ ctx[10]);
-    			t23 = space();
-    			create_component(slider0.$$.fragment);
-    			t24 = space();
-    			h61 = element("h6");
-    			t25 = text(/*labelEpoch*/ ctx[28]);
-    			t26 = text(": ");
-    			t27 = text(/*epochs*/ ctx[11]);
-    			t28 = space();
-    			create_component(slider1.$$.fragment);
-    			t29 = space();
-    			h62 = element("h6");
-    			t30 = text(/*labelHiddenLayer*/ ctx[29]);
-    			t31 = text(": ");
-    			t32 = text(/*hiddenLayerCount*/ ctx[12]);
-    			t33 = space();
-    			create_component(slider2.$$.fragment);
-    			t34 = space();
-    			h63 = element("h6");
-    			t35 = text(/*labelMinWeight*/ ctx[31]);
-    			t36 = text(": ");
-    			t37 = text(/*minWeight*/ ctx[13]);
     			t38 = space();
-    			create_component(slider3.$$.fragment);
-    			t39 = space();
-    			h64 = element("h6");
-    			t40 = text(/*labelMaxWeight*/ ctx[32]);
-    			t41 = text(": ");
-    			t42 = text(/*maxWeight*/ ctx[14]);
+    			h31 = element("h3");
+    			h31.textContent = `${/*labelDatasets*/ ctx[21]}`;
+    			t40 = space();
+    			div10 = element("div");
+    			div7 = element("div");
+    			t41 = space();
+    			div8 = element("div");
+    			t42 = space();
+    			div9 = element("div");
     			t43 = space();
-    			create_component(slider4.$$.fragment);
-    			t44 = space();
-    			create_component(select1.$$.fragment);
+    			h32 = element("h3");
+    			h32.textContent = `${/*labelPrediction*/ ctx[23]}`;
     			t45 = space();
+    			div14 = element("div");
+    			div13 = element("div");
+    			div11 = element("div");
     			create_component(select2.$$.fragment);
     			t46 = space();
-    			h65 = element("h6");
-    			t47 = text(/*labelLearningRate*/ ctx[26]);
-    			t48 = text(": ");
-    			t49 = text(/*learningRate*/ ctx[17]);
-    			t50 = space();
-    			create_component(slider5.$$.fragment);
-    			t51 = space();
-    			if (if_block) if_block.c();
-    			t52 = space();
-    			create_component(button.$$.fragment);
-    			t53 = space();
+    			if_block1.c();
+    			t47 = space();
     			div12 = element("div");
-    			h55 = element("h5");
-    			h55.textContent = `${/*labelTraining*/ ctx[22]}`;
-    			t55 = space();
-    			div11 = element("div");
-    			t56 = space();
-    			div14 = element("div");
-    			h56 = element("h5");
-    			h56.textContent = `${/*labelPrediction*/ ctx[23]}`;
-    			t58 = space();
-    			div13 = element("div");
-    			add_location(h30, file$1, 505, 0, 14774);
-    			add_location(h50, file$1, 508, 8, 14839);
-    			attr_dev(div0, "id", "user_data_chart1");
-    			add_location(div0, file$1, 509, 8, 14886);
-    			add_location(div1, file$1, 507, 4, 14824);
-    			add_location(h51, file$1, 512, 8, 14975);
-    			attr_dev(div2, "id", "user_data_chart2");
-    			add_location(div2, file$1, 513, 8, 15022);
-    			add_location(div3, file$1, 511, 4, 14960);
-    			add_location(h52, file$1, 516, 8, 15111);
-    			attr_dev(div4, "id", "user_data_chart3");
-    			add_location(div4, file$1, 517, 8, 15158);
-    			add_location(div5, file$1, 515, 4, 15096);
-    			add_location(h53, file$1, 520, 8, 15247);
-    			attr_dev(div6, "id", "user_data_chart4");
-    			add_location(div6, file$1, 521, 8, 15294);
-    			add_location(div7, file$1, 519, 4, 15232);
-    			attr_dev(div8, "class", "grid svelte-ue43dx");
-    			add_location(div8, file$1, 506, 0, 14800);
-    			add_location(br, file$1, 525, 0, 15374);
-    			add_location(h31, file$1, 527, 0, 15384);
-    			add_location(h54, file$1, 530, 8, 15445);
-    			add_location(h60, file$1, 541, 12, 15807);
-    			add_location(h61, file$1, 550, 12, 16066);
-    			add_location(h62, file$1, 559, 12, 16315);
-    			add_location(h63, file$1, 568, 12, 16587);
-    			add_location(h64, file$1, 577, 12, 16843);
-    			add_location(h65, file$1, 604, 12, 17659);
-    			attr_dev(div9, "class", "settings svelte-ue43dx");
-    			add_location(div9, file$1, 531, 8, 15480);
-    			add_location(div10, file$1, 529, 4, 15430);
-    			add_location(h55, file$1, 629, 8, 18291);
-    			attr_dev(div11, "id", "train_chart");
-    			add_location(div11, file$1, 630, 8, 18325);
-    			add_location(div12, file$1, 628, 4, 18276);
-    			add_location(h56, file$1, 634, 8, 18407);
-    			attr_dev(div13, "id", "predict_chart");
-    			add_location(div13, file$1, 635, 8, 18443);
-    			add_location(div14, file$1, 633, 4, 18392);
-    			attr_dev(div15, "class", "grid svelte-ue43dx");
-    			add_location(div15, file$1, 528, 0, 15406);
+    			add_location(h30, file$1, 413, 0, 12025);
+    			attr_dev(h50, "class", "pb-4");
+    			add_location(h50, file$1, 416, 8, 12090);
+    			attr_dev(h60, "class", "pt-6 pb-4");
+    			add_location(h60, file$1, 417, 8, 12144);
+    			attr_dev(div0, "id", "trainingDataChart");
+    			add_location(div0, file$1, 431, 8, 12621);
+    			add_location(div1, file$1, 415, 4, 12075);
+    			attr_dev(h51, "class", "pb-4");
+    			add_location(h51, file$1, 435, 8, 12716);
+    			attr_dev(h61, "class", "pt-6 pb-4");
+    			add_location(h61, file$1, 437, 12, 12807);
+    			attr_dev(h62, "class", "pt-6 pb-4");
+    			add_location(h62, file$1, 446, 12, 13084);
+    			attr_dev(h63, "class", "pt-6 pb-4");
+    			add_location(h63, file$1, 455, 12, 13351);
+    			attr_dev(h64, "class", "pt-6 pb-4");
+    			add_location(h64, file$1, 500, 12, 14760);
+    			attr_dev(div2, "class", "settings svelte-k82jeo");
+    			add_location(div2, file$1, 436, 8, 12771);
+    			add_location(div3, file$1, 434, 4, 12701);
+    			attr_dev(h52, "class", "pb-4");
+    			add_location(h52, file$1, 525, 8, 15437);
+    			attr_dev(div4, "id", "train_chart");
+    			add_location(div4, file$1, 526, 8, 15490);
+    			add_location(div5, file$1, 524, 4, 15422);
+    			attr_dev(div6, "class", "grid svelte-k82jeo");
+    			add_location(div6, file$1, 414, 0, 12051);
+    			add_location(br, file$1, 530, 0, 15561);
+    			add_location(h31, file$1, 532, 0, 15571);
+    			attr_dev(div7, "id", "datasetChart1");
+    			add_location(div7, file$1, 534, 4, 15621);
+    			attr_dev(div8, "id", "datasetChart2");
+    			add_location(div8, file$1, 535, 4, 15679);
+    			attr_dev(div9, "id", "datasetChart3");
+    			add_location(div9, file$1, 536, 4, 15737);
+    			attr_dev(div10, "class", "grid svelte-k82jeo");
+    			add_location(div10, file$1, 533, 0, 15597);
+    			add_location(h32, file$1, 539, 0, 15801);
+    			attr_dev(div11, "class", "settings svelte-k82jeo");
+    			add_location(div11, file$1, 542, 8, 15868);
+    			attr_dev(div12, "id", "predict_chart");
+    			add_location(div12, file$1, 566, 8, 16558);
+    			add_location(div13, file$1, 541, 4, 15853);
+    			attr_dev(div14, "class", "grid svelte-k82jeo");
+    			add_location(div14, file$1, 540, 0, 15829);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -11380,277 +11533,277 @@ var app = (function () {
     		m: function mount(target, anchor) {
     			insert_dev(target, h30, anchor);
     			insert_dev(target, t1, anchor);
-    			insert_dev(target, div8, anchor);
-    			append_dev(div8, div1);
+    			insert_dev(target, div6, anchor);
+    			append_dev(div6, div1);
     			append_dev(div1, h50);
     			append_dev(div1, t3);
+    			append_dev(div1, h60);
+    			append_dev(h60, t4);
+    			append_dev(h60, t5);
+    			append_dev(h60, t6);
+    			append_dev(div1, t7);
+    			mount_component(slider0, div1, null);
+    			append_dev(div1, t8);
     			append_dev(div1, div0);
-    			/*div0_binding*/ ctx[40](div0);
-    			append_dev(div8, t4);
-    			append_dev(div8, div3);
+    			/*div0_binding*/ ctx[41](div0);
+    			append_dev(div6, t9);
+    			append_dev(div6, div3);
     			append_dev(div3, h51);
-    			append_dev(div3, t6);
+    			append_dev(div3, t11);
     			append_dev(div3, div2);
-    			/*div2_binding*/ ctx[41](div2);
-    			append_dev(div8, t7);
-    			append_dev(div8, div5);
+    			append_dev(div2, h61);
+    			append_dev(h61, t12);
+    			append_dev(h61, t13);
+    			append_dev(h61, t14);
+    			append_dev(div2, t15);
+    			mount_component(slider1, div2, null);
+    			append_dev(div2, t16);
+    			append_dev(div2, h62);
+    			append_dev(h62, t17);
+    			append_dev(h62, t18);
+    			append_dev(h62, t19);
+    			append_dev(div2, t20);
+    			mount_component(slider2, div2, null);
+    			append_dev(div2, t21);
+    			append_dev(div2, h63);
+    			append_dev(h63, t22);
+    			append_dev(h63, t23);
+    			append_dev(h63, t24);
+    			append_dev(div2, t25);
+    			mount_component(slider3, div2, null);
+    			append_dev(div2, t26);
+    			mount_component(select0, div2, null);
+    			append_dev(div2, t27);
+    			mount_component(select1, div2, null);
+    			append_dev(div2, t28);
+    			append_dev(div2, h64);
+    			append_dev(h64, t29);
+    			append_dev(h64, t30);
+    			append_dev(h64, t31);
+    			append_dev(div2, t32);
+    			mount_component(slider4, div2, null);
+    			append_dev(div2, t33);
+    			if_blocks[current_block_type_index].m(div2, null);
+    			append_dev(div6, t34);
+    			append_dev(div6, div5);
     			append_dev(div5, h52);
-    			append_dev(div5, t9);
+    			append_dev(div5, t36);
     			append_dev(div5, div4);
-    			/*div4_binding*/ ctx[42](div4);
-    			append_dev(div8, t10);
-    			append_dev(div8, div7);
-    			append_dev(div7, h53);
-    			append_dev(div7, t12);
-    			append_dev(div7, div6);
-    			/*div6_binding*/ ctx[43](div6);
-    			insert_dev(target, t13, anchor);
+    			/*div4_binding*/ ctx[50](div4);
+    			insert_dev(target, t37, anchor);
     			insert_dev(target, br, anchor);
-    			insert_dev(target, t14, anchor);
+    			insert_dev(target, t38, anchor);
     			insert_dev(target, h31, anchor);
-    			insert_dev(target, t16, anchor);
-    			insert_dev(target, div15, anchor);
-    			append_dev(div15, div10);
-    			append_dev(div10, h54);
-    			append_dev(div10, t18);
+    			insert_dev(target, t40, anchor);
+    			insert_dev(target, div10, anchor);
+    			append_dev(div10, div7);
+    			/*div7_binding*/ ctx[51](div7);
+    			append_dev(div10, t41);
+    			append_dev(div10, div8);
+    			/*div8_binding*/ ctx[52](div8);
+    			append_dev(div10, t42);
     			append_dev(div10, div9);
-    			mount_component(select0, div9, null);
-    			append_dev(div9, t19);
-    			append_dev(div9, h60);
-    			append_dev(h60, t20);
-    			append_dev(h60, t21);
-    			append_dev(h60, t22);
-    			append_dev(div9, t23);
-    			mount_component(slider0, div9, null);
-    			append_dev(div9, t24);
-    			append_dev(div9, h61);
-    			append_dev(h61, t25);
-    			append_dev(h61, t26);
-    			append_dev(h61, t27);
-    			append_dev(div9, t28);
-    			mount_component(slider1, div9, null);
-    			append_dev(div9, t29);
-    			append_dev(div9, h62);
-    			append_dev(h62, t30);
-    			append_dev(h62, t31);
-    			append_dev(h62, t32);
-    			append_dev(div9, t33);
-    			mount_component(slider2, div9, null);
-    			append_dev(div9, t34);
-    			append_dev(div9, h63);
-    			append_dev(h63, t35);
-    			append_dev(h63, t36);
-    			append_dev(h63, t37);
-    			append_dev(div9, t38);
-    			mount_component(slider3, div9, null);
-    			append_dev(div9, t39);
-    			append_dev(div9, h64);
-    			append_dev(h64, t40);
-    			append_dev(h64, t41);
-    			append_dev(h64, t42);
-    			append_dev(div9, t43);
-    			mount_component(slider4, div9, null);
-    			append_dev(div9, t44);
-    			mount_component(select1, div9, null);
-    			append_dev(div9, t45);
-    			mount_component(select2, div9, null);
-    			append_dev(div9, t46);
-    			append_dev(div9, h65);
-    			append_dev(h65, t47);
-    			append_dev(h65, t48);
-    			append_dev(h65, t49);
-    			append_dev(div9, t50);
-    			mount_component(slider5, div9, null);
-    			append_dev(div9, t51);
-    			if (if_block) if_block.m(div9, null);
-    			append_dev(div9, t52);
-    			mount_component(button, div9, null);
-    			append_dev(div15, t53);
-    			append_dev(div15, div12);
-    			append_dev(div12, h55);
-    			append_dev(div12, t55);
-    			append_dev(div12, div11);
-    			/*div11_binding*/ ctx[55](div11);
-    			append_dev(div15, t56);
-    			append_dev(div15, div14);
-    			append_dev(div14, h56);
-    			append_dev(div14, t58);
+    			/*div9_binding*/ ctx[53](div9);
+    			insert_dev(target, t43, anchor);
+    			insert_dev(target, h32, anchor);
+    			insert_dev(target, t45, anchor);
+    			insert_dev(target, div14, anchor);
     			append_dev(div14, div13);
-    			/*div13_binding*/ ctx[56](div13);
+    			append_dev(div13, div11);
+    			mount_component(select2, div11, null);
+    			append_dev(div11, t46);
+    			if_blocks_1[current_block_type_index_1].m(div11, null);
+    			append_dev(div13, t47);
+    			append_dev(div13, div12);
+    			/*div12_binding*/ ctx[55](div12);
     			current = true;
     		},
     		p: function update(ctx, dirty) {
-    			if (!current || dirty[0] & /*batchSize*/ 1024) set_data_dev(t22, /*batchSize*/ ctx[10]);
+    			if (!current || dirty[0] & /*trainingDatasetSize*/ 32) set_data_dev(t6, /*trainingDatasetSize*/ ctx[5]);
     			const slider0_changes = {};
-    			if (dirty[0] & /*running, training*/ 6) slider0_changes.disabled = /*running*/ ctx[1] || /*training*/ ctx[2];
+    			if (dirty[0] & /*running, training*/ 12) slider0_changes.disabled = /*running*/ ctx[2] || /*training*/ ctx[3];
 
-    			if (!updating_value && dirty[0] & /*batchSize*/ 1024) {
+    			if (!updating_value && dirty[0] & /*trainingDatasetSize*/ 32) {
     				updating_value = true;
-    				slider0_changes.value = /*batchSize*/ ctx[10];
+    				slider0_changes.value = /*trainingDatasetSize*/ ctx[5];
     				add_flush_callback(() => updating_value = false);
     			}
 
     			slider0.$set(slider0_changes);
-    			if (!current || dirty[0] & /*epochs*/ 2048) set_data_dev(t27, /*epochs*/ ctx[11]);
+    			if (!current || dirty[0] & /*batchSize*/ 64) set_data_dev(t14, /*batchSize*/ ctx[6]);
     			const slider1_changes = {};
-    			if (dirty[0] & /*running, training*/ 6) slider1_changes.disabled = /*running*/ ctx[1] || /*training*/ ctx[2];
+    			if (dirty[0] & /*running, training*/ 12) slider1_changes.disabled = /*running*/ ctx[2] || /*training*/ ctx[3];
 
-    			if (!updating_value_1 && dirty[0] & /*epochs*/ 2048) {
+    			if (!updating_value_1 && dirty[0] & /*batchSize*/ 64) {
     				updating_value_1 = true;
-    				slider1_changes.value = /*epochs*/ ctx[11];
+    				slider1_changes.value = /*batchSize*/ ctx[6];
     				add_flush_callback(() => updating_value_1 = false);
     			}
 
     			slider1.$set(slider1_changes);
-    			if (!current || dirty[0] & /*hiddenLayerCount*/ 4096) set_data_dev(t32, /*hiddenLayerCount*/ ctx[12]);
+    			if (!current || dirty[0] & /*epochs*/ 128) set_data_dev(t19, /*epochs*/ ctx[7]);
     			const slider2_changes = {};
-    			if (dirty[0] & /*running, training*/ 6) slider2_changes.disabled = /*running*/ ctx[1] || /*training*/ ctx[2];
+    			if (dirty[0] & /*running, training*/ 12) slider2_changes.disabled = /*running*/ ctx[2] || /*training*/ ctx[3];
 
-    			if (!updating_value_2 && dirty[0] & /*hiddenLayerCount*/ 4096) {
+    			if (!updating_value_2 && dirty[0] & /*epochs*/ 128) {
     				updating_value_2 = true;
-    				slider2_changes.value = /*hiddenLayerCount*/ ctx[12];
+    				slider2_changes.value = /*epochs*/ ctx[7];
     				add_flush_callback(() => updating_value_2 = false);
     			}
 
     			slider2.$set(slider2_changes);
-    			if (!current || dirty[0] & /*minWeight*/ 8192) set_data_dev(t37, /*minWeight*/ ctx[13]);
+    			if (!current || dirty[0] & /*hiddenLayerCount*/ 256) set_data_dev(t24, /*hiddenLayerCount*/ ctx[8]);
     			const slider3_changes = {};
-    			if (dirty[0] & /*running, training*/ 6) slider3_changes.disabled = /*running*/ ctx[1] || /*training*/ ctx[2];
+    			if (dirty[0] & /*running, training*/ 12) slider3_changes.disabled = /*running*/ ctx[2] || /*training*/ ctx[3];
 
-    			if (!updating_value_3 && dirty[0] & /*minWeight*/ 8192) {
+    			if (!updating_value_3 && dirty[0] & /*hiddenLayerCount*/ 256) {
     				updating_value_3 = true;
-    				slider3_changes.value = /*minWeight*/ ctx[13];
+    				slider3_changes.value = /*hiddenLayerCount*/ ctx[8];
     				add_flush_callback(() => updating_value_3 = false);
     			}
 
     			slider3.$set(slider3_changes);
-    			if (!current || dirty[0] & /*maxWeight*/ 16384) set_data_dev(t42, /*maxWeight*/ ctx[14]);
-    			const slider4_changes = {};
-    			if (dirty[0] & /*running, training*/ 6) slider4_changes.disabled = /*running*/ ctx[1] || /*training*/ ctx[2];
+    			const select0_changes = {};
 
-    			if (!updating_value_4 && dirty[0] & /*maxWeight*/ 16384) {
+    			if (!updating_value_4 && dirty[0] & /*activationFunction*/ 512) {
     				updating_value_4 = true;
-    				slider4_changes.value = /*maxWeight*/ ctx[14];
+    				select0_changes.value = /*activationFunction*/ ctx[9];
     				add_flush_callback(() => updating_value_4 = false);
     			}
 
-    			slider4.$set(slider4_changes);
+    			select0.$set(select0_changes);
     			const select1_changes = {};
 
-    			if (!updating_value_5 && dirty[0] & /*activationFunction*/ 32768) {
+    			if (!updating_value_5 && dirty[0] & /*selectedOptimizer*/ 1024) {
     				updating_value_5 = true;
-    				select1_changes.value = /*activationFunction*/ ctx[15];
+    				select1_changes.value = /*selectedOptimizer*/ ctx[10];
     				add_flush_callback(() => updating_value_5 = false);
     			}
 
     			select1.$set(select1_changes);
-    			const select2_changes = {};
+    			if (!current || dirty[0] & /*learningRate*/ 2048) set_data_dev(t31, /*learningRate*/ ctx[11]);
+    			const slider4_changes = {};
+    			if (dirty[0] & /*running, training*/ 12) slider4_changes.disabled = /*running*/ ctx[2] || /*training*/ ctx[3];
 
-    			if (!updating_value_6 && dirty[0] & /*selectedOptimizer*/ 65536) {
+    			if (!updating_value_6 && dirty[0] & /*learningRate*/ 2048) {
     				updating_value_6 = true;
-    				select2_changes.value = /*selectedOptimizer*/ ctx[16];
+    				slider4_changes.value = /*learningRate*/ ctx[11];
     				add_flush_callback(() => updating_value_6 = false);
     			}
 
-    			select2.$set(select2_changes);
-    			if (!current || dirty[0] & /*learningRate*/ 131072) set_data_dev(t49, /*learningRate*/ ctx[17]);
-    			const slider5_changes = {};
-    			if (dirty[0] & /*running, training*/ 6) slider5_changes.disabled = /*running*/ ctx[1] || /*training*/ ctx[2];
+    			slider4.$set(slider4_changes);
+    			let previous_block_index = current_block_type_index;
+    			current_block_type_index = select_block_type(ctx);
 
-    			if (!updating_value_7 && dirty[0] & /*learningRate*/ 131072) {
-    				updating_value_7 = true;
-    				slider5_changes.value = /*learningRate*/ ctx[17];
-    				add_flush_callback(() => updating_value_7 = false);
-    			}
-
-    			slider5.$set(slider5_changes);
-
-    			if (/*running*/ ctx[1]) {
-    				if (if_block) {
-    					if (dirty[0] & /*running*/ 2) {
-    						transition_in(if_block, 1);
-    					}
-    				} else {
-    					if_block = create_if_block(ctx);
-    					if_block.c();
-    					transition_in(if_block, 1);
-    					if_block.m(div9, t52);
-    				}
-    			} else if (if_block) {
+    			if (current_block_type_index === previous_block_index) {
+    				if_blocks[current_block_type_index].p(ctx, dirty);
+    			} else {
     				group_outros();
 
-    				transition_out(if_block, 1, 1, () => {
-    					if_block = null;
+    				transition_out(if_blocks[previous_block_index], 1, 1, () => {
+    					if_blocks[previous_block_index] = null;
     				});
 
     				check_outros();
+    				if_block0 = if_blocks[current_block_type_index];
+
+    				if (!if_block0) {
+    					if_block0 = if_blocks[current_block_type_index] = if_block_creators[current_block_type_index](ctx);
+    					if_block0.c();
+    				} else {
+    					if_block0.p(ctx, dirty);
+    				}
+
+    				transition_in(if_block0, 1);
+    				if_block0.m(div2, null);
     			}
 
-    			const button_changes = {};
-    			if (dirty[0] & /*running, training, itemSelected*/ 14) button_changes.disabled = /*running*/ ctx[1] || /*training*/ ctx[2] || !/*itemSelected*/ ctx[3];
+    			const select2_changes = {};
+    			if (dirty[0] & /*datasets*/ 65536) select2_changes.items = /*datasets*/ ctx[16];
+    			select2.$set(select2_changes);
+    			let previous_block_index_1 = current_block_type_index_1;
+    			current_block_type_index_1 = select_block_type_1(ctx);
 
-    			if (dirty[2] & /*$$scope*/ 16384) {
-    				button_changes.$$scope = { dirty, ctx };
+    			if (current_block_type_index_1 === previous_block_index_1) {
+    				if_blocks_1[current_block_type_index_1].p(ctx, dirty);
+    			} else {
+    				group_outros();
+
+    				transition_out(if_blocks_1[previous_block_index_1], 1, 1, () => {
+    					if_blocks_1[previous_block_index_1] = null;
+    				});
+
+    				check_outros();
+    				if_block1 = if_blocks_1[current_block_type_index_1];
+
+    				if (!if_block1) {
+    					if_block1 = if_blocks_1[current_block_type_index_1] = if_block_creators_1[current_block_type_index_1](ctx);
+    					if_block1.c();
+    				} else {
+    					if_block1.p(ctx, dirty);
+    				}
+
+    				transition_in(if_block1, 1);
+    				if_block1.m(div11, null);
     			}
-
-    			button.$set(button_changes);
     		},
     		i: function intro(local) {
     			if (current) return;
-    			transition_in(select0.$$.fragment, local);
     			transition_in(slider0.$$.fragment, local);
     			transition_in(slider1.$$.fragment, local);
     			transition_in(slider2.$$.fragment, local);
     			transition_in(slider3.$$.fragment, local);
-    			transition_in(slider4.$$.fragment, local);
+    			transition_in(select0.$$.fragment, local);
     			transition_in(select1.$$.fragment, local);
+    			transition_in(slider4.$$.fragment, local);
+    			transition_in(if_block0);
     			transition_in(select2.$$.fragment, local);
-    			transition_in(slider5.$$.fragment, local);
-    			transition_in(if_block);
-    			transition_in(button.$$.fragment, local);
+    			transition_in(if_block1);
     			current = true;
     		},
     		o: function outro(local) {
-    			transition_out(select0.$$.fragment, local);
     			transition_out(slider0.$$.fragment, local);
     			transition_out(slider1.$$.fragment, local);
     			transition_out(slider2.$$.fragment, local);
     			transition_out(slider3.$$.fragment, local);
-    			transition_out(slider4.$$.fragment, local);
+    			transition_out(select0.$$.fragment, local);
     			transition_out(select1.$$.fragment, local);
+    			transition_out(slider4.$$.fragment, local);
+    			transition_out(if_block0);
     			transition_out(select2.$$.fragment, local);
-    			transition_out(slider5.$$.fragment, local);
-    			transition_out(if_block);
-    			transition_out(button.$$.fragment, local);
+    			transition_out(if_block1);
     			current = false;
     		},
     		d: function destroy(detaching) {
     			if (detaching) detach_dev(h30);
     			if (detaching) detach_dev(t1);
-    			if (detaching) detach_dev(div8);
-    			/*div0_binding*/ ctx[40](null);
-    			/*div2_binding*/ ctx[41](null);
-    			/*div4_binding*/ ctx[42](null);
-    			/*div6_binding*/ ctx[43](null);
-    			if (detaching) detach_dev(t13);
-    			if (detaching) detach_dev(br);
-    			if (detaching) detach_dev(t14);
-    			if (detaching) detach_dev(h31);
-    			if (detaching) detach_dev(t16);
-    			if (detaching) detach_dev(div15);
-    			destroy_component(select0);
+    			if (detaching) detach_dev(div6);
     			destroy_component(slider0);
+    			/*div0_binding*/ ctx[41](null);
     			destroy_component(slider1);
     			destroy_component(slider2);
     			destroy_component(slider3);
-    			destroy_component(slider4);
+    			destroy_component(select0);
     			destroy_component(select1);
+    			destroy_component(slider4);
+    			if_blocks[current_block_type_index].d();
+    			/*div4_binding*/ ctx[50](null);
+    			if (detaching) detach_dev(t37);
+    			if (detaching) detach_dev(br);
+    			if (detaching) detach_dev(t38);
+    			if (detaching) detach_dev(h31);
+    			if (detaching) detach_dev(t40);
+    			if (detaching) detach_dev(div10);
+    			/*div7_binding*/ ctx[51](null);
+    			/*div8_binding*/ ctx[52](null);
+    			/*div9_binding*/ ctx[53](null);
+    			if (detaching) detach_dev(t43);
+    			if (detaching) detach_dev(h32);
+    			if (detaching) detach_dev(t45);
+    			if (detaching) detach_dev(div14);
     			destroy_component(select2);
-    			destroy_component(slider5);
-    			if (if_block) if_block.d();
-    			destroy_component(button);
-    			/*div11_binding*/ ctx[55](null);
-    			/*div13_binding*/ ctx[56](null);
+    			if_blocks_1[current_block_type_index_1].d();
+    			/*div12_binding*/ ctx[55](null);
     		}
     	};
 
@@ -11683,7 +11836,7 @@ var app = (function () {
     	let labelBatchSize = "batch size";
     	let labelEpoch = "epoch";
     	let labelHiddenLayer = "hidden layer";
-    	let labelUserdataset = "dataset";
+    	let labelDataset = "dataset";
     	let labelMinWeight = "min weight";
     	let labelMaxWeight = "max weight";
 
@@ -11693,29 +11846,22 @@ var app = (function () {
     	let itemSelected = false;
     	let training = false;
 
-    	// Charts
-    	let trainingDataChart,
-    		userDataChart1,
-    		userDataChart2,
-    		userDataChart3,
-    		userDataChart4,
-    		trainChart,
-    		predictChart;
+    	// Props training
+    	// Labels
+    	let labelTrainingResult = "result";
 
-    	// Props
-    	let model;
-
-    	let data, inputData, inputDataArray;
+    	let labelTrainingSettings = "settings";
+    	let labelTrainingDataset = "training dataset";
+    	let labelTrainingDatasetSize = "training dataset size";
+    	let trainingDatasetSize = 100;
     	let batchSize = 32; // Neuronen min 32 max 512
-    	let epochs = 50; // Trainings Epochen 50 iterations
+    	let epochs = 10; // Trainings Epochen 50 iterations
     	let hiddenLayerCount = 1; // Anzahl der hidden Layer
     	let minWeight = 0;
     	let maxWeight = 1;
     	let activationFunction = "none";
     	let selectedOptimizer = "adam"; // Optimizer
     	let learningRate = 0.001; // Lernrate
-    	let selectedUserDataset;
-    	let userDatasets = [];
 
     	const activationList = [
     		"none",
@@ -11736,23 +11882,59 @@ var app = (function () {
 
     	const optimizerList = ["sgd", "momentum", "adagrad", "adadelta", "adam", "adamax", "rmsprop"];
 
-    	const selectUserDatasets = [
-    		{ value: 0, text: "Training Dataset" },
-    		{ value: 1, text: "Dataset 1" },
-    		{ value: 2, text: "Dataset 2" },
-    		{ value: 3, text: "Dataset 3" }
-    	];
+    	// Charts
+    	let trainingDataChart, trainChart;
+
+    	// Data
+    	let trainingData;
+
+    	// Model
+    	let modelName = "FFNNModel";
+
+    	let trainedModel;
+
+    	// Props prediction
+    	// Data
+    	let dataset1, dataset2, dataset3, selectedDataset;
+
+    	let datasets = [];
+
+    	// Charts
+    	let datasetChart1, datasetChart2, datasetChart3, predictChart;
 
     	// lifecycle functions
     	onMount(async () => {
-    		data = getData();
-    		userDatasets.push(getData());
-    		userDatasets.push(getRandomData1(0.1, 0.3));
-    		userDatasets.push(getRandomData2(0.4, 0.6));
-    		userDatasets.push(getRandomData3(0.7, 1));
-    		$$invalidate(18, selectedUserDataset = userDatasets[0]);
-    		showData();
-    		createModel();
+    		$$invalidate(14, trainingData = getTrainingData(trainingDatasetSize));
+    		showData(trainingDataChart, trainingData);
+    		dataset1 = getRandomData1(0.1, 0.3);
+    		dataset2 = getRandomData2(0.4, 0.6);
+    		dataset3 = getRandomData3(0.7, 1);
+    		showData(datasetChart1, dataset1);
+    		showData(datasetChart2, dataset2);
+    		showData(datasetChart3, dataset3);
+
+    		$$invalidate(16, datasets = [
+    			{
+    				value: 0,
+    				text: "Training Dataset",
+    				data: trainingData
+    			},
+    			{
+    				value: 1,
+    				text: "Dataset 1",
+    				data: dataset1
+    			},
+    			{
+    				value: 2,
+    				text: "Dataset 2",
+    				data: dataset2
+    			},
+    			{
+    				value: 3,
+    				text: "Dataset 3",
+    				data: dataset3
+    			}
+    		]);
     	});
 
     	// functions
@@ -11762,159 +11944,37 @@ var app = (function () {
     		let model = tf.sequential();
 
     		// Add a single input layer
-    		let inputConfig = { inputShape: [1], units: 1, useBias: true };
+    		let inputConfig = {
+    			inputShape: [1],
+    			units: hiddenLayerCount,
+    			useBias: true
+    		};
 
+    		if (activationFunction != "none") inputConfig.activation = activationFunction;
     		model.add(tf.layers.dense(inputConfig));
 
-    		// Add hidden layers
-    		let hiddenConfig = { units: hiddenLayerCount, useBias: true }; // weights: [
-    		//     tf.randomUniform([1, hiddenLayerCount], minWeight, maxWeight),
-    		//     tf.randomUniform([hiddenLayerCount], minWeight, maxWeight),
-
-    		// ],
-    		if (activationFunction != "none") hiddenConfig.activation = activationFunction;
-
-    		model.add(tf.layers.dense(hiddenConfig));
-
+    		// // Add hidden layers
+    		// let hiddenConfig = {
+    		//     units: hiddenLayerCount,
+    		//     useBias: true,
+    		// };
+    		// model.add(tf.layers.dense(hiddenConfig));
+    		// model.add(tf.layers.dense(hiddenConfig));
+    		// model.add(tf.layers.dense(hiddenConfig));
+    		// model.add(tf.layers.dense(hiddenConfig));
     		// Add an output layer
-    		let outputConfig = { units: 1, useBias: true };
+    		let outputConfig = { units: 1, useBias: false };
 
     		model.add(tf.layers.dense(outputConfig));
-
-    		model.weights.forEach(w => {
-    			console.log(w.name, w.shape);
-    		});
-
-    		model.summary();
     		return model;
     	};
 
-    	// Data
-    	let getRandomData1 = (nMin, nMax) => {
-    		let dataArray = [];
-
-    		for (let i = 0; i < 1; i += 0.01) {
-    			let x = i; // Math.random() * (nMax - nMin) + nMin;
-    			let y = i + Math.random() * (nMax - nMin) + nMin;
-    			dataArray.push({ x, y });
-    		}
-
-    		return dataArray;
+    	let saveModel = async (model, name) => {
+    		return await model.save(`localstorage://${name}`);
     	};
 
-    	let getRandomData2 = (nMin, nMax) => {
-    		let dataArray = [];
-
-    		for (let i = 0; i < 1; i += 0.01) {
-    			let x = i; // Math.random() * (nMax - nMin) + nMin;
-    			dataArray.push({ x, y: calc2(x) });
-    		}
-
-    		return dataArray;
-    	};
-
-    	let getRandomData3 = (nMin, nMax) => {
-    		let dataArray = [];
-
-    		for (let i = 0; i < 1; i += 0.01) {
-    			let x = i; // Math.random() * (nMax - nMin) + nMin;
-
-    			// let y = i + Math.random() * (nMax - nMin) + nMin;
-    			dataArray.push({ x, y: calc3(x) });
-    		}
-
-    		return dataArray;
-    	};
-
-    	let getData = () => {
-    		let dataArray = [];
-    		for (let i = 0; i < 1; i += 0.0001) dataArray.push({ x: i, y: calc(i) });
-    		return dataArray;
-    	};
-
-    	let calc = x => {
-    		const ys = (x + 0.8) * (x - 0.2) * (x - 0.3) * (x - 0.6);
-    		return ys;
-    	};
-
-    	let calc2 = x => {
-    		const ys = x * x * x - 0.1 * x;
-    		return ys;
-    	};
-
-    	let calc3 = x => {
-    		const ys = x * x * x * -0.9 + 1 * x;
-    		return ys;
-    	};
-
-    	let prepareData = data => {
-    		return tf.tidy(() => {
-    			// Step 1. Shuffle the data
-    			// tf.util.shuffle(data);
-    			// Step 2. Convert data to Tensor
-    			const inputs = data.map(d => d.x);
-
-    			const labels = data.map(d => d.y);
-    			const inputTensor = tf.tensor2d(inputs, [inputs.length, 1]);
-    			const labelTensor = tf.tensor2d(labels, [labels.length, 1]);
-
-    			//Step 3. Normalize the data to the range 0 - 1 using min-max scaling
-    			const inputMax = inputTensor.max();
-
-    			const inputMin = inputTensor.min();
-    			const labelMax = labelTensor.max();
-    			const labelMin = labelTensor.min();
-    			const normalizedInputs = inputTensor.sub(inputMin).div(inputMax.sub(inputMin));
-    			const normalizedLabels = labelTensor.sub(labelMin).div(labelMax.sub(labelMin));
-
-    			return {
-    				inputs: normalizedInputs,
-    				labels: normalizedLabels,
-    				// Return the min/max bounds so we can use them later.
-    				inputMax,
-    				inputMin,
-    				labelMax,
-    				labelMin
-    			};
-    		});
-    	};
-
-    	let showData = async () => {
-    		tfvis.render.scatterplot(userDataChart1, { values: userDatasets[0] }, {
-    			xAxisDomain: [0, 1],
-    			yAxisDomain: [-0.5, 1],
-    			xLabel: "X",
-    			yLabel: "Y",
-    			height: 200,
-    			width: 400
-    		});
-
-    		tfvis.render.scatterplot(userDataChart2, { values: userDatasets[1] }, {
-    			xAxisDomain: [0, 1],
-    			yAxisDomain: [-0.5, 1],
-    			xLabel: "X",
-    			yLabel: "Y",
-    			height: 200,
-    			width: 400
-    		});
-
-    		tfvis.render.scatterplot(userDataChart3, { values: userDatasets[2] }, {
-    			xAxisDomain: [0, 1],
-    			yAxisDomain: [-0.5, 1],
-    			xLabel: "X",
-    			yLabel: "Y",
-    			height: 200,
-    			width: 400
-    		});
-
-    		tfvis.render.scatterplot(userDataChart4, { values: userDatasets[3] }, {
-    			xAxisDomain: [0, 1],
-    			yAxisDomain: [-0.5, 1],
-    			xLabel: "X",
-    			yLabel: "Y",
-    			height: 200,
-    			width: 400
-    		});
+    	let loadModel = async name => {
+    		return await tf.loadLayersModel(`localstorage://${name}`);
     	};
 
     	let getOptimizer = (name, learningRate) => {
@@ -11950,24 +12010,122 @@ var app = (function () {
     		return optimizer;
     	};
 
+    	// Data
+    	let getTrainingData = (nCount = 100) => {
+    		let dataArray = [];
+    		for (let i = 0; i < nCount; i++) dataArray.push({ x: i, y: calcY(i) });
+    		return dataArray;
+    	};
+
+    	let calcY = x => {
+    		const y = (x + 0.8) * (x - 0.2) * (x - 0.3) * (x - 0.6);
+    		return y;
+    	};
+
+    	let calcYs = x => {
+    		// const ys = (x + 0.8) * (x - 0.2) * (x - 0.3) * (x - 0.6);
+    		let xs = tf.tensor1d([x]);
+
+    		let x1 = xs.add(0.8), x2 = xs.sub(0.2), x3 = xs.sub(0.3), x4 = xs.sub(0.6);
+    		const ys = x1.mul(x2.mul(x3).mul(x4));
+    		return ys.dataSync();
+    	};
+
+    	let getRandomData1 = (nMin, nMax) => {
+    		let dataArray = [];
+
+    		for (let i = 0; i < 1; i += 0.01) {
+    			let x = i; // Math.random() * (nMax - nMin) + nMin;
+    			let y = i + Math.random() * (nMax - nMin) + nMin;
+    			dataArray.push({ x, y });
+    		}
+
+    		return dataArray;
+    	};
+
+    	let getRandomData2 = (nMin, nMax) => {
+    		let dataArray = [];
+
+    		for (let i = 0; i < 1; i += 0.01) {
+    			let x = i; // Math.random() * (nMax - nMin) + nMin;
+    			let y = x * x * x - 0.1 * x;
+    			dataArray.push({ x, y });
+    		}
+
+    		return dataArray;
+    	};
+
+    	let getRandomData3 = (nMin, nMax) => {
+    		let dataArray = [];
+
+    		for (let i = 0; i < 1; i += 0.01) {
+    			let x = i; // Math.random() * (nMax - nMin) + nMin;
+    			let y = x * x * x * -0.9 + 1 * x;
+    			dataArray.push({ x, y });
+    		}
+
+    		return dataArray;
+    	};
+
+    	let prepareData = data => {
+    		return tf.tidy(() => {
+    			// Step 1. Shuffle the data
+    			tf.util.shuffle(data);
+
+    			// Step 2. Convert data to Tensor
+    			const inputs = data.map(d => d.x);
+
+    			const labels = data.map(d => calcYs(d.x));
+    			const inputTensor = tf.tensor2d(inputs, [inputs.length, 1]);
+    			const labelTensor = tf.tensor2d(labels, [labels.length, 1]);
+
+    			//Step 3. Normalize the data to the range 0 - 1 using min-max scaling
+    			const inputMax = inputTensor.max();
+
+    			const inputMin = inputTensor.min();
+    			const labelMax = labelTensor.max();
+    			const labelMin = labelTensor.min();
+    			const normalizedInputs = inputTensor.sub(inputMin).div(inputMax.sub(inputMin));
+    			const normalizedLabels = labelTensor.sub(labelMin).div(labelMax.sub(labelMin));
+
+    			return {
+    				inputs: normalizedInputs,
+    				labels: normalizedLabels,
+    				// Return the min/max bounds so we can use them later.
+    				inputMax,
+    				inputMin,
+    				labelMax,
+    				labelMin
+    			};
+    		});
+    	};
+
+    	let showData = (htmlElement, values) => {
+    		tfvis.render.scatterplot(htmlElement, { values }, {
+    			xLabel: "X",
+    			yLabel: "Y",
+    			height: 200,
+    			width: 400
+    		});
+    	};
+
     	async function train() {
-    		$$invalidate(2, training = true);
+    		$$invalidate(3, training = true);
 
     		// Create the model
-    		if (!model) model = createModel();
-
-    		// Get Data
-    		if (!data) data = getData();
+    		let model = createModel();
 
     		// Convert the data to a form we can use for training.
-    		const tensorData = prepareData(data);
+    		const tensorData = prepareData(trainingData);
 
     		const { inputs, labels } = tensorData;
 
     		// Train the model
     		await trainModel(model, inputs, labels);
 
-    		$$invalidate(2, training = false);
+    		saveModel(model, modelName);
+    		trainedModel = model;
+    		$$invalidate(3, training = false);
     	}
 
     	let trainModel = async (model, inputs, labels) => {
@@ -11983,74 +12141,62 @@ var app = (function () {
     		return await model.fit(inputs, labels, {
     			batchSize,
     			epochs,
-    			shuffle: false,
-    			callbacks: tfvis.show.fitCallbacks(
-    				trainChart,
-    				// { name: "Training" },
-    				["loss", "mse"],
-    				{ height: 200, width: 400 }
-    			)
+    			shuffle: true,
+    			callbacks: tfvis.show.fitCallbacks(trainChart, ["loss", "mse"], {
+    				height: 200,
+    				width: 400,
+    				callbacks: ["onEpochEnd"]
+    			})
     		});
     	};
 
     	async function predict() {
-    		$$invalidate(1, running = true);
+    		$$invalidate(2, running = true);
 
     		// Create the model
-    		if (!model) model = createModel();
+    		let model = trainedModel ? trainedModel : await loadModel(modelName);
 
-    		// tfvis.show.modelSummary({ name: labelModel }, model);
-    		// Get Data
-    		if (!data) data = getData();
+    		model.summary();
 
     		// Get Data
-    		if (!selectedUserDataset) $$invalidate(18, selectedUserDataset = userDatasets[0]);
+    		let data = selectedDataset.data;
 
     		// Convert the data to a form we can use for training.
     		const tensorData = prepareData(data);
 
-    		// const { inputs, labels } = tensorData;
-    		// // Train the model
-    		// await train(model, inputs, labels);
     		// Make some predictions using the model and compare them to the
     		// original data
-    		testModel(model, selectedUserDataset, tensorData);
+    		testModel(model, data, tensorData);
 
-    		$$invalidate(1, running = false);
+    		$$invalidate(2, running = false);
     	}
 
     	let testModel = (model, inputData, normalizationData) => {
-    		const { inputMax, inputMin, labelMin, labelMax } = normalizationData;
+    		const { inputs, labels, inputMax, inputMin, labelMin, labelMax } = normalizationData;
 
-    		// Generate predictions for a uniform range of numbers between 0 and 1;
-    		// We un-normalize the data by doing the inverse of the min-max scaling
-    		// that we did earlier.
-    		const [xs, preds] = tf.tidy(() => {
-    			const xs = tf.linspace(0, 1, 100);
-    			const preds = model.predict(xs.reshape([100, 1]));
-    			const unNormXs = xs.mul(inputMax.sub(inputMin)).add(inputMin);
-    			const unNormPreds = preds.mul(labelMax.sub(labelMin)).add(labelMin);
+    		const [x, y] = tf.tidy(() => {
+    			const x = inputs;
+    			const y = model.predict(x.reshape([x.size, 1]));
+    			const unNormXs = x.mul(inputMax.sub(inputMin)).add(inputMin);
+    			const unNormPreds = y.mul(labelMax.sub(labelMin)).add(labelMin);
 
     			// Un-normalize the data
     			return [unNormXs.dataSync(), unNormPreds.dataSync()];
     		});
 
-    		const predictedPoints = Array.from(xs).map((val, i) => {
-    			return { x: val, y: preds[i] };
+    		const predictedPoints = Array.from(x).map((val, i) => {
+    			return { x: val, y: y[i] };
     		});
 
     		const originalPoints = inputData.map(d => ({ x: d.x, y: d.y }));
 
     		tfvis.render.scatterplot(
     			predictChart,
-    			// { name: "Model Predictions vs Original Data" },
     			{
     				values: [originalPoints, predictedPoints],
     				series: ["original", "predicted"]
     			},
     			{
-    				xAxisDomain: [0, 1],
-    				yAxisDomain: [-1, 2],
     				xLabel: "X",
     				yLabel: "Y",
     				height: 400,
@@ -12059,168 +12205,104 @@ var app = (function () {
     		);
     	};
 
-    	async function run() {
-    		$$invalidate(2, training = true);
-    		$$invalidate(1, running = true);
-
-    		// Create the model
-    		// if (!model)
-    		let model = createModel();
-
-    		// tfvis.show.modelSummary({ name: "FFNN" }, model);
-    		// Get Data
-    		let data = getData();
-
-    		// Convert the data to a form we can use for training.
-    		const tensorData = prepareData(data);
-
-    		const { inputs, labels } = tensorData;
-
-    		// Train the model
-    		await trainModel(model, inputs, labels);
-
-    		$$invalidate(2, training = false);
-
-    		// Get Data
-    		if (!selectedUserDataset) return; //selectedUserDataset = userDatasets[0];
-
-    		const tensorData2 = prepareData(selectedUserDataset);
-
-    		// Make some predictions using the model and compare them to the
-    		// original data
-    		testModel(model, selectedUserDataset, tensorData2);
-
-    		$$invalidate(1, running = false);
-    	}
-
-    	async function run2() {
-    		$$invalidate(2, training = true);
-    		$$invalidate(1, running = true);
-
-    		// Create the model
-    		// if (!model)
-    		let model = createModel();
-
-    		tfvis.show.modelSummary({ name: "FFNN" }, model);
-
-    		// Get Data
-    		if (!selectedUserDataset) return; //selectedUserDataset = userDatasets[0];
-
-    		// Convert the data to a form we can use for training.
-    		const tensorData = prepareData(selectedUserDataset);
-
-    		const { inputs, labels } = tensorData;
-
-    		// Train the model
-    		await trainModel(model, inputs, labels);
-
-    		$$invalidate(2, training = false);
-
-    		// Make some predictions using the model and compare them to the
-    		// original data
-    		testModel(model, selectedUserDataset, tensorData);
-
-    		$$invalidate(1, running = false);
-    	}
-
     	const writable_props = [];
 
     	Object.keys($$props).forEach(key => {
-    		if (!~writable_props.indexOf(key) && key.slice(0, 2) !== "$$") console_1$1.warn(`<FFNN> was created with unknown prop '${key}'`);
+    		if (!~writable_props.indexOf(key) && key.slice(0, 2) !== "$$") console.warn(`<FFNN> was created with unknown prop '${key}'`);
     	});
+
+    	function slider0_value_binding(value) {
+    		trainingDatasetSize = value;
+    		$$invalidate(5, trainingDatasetSize);
+    	}
+
+    	const change_handler = () => {
+    		$$invalidate(14, trainingData = getTrainingData(trainingDatasetSize));
+    		showData(trainingDataChart, trainingData);
+    	};
 
     	function div0_binding($$value) {
     		binding_callbacks[$$value ? "unshift" : "push"](() => {
-    			userDataChart1 = $$value;
-    			$$invalidate(4, userDataChart1);
+    			trainingDataChart = $$value;
+    			$$invalidate(12, trainingDataChart);
     		});
     	}
 
-    	function div2_binding($$value) {
-    		binding_callbacks[$$value ? "unshift" : "push"](() => {
-    			userDataChart2 = $$value;
-    			$$invalidate(5, userDataChart2);
-    		});
+    	function slider1_value_binding(value) {
+    		batchSize = value;
+    		$$invalidate(6, batchSize);
+    	}
+
+    	function slider2_value_binding(value) {
+    		epochs = value;
+    		$$invalidate(7, epochs);
+    	}
+
+    	function slider3_value_binding(value) {
+    		hiddenLayerCount = value;
+    		$$invalidate(8, hiddenLayerCount);
+    	}
+
+    	function select0_value_binding(value) {
+    		activationFunction = value;
+    		$$invalidate(9, activationFunction);
+    	}
+
+    	const change_handler_1 = v => {
+    		$$invalidate(9, activationFunction = v.detail);
+    	};
+
+    	function select1_value_binding(value) {
+    		selectedOptimizer = value;
+    		$$invalidate(10, selectedOptimizer);
+    	}
+
+    	const change_handler_2 = v => {
+    		$$invalidate(10, selectedOptimizer = v.detail);
+    	};
+
+    	function slider4_value_binding(value) {
+    		learningRate = value;
+    		$$invalidate(11, learningRate);
     	}
 
     	function div4_binding($$value) {
     		binding_callbacks[$$value ? "unshift" : "push"](() => {
-    			userDataChart3 = $$value;
-    			$$invalidate(6, userDataChart3);
-    		});
-    	}
-
-    	function div6_binding($$value) {
-    		binding_callbacks[$$value ? "unshift" : "push"](() => {
-    			userDataChart4 = $$value;
-    			$$invalidate(7, userDataChart4);
-    		});
-    	}
-
-    	const change_handler = v => {
-    		$$invalidate(3, itemSelected = true);
-    		$$invalidate(18, selectedUserDataset = userDatasets[v.detail]);
-    	};
-
-    	function slider0_value_binding(value) {
-    		batchSize = value;
-    		$$invalidate(10, batchSize);
-    	}
-
-    	function slider1_value_binding(value) {
-    		epochs = value;
-    		$$invalidate(11, epochs);
-    	}
-
-    	function slider2_value_binding(value) {
-    		hiddenLayerCount = value;
-    		$$invalidate(12, hiddenLayerCount);
-    	}
-
-    	function slider3_value_binding(value) {
-    		minWeight = value;
-    		$$invalidate(13, minWeight);
-    	}
-
-    	function slider4_value_binding(value) {
-    		maxWeight = value;
-    		$$invalidate(14, maxWeight);
-    	}
-
-    	function select1_value_binding(value) {
-    		activationFunction = value;
-    		$$invalidate(15, activationFunction);
-    	}
-
-    	const change_handler_1 = v => {
-    		$$invalidate(15, activationFunction = v.detail);
-    	};
-
-    	function select2_value_binding(value) {
-    		selectedOptimizer = value;
-    		$$invalidate(16, selectedOptimizer);
-    	}
-
-    	const change_handler_2 = v => {
-    		$$invalidate(16, selectedOptimizer = v.detail);
-    	};
-
-    	function slider5_value_binding(value) {
-    		learningRate = value;
-    		$$invalidate(17, learningRate);
-    	}
-
-    	function div11_binding($$value) {
-    		binding_callbacks[$$value ? "unshift" : "push"](() => {
     			trainChart = $$value;
-    			$$invalidate(8, trainChart);
+    			$$invalidate(13, trainChart);
     		});
     	}
 
-    	function div13_binding($$value) {
+    	function div7_binding($$value) {
+    		binding_callbacks[$$value ? "unshift" : "push"](() => {
+    			datasetChart1 = $$value;
+    			$$invalidate(17, datasetChart1);
+    		});
+    	}
+
+    	function div8_binding($$value) {
+    		binding_callbacks[$$value ? "unshift" : "push"](() => {
+    			datasetChart2 = $$value;
+    			$$invalidate(18, datasetChart2);
+    		});
+    	}
+
+    	function div9_binding($$value) {
+    		binding_callbacks[$$value ? "unshift" : "push"](() => {
+    			datasetChart3 = $$value;
+    			$$invalidate(19, datasetChart3);
+    		});
+    	}
+
+    	const change_handler_3 = v => {
+    		$$invalidate(4, itemSelected = true);
+    		$$invalidate(15, selectedDataset = datasets[v.detail]);
+    	};
+
+    	function div12_binding($$value) {
     		binding_callbacks[$$value ? "unshift" : "push"](() => {
     			predictChart = $$value;
-    			$$invalidate(9, predictChart);
+    			$$invalidate(20, predictChart);
     		});
     	}
 
@@ -12248,23 +12330,17 @@ var app = (function () {
     		labelBatchSize,
     		labelEpoch,
     		labelHiddenLayer,
-    		labelUserdataset,
+    		labelDataset,
     		labelMinWeight,
     		labelMaxWeight,
     		running,
     		itemSelected,
     		training,
-    		trainingDataChart,
-    		userDataChart1,
-    		userDataChart2,
-    		userDataChart3,
-    		userDataChart4,
-    		trainChart,
-    		predictChart,
-    		model,
-    		data,
-    		inputData,
-    		inputDataArray,
+    		labelTrainingResult,
+    		labelTrainingSettings,
+    		labelTrainingDataset,
+    		labelTrainingDatasetSize,
+    		trainingDatasetSize,
     		batchSize,
     		epochs,
     		hiddenLayerCount,
@@ -12273,34 +12349,44 @@ var app = (function () {
     		activationFunction,
     		selectedOptimizer,
     		learningRate,
-    		selectedUserDataset,
-    		userDatasets,
     		activationList,
     		optimizerList,
-    		selectUserDatasets,
+    		trainingDataChart,
+    		trainChart,
+    		trainingData,
+    		modelName,
+    		trainedModel,
+    		dataset1,
+    		dataset2,
+    		dataset3,
+    		selectedDataset,
+    		datasets,
+    		datasetChart1,
+    		datasetChart2,
+    		datasetChart3,
+    		predictChart,
     		createModel,
+    		saveModel,
+    		loadModel,
+    		getOptimizer,
+    		getTrainingData,
+    		calcY,
+    		calcYs,
     		getRandomData1,
     		getRandomData2,
     		getRandomData3,
-    		getData,
-    		calc,
-    		calc2,
-    		calc3,
     		prepareData,
     		showData,
-    		getOptimizer,
     		train,
     		trainModel,
     		predict,
-    		testModel,
-    		run,
-    		run2
+    		testModel
     	});
 
     	$$self.$inject_state = $$props => {
-    		if ("labelDatasets" in $$props) $$invalidate(19, labelDatasets = $$props.labelDatasets);
-    		if ("labelFFNN" in $$props) $$invalidate(20, labelFFNN = $$props.labelFFNN);
-    		if ("labelSettinngs" in $$props) $$invalidate(21, labelSettinngs = $$props.labelSettinngs);
+    		if ("labelDatasets" in $$props) $$invalidate(21, labelDatasets = $$props.labelDatasets);
+    		if ("labelFFNN" in $$props) labelFFNN = $$props.labelFFNN;
+    		if ("labelSettinngs" in $$props) labelSettinngs = $$props.labelSettinngs;
     		if ("labelTraining" in $$props) $$invalidate(22, labelTraining = $$props.labelTraining);
     		if ("labelPrediction" in $$props) $$invalidate(23, labelPrediction = $$props.labelPrediction);
     		if ("labelActivationFunction" in $$props) $$invalidate(24, labelActivationFunction = $$props.labelActivationFunction);
@@ -12309,44 +12395,51 @@ var app = (function () {
     		if ("labelBatchSize" in $$props) $$invalidate(27, labelBatchSize = $$props.labelBatchSize);
     		if ("labelEpoch" in $$props) $$invalidate(28, labelEpoch = $$props.labelEpoch);
     		if ("labelHiddenLayer" in $$props) $$invalidate(29, labelHiddenLayer = $$props.labelHiddenLayer);
-    		if ("labelUserdataset" in $$props) $$invalidate(30, labelUserdataset = $$props.labelUserdataset);
-    		if ("labelMinWeight" in $$props) $$invalidate(31, labelMinWeight = $$props.labelMinWeight);
-    		if ("labelMaxWeight" in $$props) $$invalidate(32, labelMaxWeight = $$props.labelMaxWeight);
-    		if ("running" in $$props) $$invalidate(1, running = $$props.running);
-    		if ("itemSelected" in $$props) $$invalidate(3, itemSelected = $$props.itemSelected);
-    		if ("training" in $$props) $$invalidate(2, training = $$props.training);
-    		if ("trainingDataChart" in $$props) trainingDataChart = $$props.trainingDataChart;
-    		if ("userDataChart1" in $$props) $$invalidate(4, userDataChart1 = $$props.userDataChart1);
-    		if ("userDataChart2" in $$props) $$invalidate(5, userDataChart2 = $$props.userDataChart2);
-    		if ("userDataChart3" in $$props) $$invalidate(6, userDataChart3 = $$props.userDataChart3);
-    		if ("userDataChart4" in $$props) $$invalidate(7, userDataChart4 = $$props.userDataChart4);
-    		if ("trainChart" in $$props) $$invalidate(8, trainChart = $$props.trainChart);
-    		if ("predictChart" in $$props) $$invalidate(9, predictChart = $$props.predictChart);
-    		if ("model" in $$props) model = $$props.model;
-    		if ("data" in $$props) data = $$props.data;
-    		if ("inputData" in $$props) $$invalidate(62, inputData = $$props.inputData);
-    		if ("inputDataArray" in $$props) inputDataArray = $$props.inputDataArray;
-    		if ("batchSize" in $$props) $$invalidate(10, batchSize = $$props.batchSize);
-    		if ("epochs" in $$props) $$invalidate(11, epochs = $$props.epochs);
-    		if ("hiddenLayerCount" in $$props) $$invalidate(12, hiddenLayerCount = $$props.hiddenLayerCount);
-    		if ("minWeight" in $$props) $$invalidate(13, minWeight = $$props.minWeight);
-    		if ("maxWeight" in $$props) $$invalidate(14, maxWeight = $$props.maxWeight);
-    		if ("activationFunction" in $$props) $$invalidate(15, activationFunction = $$props.activationFunction);
-    		if ("selectedOptimizer" in $$props) $$invalidate(16, selectedOptimizer = $$props.selectedOptimizer);
-    		if ("learningRate" in $$props) $$invalidate(17, learningRate = $$props.learningRate);
-    		if ("selectedUserDataset" in $$props) $$invalidate(18, selectedUserDataset = $$props.selectedUserDataset);
-    		if ("userDatasets" in $$props) $$invalidate(33, userDatasets = $$props.userDatasets);
+    		if ("labelDataset" in $$props) $$invalidate(30, labelDataset = $$props.labelDataset);
+    		if ("labelMinWeight" in $$props) labelMinWeight = $$props.labelMinWeight;
+    		if ("labelMaxWeight" in $$props) labelMaxWeight = $$props.labelMaxWeight;
+    		if ("running" in $$props) $$invalidate(2, running = $$props.running);
+    		if ("itemSelected" in $$props) $$invalidate(4, itemSelected = $$props.itemSelected);
+    		if ("training" in $$props) $$invalidate(3, training = $$props.training);
+    		if ("labelTrainingResult" in $$props) $$invalidate(31, labelTrainingResult = $$props.labelTrainingResult);
+    		if ("labelTrainingSettings" in $$props) $$invalidate(32, labelTrainingSettings = $$props.labelTrainingSettings);
+    		if ("labelTrainingDataset" in $$props) $$invalidate(33, labelTrainingDataset = $$props.labelTrainingDataset);
+    		if ("labelTrainingDatasetSize" in $$props) $$invalidate(34, labelTrainingDatasetSize = $$props.labelTrainingDatasetSize);
+    		if ("trainingDatasetSize" in $$props) $$invalidate(5, trainingDatasetSize = $$props.trainingDatasetSize);
+    		if ("batchSize" in $$props) $$invalidate(6, batchSize = $$props.batchSize);
+    		if ("epochs" in $$props) $$invalidate(7, epochs = $$props.epochs);
+    		if ("hiddenLayerCount" in $$props) $$invalidate(8, hiddenLayerCount = $$props.hiddenLayerCount);
+    		if ("minWeight" in $$props) minWeight = $$props.minWeight;
+    		if ("maxWeight" in $$props) maxWeight = $$props.maxWeight;
+    		if ("activationFunction" in $$props) $$invalidate(9, activationFunction = $$props.activationFunction);
+    		if ("selectedOptimizer" in $$props) $$invalidate(10, selectedOptimizer = $$props.selectedOptimizer);
+    		if ("learningRate" in $$props) $$invalidate(11, learningRate = $$props.learningRate);
+    		if ("trainingDataChart" in $$props) $$invalidate(12, trainingDataChart = $$props.trainingDataChart);
+    		if ("trainChart" in $$props) $$invalidate(13, trainChart = $$props.trainChart);
+    		if ("trainingData" in $$props) $$invalidate(14, trainingData = $$props.trainingData);
+    		if ("modelName" in $$props) modelName = $$props.modelName;
+    		if ("trainedModel" in $$props) trainedModel = $$props.trainedModel;
+    		if ("dataset1" in $$props) dataset1 = $$props.dataset1;
+    		if ("dataset2" in $$props) dataset2 = $$props.dataset2;
+    		if ("dataset3" in $$props) dataset3 = $$props.dataset3;
+    		if ("selectedDataset" in $$props) $$invalidate(15, selectedDataset = $$props.selectedDataset);
+    		if ("datasets" in $$props) $$invalidate(16, datasets = $$props.datasets);
+    		if ("datasetChart1" in $$props) $$invalidate(17, datasetChart1 = $$props.datasetChart1);
+    		if ("datasetChart2" in $$props) $$invalidate(18, datasetChart2 = $$props.datasetChart2);
+    		if ("datasetChart3" in $$props) $$invalidate(19, datasetChart3 = $$props.datasetChart3);
+    		if ("predictChart" in $$props) $$invalidate(20, predictChart = $$props.predictChart);
     		if ("createModel" in $$props) createModel = $$props.createModel;
+    		if ("saveModel" in $$props) saveModel = $$props.saveModel;
+    		if ("loadModel" in $$props) loadModel = $$props.loadModel;
+    		if ("getOptimizer" in $$props) getOptimizer = $$props.getOptimizer;
+    		if ("getTrainingData" in $$props) $$invalidate(37, getTrainingData = $$props.getTrainingData);
+    		if ("calcY" in $$props) calcY = $$props.calcY;
+    		if ("calcYs" in $$props) calcYs = $$props.calcYs;
     		if ("getRandomData1" in $$props) getRandomData1 = $$props.getRandomData1;
     		if ("getRandomData2" in $$props) getRandomData2 = $$props.getRandomData2;
     		if ("getRandomData3" in $$props) getRandomData3 = $$props.getRandomData3;
-    		if ("getData" in $$props) getData = $$props.getData;
-    		if ("calc" in $$props) calc = $$props.calc;
-    		if ("calc2" in $$props) calc2 = $$props.calc2;
-    		if ("calc3" in $$props) calc3 = $$props.calc3;
     		if ("prepareData" in $$props) prepareData = $$props.prepareData;
-    		if ("showData" in $$props) showData = $$props.showData;
-    		if ("getOptimizer" in $$props) getOptimizer = $$props.getOptimizer;
+    		if ("showData" in $$props) $$invalidate(38, showData = $$props.showData);
     		if ("trainModel" in $$props) trainModel = $$props.trainModel;
     		if ("testModel" in $$props) testModel = $$props.testModel;
     	};
@@ -12356,40 +12449,38 @@ var app = (function () {
     	}
 
     	$$self.$$.update = () => {
-    		if ($$self.$$.dirty[0] & /*training*/ 4) {
+    		if ($$self.$$.dirty[0] & /*training*/ 8) {
     			(dispatch("training", training));
     		}
 
-    		if ($$self.$$.dirty[0] & /*running*/ 2) {
+    		if ($$self.$$.dirty[0] & /*running*/ 4) {
     			(dispatch("running", running));
     		}
     	};
 
-    	(inputDataArray = inputData ? inputData.split(" ") : "");
-
     	return [
-    		run,
+    		train,
+    		predict,
     		running,
     		training,
     		itemSelected,
-    		userDataChart1,
-    		userDataChart2,
-    		userDataChart3,
-    		userDataChart4,
-    		trainChart,
-    		predictChart,
+    		trainingDatasetSize,
     		batchSize,
     		epochs,
     		hiddenLayerCount,
-    		minWeight,
-    		maxWeight,
     		activationFunction,
     		selectedOptimizer,
     		learningRate,
-    		selectedUserDataset,
+    		trainingDataChart,
+    		trainChart,
+    		trainingData,
+    		selectedDataset,
+    		datasets,
+    		datasetChart1,
+    		datasetChart2,
+    		datasetChart3,
+    		predictChart,
     		labelDatasets,
-    		labelFFNN,
-    		labelSettinngs,
     		labelTraining,
     		labelPrediction,
     		labelActivationFunction,
@@ -12398,40 +12489,39 @@ var app = (function () {
     		labelBatchSize,
     		labelEpoch,
     		labelHiddenLayer,
-    		labelUserdataset,
-    		labelMinWeight,
-    		labelMaxWeight,
-    		userDatasets,
+    		labelDataset,
+    		labelTrainingResult,
+    		labelTrainingSettings,
+    		labelTrainingDataset,
+    		labelTrainingDatasetSize,
     		activationList,
     		optimizerList,
-    		selectUserDatasets,
-    		train,
-    		predict,
-    		run2,
-    		div0_binding,
-    		div2_binding,
-    		div4_binding,
-    		div6_binding,
-    		change_handler,
+    		getTrainingData,
+    		showData,
     		slider0_value_binding,
+    		change_handler,
+    		div0_binding,
     		slider1_value_binding,
     		slider2_value_binding,
     		slider3_value_binding,
-    		slider4_value_binding,
-    		select1_value_binding,
+    		select0_value_binding,
     		change_handler_1,
-    		select2_value_binding,
+    		select1_value_binding,
     		change_handler_2,
-    		slider5_value_binding,
-    		div11_binding,
-    		div13_binding
+    		slider4_value_binding,
+    		div4_binding,
+    		div7_binding,
+    		div8_binding,
+    		div9_binding,
+    		change_handler_3,
+    		div12_binding
     	];
     }
 
     class FFNN extends SvelteComponentDev {
     	constructor(options) {
     		super(options);
-    		init(this, options, instance$2, create_fragment$2, safe_not_equal, { train: 37, predict: 38, run: 0, run2: 39 }, [-1, -1, -1]);
+    		init(this, options, instance$2, create_fragment$2, safe_not_equal, { train: 0, predict: 1 }, [-1, -1, -1]);
 
     		dispatch_dev("SvelteRegisterComponent", {
     			component: this,
@@ -12442,7 +12532,7 @@ var app = (function () {
     	}
 
     	get train() {
-    		return this.$$.ctx[37];
+    		return this.$$.ctx[0];
     	}
 
     	set train(value) {
@@ -12450,26 +12540,10 @@ var app = (function () {
     	}
 
     	get predict() {
-    		return this.$$.ctx[38];
+    		return this.$$.ctx[1];
     	}
 
     	set predict(value) {
-    		throw new Error("<FFNN>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
-    	}
-
-    	get run() {
-    		return this.$$.ctx[0];
-    	}
-
-    	set run(value) {
-    		throw new Error("<FFNN>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
-    	}
-
-    	get run2() {
-    		return this.$$.ctx[39];
-    	}
-
-    	set run2(value) {
     		throw new Error("<FFNN>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
     	}
     }
