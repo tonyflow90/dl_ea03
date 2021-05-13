@@ -32,7 +32,7 @@
     let labelMinWeight = "min weight";
     let labelMaxWeight = "max weight";
 
-    // events
+    // Events
     let running = false;
     let itemSelected = false;
     let training = false;
@@ -48,14 +48,15 @@
     let labelTrainingDataset = "training dataset";
     let labelTrainingDatasetSize = "training dataset size";
 
-    let trainingDatasetSize = 100;
-    let batchSize = 32; // Neuronen min 32 max 512
-    let epochs = 10; // Trainings Epochen 50 iterations
-    let hiddenLayerCount = 1; // Anzahl der hidden Layer
+    let trainingDatasetSize = 1000;
+    let batchSize = 100; // Neuronen min 32 max 512
+    let epochs = 200; // Trainings Epochen 50 iterations
+    let hiddenLayerCount = 25; // Anzahl der hidden Layer
+    let stepWeight = .001
     let minWeight = 0;
-    let maxWeight = 1;
+    let maxWeight = .2;
     let activationFunction = "none";
-    let selectedOptimizer = "adam"; // Optimizer
+    let selectedOptimizer = "sgd"; // Optimizer
     let learningRate = 0.001; // Lernrate
 
     const activationList = [
@@ -104,6 +105,10 @@
     // Charts
     let datasetChart1, datasetChart2, datasetChart3, predictChart;
 
+    // Documentation
+    let labelDocumentation = "Documentation";
+    let mdUrl = "./files/documentation.md";
+
     // lifecycle functions
     onMount(async () => {
         trainingData = getTrainingData(trainingDatasetSize);
@@ -131,33 +136,35 @@
         // Create a sequential model
         let model = tf.sequential();
 
+        let weights = [
+            tf.randomUniform([1, hiddenLayerCount], 1, 1),
+            tf.randomUniform([hiddenLayerCount], minWeight, maxWeight),
+        ];
+
         // Add a single input layer
         let inputConfig = {
+            name: "hiddenlayer",
             inputShape: [1],
             units: hiddenLayerCount,
+            weights: weights,
             useBias: true,
         };
         if (activationFunction != "none")
             inputConfig.activation = activationFunction;
 
-        model.add(tf.layers.dense(inputConfig));
-
-        // // Add hidden layers
-        // let hiddenConfig = {
-        //     units: hiddenLayerCount,
-        //     useBias: true,
-        // };
-        // model.add(tf.layers.dense(hiddenConfig));
-        // model.add(tf.layers.dense(hiddenConfig));
-        // model.add(tf.layers.dense(hiddenConfig));
-        // model.add(tf.layers.dense(hiddenConfig));
+        let layer = tf.layers.dense(inputConfig);
+        model.add(layer);
 
         // Add an output layer
         let outputConfig = {
             units: 1,
-            useBias: false,
+            useBias: true,
         };
         model.add(tf.layers.dense(outputConfig));
+
+        // model.weights.forEach((w) => {
+        //     console.log(w.name, w.shape, w.read().dataSync());
+        // });
 
         return model;
     };
@@ -228,8 +235,8 @@
     let getRandomData1 = (nMin, nMax) => {
         let dataArray = [];
         for (let i = 0; i < 1; i += 0.01) {
-            let x = i; // Math.random() * (nMax - nMin) + nMin;
-            let y = i + Math.random() * (nMax - nMin) + nMin;
+            let x = Math.random() * (nMax - nMin) + nMin;
+            let y = calcY(x); // + Math.random() * (nMax - nMin) + nMin;
             dataArray.push({ x: x, y: y });
         }
         return dataArray;
@@ -239,7 +246,7 @@
         let dataArray = [];
         for (let i = 0; i < 1; i += 0.01) {
             let x = i; // Math.random() * (nMax - nMin) + nMin;
-            let y = x * x * x - 0.1 * x;
+            let y = Math.sqrt(x) - 0.1 * x * 2;
             dataArray.push({ x: x, y: y });
         }
         return dataArray;
@@ -262,7 +269,7 @@
 
             // Step 2. Convert data to Tensor
             const inputs = data.map((d) => d.x);
-            const labels = data.map((d) => calcYs(d.x));
+            const labels = data.map((d) => calcY(d.x));
             const inputTensor = tf.tensor2d(inputs, [inputs.length, 1]);
             const labelTensor = tf.tensor2d(labels, [labels.length, 1]);
 
@@ -332,16 +339,54 @@
             metrics: ["mse"],
         });
 
-        return await model.fit(inputs, labels, {
+        // return await model.fit(inputs, labels, {
+        //     batchSize,
+        //     epochs,
+        //     shuffle: true,
+        //     callbacks: tfvis.show.fitCallbacks(trainChart, ["loss", "mse"], {
+        //         height: 200,
+        //         width: 400,
+        //         callbacks: ["onEpochEnd"],
+        //     }),
+        // });
+
+        await model.fit(inputs, labels, {
             batchSize,
             epochs,
             shuffle: true,
-            callbacks: tfvis.show.fitCallbacks(trainChart, ["loss", "mse"], {
-                height: 200,
-                width: 400,
-                callbacks: ["onEpochEnd"],
-            }),
+            validationSplit: 0.2,
+            validationData: labels,
+            callbacks: tfvis.show.fitCallbacks(
+                trainChart,
+                ["val_loss", "loss", "val_mse", "mse"],
+                {
+                    height: 200,
+                    width: 400,
+                    callbacks: ["onEpochEnd"],
+                }
+            ),
         });
+
+        // const hiddenLayer = model.getLayer("hiddenlayer");
+        // const [weights, biases] = hiddenLayer.getWeights(true);
+        // debugger
+        // console.log(weights.shape);
+        // console.log(biases.shape);
+
+        return model;
+
+        // return await model.fit(inputs, labels, {
+        //     batchSize,
+        //     epochs,
+        //     shuffle: true,
+        //     validationSplit: 0.2,
+        //     callbacks: {
+        //         onEpochEnd: async (epoch, logs) => {
+        //             debugger;
+        //             showData(trainChart, epoch);
+        //         }
+        //     }
+        // })
     };
 
     // Predict
@@ -419,12 +464,13 @@
             {labelTrainingDatasetSize}: {trainingDatasetSize}
         </h6>
         <Slider
-            min="10"
-            step="10"
+            min="100"
+            step="100"
             max="10000"
             bind:value={trainingDatasetSize}
             on:change={() => {
                 trainingData = getTrainingData(trainingDatasetSize);
+                datasets[0].data = trainingData;
                 showData(trainingDataChart, trainingData);
             }}
             disabled={running || training}
@@ -438,7 +484,7 @@
             <h6 class="pt-6 pb-4">{labelBatchSize}: {batchSize}</h6>
             <Slider
                 min="32"
-                step="30"
+                step="10"
                 max="512"
                 bind:value={batchSize}
                 disabled={running || training}
@@ -448,7 +494,7 @@
             <Slider
                 min="10"
                 step="10"
-                max="200"
+                max="1000"
                 bind:value={epochs}
                 disabled={running || training}
             />
@@ -457,28 +503,28 @@
             <Slider
                 min="1"
                 step="1"
-                max="1000"
+                max="100"
                 bind:value={hiddenLayerCount}
                 disabled={running || training}
             />
 
-            <!-- <h6 class="pt-6 pb-4">{labelMinWeight}: {minWeight}</h6>
+            <h6 class="pt-6 pb-4">{labelMinWeight}: {minWeight}</h6>
             <Slider
                 min="0"
-                step=".1"
-                max="1"
+                step={stepWeight}
+                max={maxWeight}
                 bind:value={minWeight}
                 disabled={running || training}
             />
 
             <h6 class="pt-6 pb-4">{labelMaxWeight}: {maxWeight}</h6>
             <Slider
-                min="0"
-                step=".1"
-                max="1"
+                min={minWeight}
+                step={stepWeight}
+                max=.1
                 bind:value={maxWeight}
                 disabled={running || training}
-            /> -->
+            />
 
             <Select
                 label={labelActivationFunction}
@@ -538,7 +584,7 @@
 </div>
 
 <h3>{labelPrediction}</h3>
-<div class="grid">
+<div class="grid prediction-grid">
     <div>
         <div class="settings">
             <Select
@@ -568,6 +614,11 @@
     </div>
 </div>
 
+<h3>{labelDocumentation}</h3>
+<div class="grid">
+    <zero-md src={mdUrl} />
+</div>
+
 <style>
     .grid {
         display: grid;
@@ -575,6 +626,10 @@
         column-gap: 20px;
         row-gap: 20px;
         justify-items: center;
+    }
+
+    .prediction-grid {
+        min-height: 300px;
     }
 
     .settings {

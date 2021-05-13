@@ -195,6 +195,14 @@ var app = (function () {
             }
         }
     }
+    function set_custom_element_data(node, prop, value) {
+        if (prop in node) {
+            node[prop] = value;
+        }
+        else {
+            attr(node, prop, value);
+        }
+    }
     function to_number(value) {
         return value === '' ? null : +value;
     }
@@ -686,12 +694,6 @@ var app = (function () {
         };
     }
 
-    const globals = (typeof window !== 'undefined'
-        ? window
-        : typeof globalThis !== 'undefined'
-            ? globalThis
-            : global);
-
     function get_spread_update(levels, updates) {
         const update = {};
         const to_null_out = {};
@@ -949,7 +951,7 @@ var app = (function () {
 
     const file$k = "node_modules\\smelte\\src\\components\\Icon\\Icon.svelte";
 
-    function create_fragment$m(ctx) {
+    function create_fragment$l(ctx) {
     	let i;
     	let i_class_value;
     	let i_style_value;
@@ -1039,7 +1041,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_fragment$m.name,
+    		id: create_fragment$l.name,
     		type: "component",
     		source: "",
     		ctx
@@ -1048,7 +1050,7 @@ var app = (function () {
     	return block;
     }
 
-    function instance$m($$self, $$props, $$invalidate) {
+    function instance$l($$self, $$props, $$invalidate) {
     	let { $$slots: slots = {}, $$scope } = $$props;
     	validate_slots("Icon", slots, ['default']);
     	let { small = false } = $$props;
@@ -1094,7 +1096,7 @@ var app = (function () {
     	constructor(options) {
     		super(options);
 
-    		init(this, options, instance$m, create_fragment$m, safe_not_equal, {
+    		init(this, options, instance$l, create_fragment$l, safe_not_equal, {
     			small: 0,
     			xs: 1,
     			reverse: 2,
@@ -1106,7 +1108,7 @@ var app = (function () {
     			component: this,
     			tagName: "Icon",
     			options,
-    			id: create_fragment$m.name
+    			id: create_fragment$l.name
     		});
     	}
 
@@ -1739,7 +1741,7 @@ var app = (function () {
     	return block_1;
     }
 
-    function create_fragment$l(ctx) {
+    function create_fragment$k(ctx) {
     	let current_block_type_index;
     	let if_block;
     	let if_block_anchor;
@@ -1812,7 +1814,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block: block_1,
-    		id: create_fragment$l.name,
+    		id: create_fragment$k.name,
     		type: "component",
     		source: "",
     		ctx
@@ -1831,7 +1833,7 @@ var app = (function () {
     const disabledDefault = "bg-gray-300 text-gray-500 dark:bg-dark-400 pointer-events-none hover:bg-gray-300 cursor-default";
     const elevationDefault = "hover:shadow shadow";
 
-    function instance$l($$self, $$props, $$invalidate) {
+    function instance$k($$self, $$props, $$invalidate) {
     	let normal;
     	let lighter;
     	let { $$slots: slots = {}, $$scope } = $$props;
@@ -2138,8 +2140,8 @@ var app = (function () {
     		init(
     			this,
     			options,
-    			instance$l,
-    			create_fragment$l,
+    			instance$k,
+    			create_fragment$k,
     			safe_not_equal,
     			{
     				value: 0,
@@ -2177,7 +2179,7 @@ var app = (function () {
     			component: this,
     			tagName: "Button",
     			options,
-    			id: create_fragment$l.name
+    			id: create_fragment$k.name
     		});
     	}
 
@@ -2409,7 +2411,7 @@ var app = (function () {
     const get_title_slot_changes = dirty => ({});
     const get_title_slot_context = ctx => ({});
 
-    function create_fragment$k(ctx) {
+    function create_fragment$j(ctx) {
     	let div;
     	let t0;
     	let t1;
@@ -2542,7 +2544,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_fragment$k.name,
+    		id: create_fragment$j.name,
     		type: "component",
     		source: "",
     		ctx
@@ -2553,7 +2555,7 @@ var app = (function () {
 
     const classesDefault$8 = "rounded inline-flex flex-col overflow-hidden duration-200 ease-in";
 
-    function instance$k($$self, $$props, $$invalidate) {
+    function instance$j($$self, $$props, $$invalidate) {
     	let c;
     	let { $$slots: slots = {}, $$scope } = $$props;
     	validate_slots("Card", slots, ['title','media','default','text','actions']);
@@ -2599,13 +2601,13 @@ var app = (function () {
     class Card$1 extends SvelteComponentDev {
     	constructor(options) {
     		super(options);
-    		init(this, options, instance$k, create_fragment$k, safe_not_equal, { hover: 1, classes: 2 });
+    		init(this, options, instance$j, create_fragment$j, safe_not_equal, { hover: 1, classes: 2 });
 
     		dispatch_dev("SvelteRegisterComponent", {
     			component: this,
     			tagName: "Card",
     			options,
-    			id: create_fragment$k.name
+    			id: create_fragment$j.name
     		});
     	}
 
@@ -2629,7 +2631,7 @@ var app = (function () {
     /* node_modules\smelte\src\components\Card\Title.svelte generated by Svelte v3.37.0 */
     const file$h = "node_modules\\smelte\\src\\components\\Card\\Title.svelte";
 
-    function create_fragment$j(ctx) {
+    function create_fragment$i(ctx) {
     	let div4;
     	let div0;
     	let img;
@@ -2722,7 +2724,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_fragment$j.name,
+    		id: create_fragment$i.name,
     		type: "component",
     		source: "",
     		ctx
@@ -2733,7 +2735,7 @@ var app = (function () {
 
     const classesDefault$7 = "flex px-4 py-2 items-center";
 
-    function instance$j($$self, $$props, $$invalidate) {
+    function instance$i($$self, $$props, $$invalidate) {
     	let c;
     	let { $$slots: slots = {}, $$scope } = $$props;
     	validate_slots("Title", slots, []);
@@ -2789,7 +2791,7 @@ var app = (function () {
     	constructor(options) {
     		super(options);
 
-    		init(this, options, instance$j, create_fragment$j, safe_not_equal, {
+    		init(this, options, instance$i, create_fragment$i, safe_not_equal, {
     			hover: 4,
     			title: 0,
     			subheader: 1,
@@ -2801,7 +2803,7 @@ var app = (function () {
     			component: this,
     			tagName: "Title",
     			options,
-    			id: create_fragment$j.name
+    			id: create_fragment$i.name
     		});
     	}
 
@@ -2906,7 +2908,7 @@ var app = (function () {
 
     const file$g = "node_modules\\smelte\\src\\components\\Util\\Spacer.svelte";
 
-    function create_fragment$i(ctx) {
+    function create_fragment$h(ctx) {
     	let div;
 
     	const block = {
@@ -2931,7 +2933,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_fragment$i.name,
+    		id: create_fragment$h.name,
     		type: "component",
     		source: "",
     		ctx
@@ -2940,7 +2942,7 @@ var app = (function () {
     	return block;
     }
 
-    function instance$i($$self, $$props) {
+    function instance$h($$self, $$props) {
     	let { $$slots: slots = {}, $$scope } = $$props;
     	validate_slots("Spacer", slots, []);
     	const writable_props = [];
@@ -2955,13 +2957,13 @@ var app = (function () {
     class Spacer$1 extends SvelteComponentDev {
     	constructor(options) {
     		super(options);
-    		init(this, options, instance$i, create_fragment$i, safe_not_equal, {});
+    		init(this, options, instance$h, create_fragment$h, safe_not_equal, {});
 
     		dispatch_dev("SvelteRegisterComponent", {
     			component: this,
     			tagName: "Spacer",
     			options,
-    			id: create_fragment$i.name
+    			id: create_fragment$h.name
     		});
     	}
     }
@@ -3128,7 +3130,7 @@ var app = (function () {
     	return block;
     }
 
-    function create_fragment$h(ctx) {
+    function create_fragment$g(ctx) {
     	let li;
     	let t0;
     	let div1;
@@ -3273,7 +3275,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_fragment$h.name,
+    		id: create_fragment$g.name,
     		type: "component",
     		source: "",
     		ctx
@@ -3286,7 +3288,7 @@ var app = (function () {
     const selectedClassesDefault = "bg-gray-200 dark:bg-primary-transLight";
     const subheadingClassesDefault = "text-gray-600 p-0 text-sm";
 
-    function instance$h($$self, $$props, $$invalidate) {
+    function instance$g($$self, $$props, $$invalidate) {
     	let c;
     	let { $$slots: slots = {}, $$scope } = $$props;
     	validate_slots("ListItem", slots, ['default']);
@@ -3429,7 +3431,7 @@ var app = (function () {
     	constructor(options) {
     		super(options);
 
-    		init(this, options, instance$h, create_fragment$h, safe_not_equal, {
+    		init(this, options, instance$g, create_fragment$g, safe_not_equal, {
     			icon: 0,
     			id: 11,
     			value: 10,
@@ -3452,7 +3454,7 @@ var app = (function () {
     			component: this,
     			tagName: "ListItem",
     			options,
-    			id: create_fragment$h.name
+    			id: create_fragment$g.name
     		});
     	}
 
@@ -4075,7 +4077,7 @@ var app = (function () {
     	return block;
     }
 
-    function create_fragment$g(ctx) {
+    function create_fragment$f(ctx) {
     	let ul;
     	let current;
     	let each_value = /*items*/ ctx[1];
@@ -4177,7 +4179,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_fragment$g.name,
+    		id: create_fragment$f.name,
     		type: "component",
     		source: "",
     		ctx
@@ -4202,7 +4204,7 @@ var app = (function () {
     	return i;
     }
 
-    function instance$g($$self, $$props, $$invalidate) {
+    function instance$f($$self, $$props, $$invalidate) {
     	let c;
     	let { $$slots: slots = {}, $$scope } = $$props;
     	validate_slots("List", slots, ['item']);
@@ -4319,7 +4321,7 @@ var app = (function () {
     	constructor(options) {
     		super(options);
 
-    		init(this, options, instance$g, create_fragment$g, safe_not_equal, {
+    		init(this, options, instance$f, create_fragment$f, safe_not_equal, {
     			items: 1,
     			value: 0,
     			dense: 2,
@@ -4337,7 +4339,7 @@ var app = (function () {
     			component: this,
     			tagName: "List",
     			options,
-    			id: create_fragment$g.name
+    			id: create_fragment$f.name
     		});
     	}
 
@@ -4433,7 +4435,7 @@ var app = (function () {
     /* node_modules\smelte\src\components\TextField\Label.svelte generated by Svelte v3.37.0 */
     const file$d = "node_modules\\smelte\\src\\components\\TextField\\Label.svelte";
 
-    function create_fragment$f(ctx) {
+    function create_fragment$e(ctx) {
     	let label;
     	let label_class_value;
     	let current;
@@ -4504,7 +4506,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_fragment$f.name,
+    		id: create_fragment$e.name,
     		type: "component",
     		source: "",
     		ctx
@@ -4513,7 +4515,7 @@ var app = (function () {
     	return block;
     }
 
-    function instance$f($$self, $$props, $$invalidate) {
+    function instance$e($$self, $$props, $$invalidate) {
     	let { $$slots: slots = {}, $$scope } = $$props;
     	validate_slots("Label", slots, ['default']);
     	let { focused = false } = $$props;
@@ -4630,7 +4632,7 @@ var app = (function () {
     	constructor(options) {
     		super(options);
 
-    		init(this, options, instance$f, create_fragment$f, safe_not_equal, {
+    		init(this, options, instance$e, create_fragment$e, safe_not_equal, {
     			focused: 3,
     			error: 4,
     			outlined: 5,
@@ -4649,7 +4651,7 @@ var app = (function () {
     			component: this,
     			tagName: "Label",
     			options,
-    			id: create_fragment$f.name
+    			id: create_fragment$e.name
     		});
     	}
 
@@ -4753,7 +4755,7 @@ var app = (function () {
     /* node_modules\smelte\src\components\TextField\Hint.svelte generated by Svelte v3.37.0 */
     const file$c = "node_modules\\smelte\\src\\components\\TextField\\Hint.svelte";
 
-    function create_fragment$e(ctx) {
+    function create_fragment$d(ctx) {
     	let div;
     	let html_tag;
     	let raw_value = (/*hint*/ ctx[1] || "") + "";
@@ -4814,7 +4816,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_fragment$e.name,
+    		id: create_fragment$d.name,
     		type: "component",
     		source: "",
     		ctx
@@ -4823,7 +4825,7 @@ var app = (function () {
     	return block;
     }
 
-    function instance$e($$self, $$props, $$invalidate) {
+    function instance$d($$self, $$props, $$invalidate) {
     	let classes;
     	let { $$slots: slots = {}, $$scope } = $$props;
     	validate_slots("Hint", slots, []);
@@ -4898,7 +4900,7 @@ var app = (function () {
     	constructor(options) {
     		super(options);
 
-    		init(this, options, instance$e, create_fragment$e, safe_not_equal, {
+    		init(this, options, instance$d, create_fragment$d, safe_not_equal, {
     			error: 0,
     			hint: 1,
     			add: 4,
@@ -4911,7 +4913,7 @@ var app = (function () {
     			component: this,
     			tagName: "Hint",
     			options,
-    			id: create_fragment$e.name
+    			id: create_fragment$d.name
     		});
     	}
 
@@ -4967,7 +4969,7 @@ var app = (function () {
     /* node_modules\smelte\src\components\TextField\Underline.svelte generated by Svelte v3.37.0 */
     const file$b = "node_modules\\smelte\\src\\components\\TextField\\Underline.svelte";
 
-    function create_fragment$d(ctx) {
+    function create_fragment$c(ctx) {
     	let div1;
     	let div0;
     	let div0_class_value;
@@ -5014,7 +5016,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_fragment$d.name,
+    		id: create_fragment$c.name,
     		type: "component",
     		source: "",
     		ctx
@@ -5023,7 +5025,7 @@ var app = (function () {
     	return block;
     }
 
-    function instance$d($$self, $$props, $$invalidate) {
+    function instance$c($$self, $$props, $$invalidate) {
     	let classes;
     	let { $$slots: slots = {}, $$scope } = $$props;
     	validate_slots("Underline", slots, []);
@@ -5126,7 +5128,7 @@ var app = (function () {
     	constructor(options) {
     		super(options);
 
-    		init(this, options, instance$d, create_fragment$d, safe_not_equal, {
+    		init(this, options, instance$c, create_fragment$c, safe_not_equal, {
     			noUnderline: 0,
     			outlined: 1,
     			focused: 4,
@@ -5142,7 +5144,7 @@ var app = (function () {
     			component: this,
     			tagName: "Underline",
     			options,
-    			id: create_fragment$d.name
+    			id: create_fragment$c.name
     		});
     	}
 
@@ -5993,7 +5995,7 @@ var app = (function () {
     	return block;
     }
 
-    function create_fragment$c(ctx) {
+    function create_fragment$b(ctx) {
     	let div;
     	let t0;
     	let t1;
@@ -6212,7 +6214,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_fragment$c.name,
+    		id: create_fragment$b.name,
     		type: "component",
     		source: "",
     		ctx
@@ -6226,7 +6228,7 @@ var app = (function () {
     const appendDefault = "absolute right-0 top-0 pb-2 pr-4 pt-4 text-gray-700 z-10";
     const prependDefault = "absolute left-0 top-0 pb-2 pl-2 pt-4 text-xs text-gray-700 z-10";
 
-    function instance$c($$self, $$props, $$invalidate) {
+    function instance$b($$self, $$props, $$invalidate) {
     	let showHint;
     	let labelOnTop;
     	let iClasses;
@@ -6659,8 +6661,8 @@ var app = (function () {
     		init(
     			this,
     			options,
-    			instance$c,
-    			create_fragment$c,
+    			instance$b,
+    			create_fragment$b,
     			safe_not_equal,
     			{
     				outlined: 2,
@@ -6701,7 +6703,7 @@ var app = (function () {
     			component: this,
     			tagName: "TextField",
     			options,
-    			id: create_fragment$c.name
+    			id: create_fragment$b.name
     		});
     	}
 
@@ -7031,7 +7033,7 @@ var app = (function () {
     	return block;
     }
 
-    function create_fragment$b(ctx) {
+    function create_fragment$a(ctx) {
     	let label_1;
     	let current;
     	const default_slot_template = /*#slots*/ ctx[7].default;
@@ -7097,7 +7099,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_fragment$b.name,
+    		id: create_fragment$a.name,
     		type: "component",
     		source: "",
     		ctx
@@ -7108,7 +7110,7 @@ var app = (function () {
 
     const classesDefault$3 = "pl-2 cursor-pointer 'text-gray-700 dark:text-gray-300'";
 
-    function instance$b($$self, $$props, $$invalidate) {
+    function instance$a($$self, $$props, $$invalidate) {
     	let c;
     	let { $$slots: slots = {}, $$scope } = $$props;
     	validate_slots("Label", slots, ['default']);
@@ -7163,7 +7165,7 @@ var app = (function () {
     	constructor(options) {
     		super(options);
 
-    		init(this, options, instance$b, create_fragment$b, safe_not_equal, {
+    		init(this, options, instance$a, create_fragment$a, safe_not_equal, {
     			classes: 3,
     			label: 0,
     			disabled: 4,
@@ -7174,7 +7176,7 @@ var app = (function () {
     			component: this,
     			tagName: "Label",
     			options,
-    			id: create_fragment$b.name
+    			id: create_fragment$a.name
     		});
     	}
 
@@ -7214,7 +7216,7 @@ var app = (function () {
     /* node_modules\smelte\src\components\Ripple\Ripple.svelte generated by Svelte v3.37.0 */
     const file$8 = "node_modules\\smelte\\src\\components\\Ripple\\Ripple.svelte";
 
-    function create_fragment$a(ctx) {
+    function create_fragment$9(ctx) {
     	let span;
     	let span_class_value;
     	let current;
@@ -7277,7 +7279,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_fragment$a.name,
+    		id: create_fragment$9.name,
     		type: "component",
     		source: "",
     		ctx
@@ -7286,7 +7288,7 @@ var app = (function () {
     	return block;
     }
 
-    function instance$a($$self, $$props, $$invalidate) {
+    function instance$9($$self, $$props, $$invalidate) {
     	let ripple;
     	let hoverClass;
     	let { $$slots: slots = {}, $$scope } = $$props;
@@ -7338,13 +7340,13 @@ var app = (function () {
     class Ripple extends SvelteComponentDev {
     	constructor(options) {
     		super(options);
-    		init(this, options, instance$a, create_fragment$a, safe_not_equal, { color: 4, noHover: 0 });
+    		init(this, options, instance$9, create_fragment$9, safe_not_equal, { color: 4, noHover: 0 });
 
     		dispatch_dev("SvelteRegisterComponent", {
     			component: this,
     			tagName: "Ripple",
     			options,
-    			id: create_fragment$a.name
+    			id: create_fragment$9.name
     		});
     	}
 
@@ -7682,7 +7684,7 @@ var app = (function () {
     	return block;
     }
 
-    function create_fragment$9(ctx) {
+    function create_fragment$8(ctx) {
     	let div2;
     	let div1;
     	let input;
@@ -7818,7 +7820,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_fragment$9.name,
+    		id: create_fragment$8.name,
     		type: "component",
     		source: "",
     		ctx
@@ -7829,7 +7831,7 @@ var app = (function () {
 
     const classesDefault$2 = "inline-flex items-center mb-2 cursor-pointer z-10";
 
-    function instance$9($$self, $$props, $$invalidate) {
+    function instance$8($$self, $$props, $$invalidate) {
     	let rippleColor;
     	let c;
     	let { $$slots: slots = {}, $$scope } = $$props;
@@ -7979,7 +7981,7 @@ var app = (function () {
     	constructor(options) {
     		super(options);
 
-    		init(this, options, instance$9, create_fragment$9, safe_not_equal, {
+    		init(this, options, instance$8, create_fragment$8, safe_not_equal, {
     			value: 1,
     			label: 2,
     			color: 3,
@@ -7994,7 +7996,7 @@ var app = (function () {
     			component: this,
     			tagName: "Checkbox",
     			options,
-    			id: create_fragment$9.name
+    			id: create_fragment$8.name
     		});
     	}
 
@@ -8333,7 +8335,7 @@ var app = (function () {
     	return block;
     }
 
-    function create_fragment$8(ctx) {
+    function create_fragment$7(ctx) {
     	let div;
     	let t;
     	let current;
@@ -8432,7 +8434,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_fragment$8.name,
+    		id: create_fragment$7.name,
     		type: "component",
     		source: "",
     		ctx
@@ -8448,7 +8450,7 @@ var app = (function () {
     	return it.map(i => typeof i !== "object" ? { value: i, text: i } : i);
     }
 
-    function instance$8($$self, $$props, $$invalidate) {
+    function instance$7($$self, $$props, $$invalidate) {
     	let filteredItems;
     	let c;
     	let o;
@@ -8746,8 +8748,8 @@ var app = (function () {
     		init(
     			this,
     			options,
-    			instance$8,
-    			create_fragment$8,
+    			instance$7,
+    			create_fragment$7,
     			safe_not_equal,
     			{
     				items: 32,
@@ -8787,7 +8789,7 @@ var app = (function () {
     			component: this,
     			tagName: "Select",
     			options,
-    			id: create_fragment$8.name
+    			id: create_fragment$7.name
     		});
     	}
 
@@ -9028,7 +9030,7 @@ var app = (function () {
 
     const file$5 = "node_modules\\smelte\\src\\components\\ProgressCircular\\ProgressCircular.svelte";
 
-    function create_fragment$7(ctx) {
+    function create_fragment$6(ctx) {
     	let svg;
     	let circle;
     	let circle_class_value;
@@ -9103,7 +9105,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_fragment$7.name,
+    		id: create_fragment$6.name,
     		type: "component",
     		source: "",
     		ctx
@@ -9112,7 +9114,7 @@ var app = (function () {
     	return block;
     }
 
-    function instance$7($$self, $$props, $$invalidate) {
+    function instance$6($$self, $$props, $$invalidate) {
     	let style;
     	let { $$slots: slots = {}, $$scope } = $$props;
     	validate_slots("ProgressCircular", slots, []);
@@ -9165,13 +9167,13 @@ var app = (function () {
     class ProgressCircular extends SvelteComponentDev {
     	constructor(options) {
     		super(options);
-    		init(this, options, instance$7, create_fragment$7, safe_not_equal, { progress: 4, color: 0, width: 1, size: 2 });
+    		init(this, options, instance$6, create_fragment$6, safe_not_equal, { progress: 4, color: 0, width: 1, size: 2 });
 
     		dispatch_dev("SvelteRegisterComponent", {
     			component: this,
     			tagName: "ProgressCircular",
     			options,
-    			id: create_fragment$7.name
+    			id: create_fragment$6.name
     		});
     	}
 
@@ -9211,7 +9213,7 @@ var app = (function () {
     /* node_modules\smelte\src\components\Slider\Slider.svelte generated by Svelte v3.37.0 */
     const file$4 = "node_modules\\smelte\\src\\components\\Slider\\Slider.svelte";
 
-    function create_fragment$6(ctx) {
+    function create_fragment$5(ctx) {
     	let label_1;
     	let t0;
     	let t1;
@@ -9300,7 +9302,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_fragment$6.name,
+    		id: create_fragment$5.name,
     		type: "component",
     		source: "",
     		ctx
@@ -9309,7 +9311,7 @@ var app = (function () {
     	return block;
     }
 
-    function instance$6($$self, $$props, $$invalidate) {
+    function instance$5($$self, $$props, $$invalidate) {
     	let c;
     	let { $$slots: slots = {}, $$scope } = $$props;
     	validate_slots("Slider", slots, []);
@@ -9441,7 +9443,7 @@ var app = (function () {
     	constructor(options) {
     		super(options);
 
-    		init(this, options, instance$6, create_fragment$6, safe_not_equal, {
+    		init(this, options, instance$5, create_fragment$5, safe_not_equal, {
     			value: 0,
     			label: 1,
     			color: 9,
@@ -9456,7 +9458,7 @@ var app = (function () {
     			component: this,
     			tagName: "Slider",
     			options,
-    			id: create_fragment$6.name
+    			id: create_fragment$5.name
     		});
     	}
 
@@ -9874,7 +9876,7 @@ var app = (function () {
     	return block;
     }
 
-    function create_fragment$5(ctx) {
+    function create_fragment$4(ctx) {
     	let if_block_anchor;
     	let current;
     	let if_block = /*value*/ ctx[0] && running === /*hash*/ ctx[1] && create_if_block$2(ctx);
@@ -9933,7 +9935,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_fragment$5.name,
+    		id: create_fragment$4.name,
     		type: "component",
     		source: "",
     		ctx
@@ -9946,7 +9948,7 @@ var app = (function () {
     let running = false;
     const wrapperDefault = "fixed w-full h-full flex items-center justify-center pointer-events-none";
 
-    function instance$5($$self, $$props, $$invalidate) {
+    function instance$4($$self, $$props, $$invalidate) {
     	let toggler;
     	let c;
     	let $queue;
@@ -10187,7 +10189,7 @@ var app = (function () {
     	constructor(options) {
     		super(options);
 
-    		init(this, options, instance$5, create_fragment$5, safe_not_equal, {
+    		init(this, options, instance$4, create_fragment$4, safe_not_equal, {
     			value: 0,
     			timeout: 2,
     			inProps: 3,
@@ -10207,7 +10209,7 @@ var app = (function () {
     			component: this,
     			tagName: "Snackbar",
     			options,
-    			id: create_fragment$5.name
+    			id: create_fragment$4.name
     		});
     	}
 
@@ -10394,7 +10396,7 @@ var app = (function () {
     	return block;
     }
 
-    function create_fragment$4(ctx) {
+    function create_fragment$3(ctx) {
     	let div1;
     	let div0;
     	let t;
@@ -10516,7 +10518,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_fragment$4.name,
+    		id: create_fragment$3.name,
     		type: "component",
     		source: "",
     		ctx
@@ -10545,7 +10547,7 @@ var app = (function () {
     	};
     }
 
-    function instance$4($$self, $$props, $$invalidate) {
+    function instance$3($$self, $$props, $$invalidate) {
     	let c;
     	let { $$slots: slots = {}, $$scope } = $$props;
     	validate_slots("Tooltip", slots, ['activator','default']);
@@ -10660,7 +10662,7 @@ var app = (function () {
     	constructor(options) {
     		super(options);
 
-    		init(this, options, instance$4, create_fragment$4, safe_not_equal, {
+    		init(this, options, instance$3, create_fragment$3, safe_not_equal, {
     			classes: 7,
     			show: 0,
     			timeout: 6,
@@ -10672,7 +10674,7 @@ var app = (function () {
     			component: this,
     			tagName: "Tooltip",
     			options,
-    			id: create_fragment$4.name
+    			id: create_fragment$3.name
     		});
     	}
 
@@ -10746,7 +10748,7 @@ var app = (function () {
     	return block;
     }
 
-    function create_fragment$3(ctx) {
+    function create_fragment$2(ctx) {
     	let button;
     	let current;
 
@@ -10796,7 +10798,7 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_fragment$3.name,
+    		id: create_fragment$2.name,
     		type: "component",
     		source: "",
     		ctx
@@ -10805,7 +10807,7 @@ var app = (function () {
     	return block;
     }
 
-    function instance$3($$self, $$props, $$invalidate) {
+    function instance$2($$self, $$props, $$invalidate) {
     	let { $$slots: slots = {}, $$scope } = $$props;
     	validate_slots("TFExample", slots, []);
 
@@ -10876,13 +10878,13 @@ var app = (function () {
     class TFExample extends SvelteComponentDev {
     	constructor(options) {
     		super(options);
-    		init(this, options, instance$3, create_fragment$3, safe_not_equal, {});
+    		init(this, options, instance$2, create_fragment$2, safe_not_equal, {});
 
     		dispatch_dev("SvelteRegisterComponent", {
     			component: this,
     			tagName: "TFExample",
     			options,
-    			id: create_fragment$3.name
+    			id: create_fragment$2.name
     		});
     	}
     }
@@ -10891,7 +10893,7 @@ var app = (function () {
 
     const file$1 = "src\\components\\FFNN.svelte";
 
-    // (512:12) {:else}
+    // (558:12) {:else}
     function create_else_block_1(ctx) {
     	let button;
     	let current;
@@ -10921,7 +10923,7 @@ var app = (function () {
     			const button_changes = {};
     			if (dirty[0] & /*running, training*/ 12) button_changes.disabled = /*running*/ ctx[2] || /*training*/ ctx[3];
 
-    			if (dirty[2] & /*$$scope*/ 262144) {
+    			if (dirty[2] & /*$$scope*/ 8388608) {
     				button_changes.$$scope = { dirty, ctx };
     			}
 
@@ -10945,14 +10947,14 @@ var app = (function () {
     		block,
     		id: create_else_block_1.name,
     		type: "else",
-    		source: "(512:12) {:else}",
+    		source: "(558:12) {:else}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (510:12) {#if training}
+    // (556:12) {#if training}
     function create_if_block_1(ctx) {
     	let progresscircular;
     	let current;
@@ -10985,14 +10987,14 @@ var app = (function () {
     		block,
     		id: create_if_block_1.name,
     		type: "if",
-    		source: "(510:12) {#if training}",
+    		source: "(556:12) {#if training}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (513:16) <Button                      block                      outlined                      on:click={train}                      disabled={running || training}                  >
+    // (559:16) <Button                      block                      outlined                      on:click={train}                      disabled={running || training}                  >
     function create_default_slot_1$1(ctx) {
     	let t;
 
@@ -11012,14 +11014,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_1$1.name,
     		type: "slot",
-    		source: "(513:16) <Button                      block                      outlined                      on:click={train}                      disabled={running || training}                  >",
+    		source: "(559:16) <Button                      block                      outlined                      on:click={train}                      disabled={running || training}                  >",
     		ctx
     	});
 
     	return block;
     }
 
-    // (555:12) {:else}
+    // (601:12) {:else}
     function create_else_block(ctx) {
     	let button;
     	let current;
@@ -11049,7 +11051,7 @@ var app = (function () {
     			const button_changes = {};
     			if (dirty[0] & /*running, training, itemSelected*/ 28) button_changes.disabled = /*running*/ ctx[2] || /*training*/ ctx[3] || !/*itemSelected*/ ctx[4];
 
-    			if (dirty[2] & /*$$scope*/ 262144) {
+    			if (dirty[2] & /*$$scope*/ 8388608) {
     				button_changes.$$scope = { dirty, ctx };
     			}
 
@@ -11073,14 +11075,14 @@ var app = (function () {
     		block,
     		id: create_else_block.name,
     		type: "else",
-    		source: "(555:12) {:else}",
+    		source: "(601:12) {:else}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (553:12) {#if running}
+    // (599:12) {#if running}
     function create_if_block(ctx) {
     	let progresscircular;
     	let current;
@@ -11113,14 +11115,14 @@ var app = (function () {
     		block,
     		id: create_if_block.name,
     		type: "if",
-    		source: "(553:12) {#if running}",
+    		source: "(599:12) {#if running}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (556:16) <Button                      block                      outlined                      on:click={predict}                      disabled={running || training || !itemSelected}                  >
+    // (602:16) <Button                      block                      outlined                      on:click={predict}                      disabled={running || training || !itemSelected}                  >
     function create_default_slot$1(ctx) {
     	let t;
 
@@ -11140,14 +11142,14 @@ var app = (function () {
     		block,
     		id: create_default_slot$1.name,
     		type: "slot",
-    		source: "(556:16) <Button                      block                      outlined                      on:click={predict}                      disabled={running || training || !itemSelected}                  >",
+    		source: "(602:16) <Button                      block                      outlined                      on:click={predict}                      disabled={running || training || !itemSelected}                  >",
     		ctx
     	});
 
     	return block;
     }
 
-    function create_fragment$2(ctx) {
+    function create_fragment$1(ctx) {
     	let h30;
     	let t1;
     	let div6;
@@ -11192,59 +11194,81 @@ var app = (function () {
     	let slider3;
     	let updating_value_3;
     	let t26;
-    	let select0;
-    	let updating_value_4;
-    	let t27;
-    	let select1;
-    	let updating_value_5;
-    	let t28;
     	let h64;
+    	let t27;
+    	let t28;
     	let t29;
     	let t30;
-    	let t31;
-    	let t32;
     	let slider4;
-    	let updating_value_6;
+    	let updating_value_4;
+    	let t31;
+    	let h65;
+    	let t32;
     	let t33;
+    	let t34;
+    	let t35;
+    	let slider5;
+    	let updating_value_5;
+    	let t36;
+    	let select0;
+    	let updating_value_6;
+    	let t37;
+    	let select1;
+    	let updating_value_7;
+    	let t38;
+    	let h66;
+    	let t39;
+    	let t40;
+    	let t41;
+    	let t42;
+    	let slider6;
+    	let updating_value_8;
+    	let t43;
     	let current_block_type_index;
     	let if_block0;
-    	let t34;
+    	let t44;
     	let div5;
     	let h52;
-    	let t36;
+    	let t46;
     	let div4;
-    	let t37;
+    	let t47;
     	let br;
-    	let t38;
+    	let t48;
     	let h31;
-    	let t40;
+    	let t50;
     	let div10;
     	let div7;
-    	let t41;
+    	let t51;
     	let div8;
-    	let t42;
+    	let t52;
     	let div9;
-    	let t43;
+    	let t53;
     	let h32;
-    	let t45;
+    	let t55;
     	let div14;
     	let div13;
     	let div11;
     	let select2;
-    	let t46;
+    	let t56;
     	let current_block_type_index_1;
     	let if_block1;
-    	let t47;
+    	let t57;
     	let div12;
+    	let t58;
+    	let h33;
+    	let t60;
+    	let div15;
+    	let zero_md;
+    	let zero_md_src_value;
     	let current;
 
     	function slider0_value_binding(value) {
-    		/*slider0_value_binding*/ ctx[39](value);
+    		/*slider0_value_binding*/ ctx[46](value);
     	}
 
     	let slider0_props = {
-    		min: "10",
-    		step: "10",
+    		min: "100",
+    		step: "100",
     		max: "10000",
     		disabled: /*running*/ ctx[2] || /*training*/ ctx[3]
     	};
@@ -11255,15 +11279,15 @@ var app = (function () {
 
     	slider0 = new Slider({ props: slider0_props, $$inline: true });
     	binding_callbacks.push(() => bind(slider0, "value", slider0_value_binding));
-    	slider0.$on("change", /*change_handler*/ ctx[40]);
+    	slider0.$on("change", /*change_handler*/ ctx[47]);
 
     	function slider1_value_binding(value) {
-    		/*slider1_value_binding*/ ctx[42](value);
+    		/*slider1_value_binding*/ ctx[49](value);
     	}
 
     	let slider1_props = {
     		min: "32",
-    		step: "30",
+    		step: "10",
     		max: "512",
     		disabled: /*running*/ ctx[2] || /*training*/ ctx[3]
     	};
@@ -11276,13 +11300,13 @@ var app = (function () {
     	binding_callbacks.push(() => bind(slider1, "value", slider1_value_binding));
 
     	function slider2_value_binding(value) {
-    		/*slider2_value_binding*/ ctx[43](value);
+    		/*slider2_value_binding*/ ctx[50](value);
     	}
 
     	let slider2_props = {
     		min: "10",
     		step: "10",
-    		max: "200",
+    		max: "1000",
     		disabled: /*running*/ ctx[2] || /*training*/ ctx[3]
     	};
 
@@ -11294,13 +11318,13 @@ var app = (function () {
     	binding_callbacks.push(() => bind(slider2, "value", slider2_value_binding));
 
     	function slider3_value_binding(value) {
-    		/*slider3_value_binding*/ ctx[44](value);
+    		/*slider3_value_binding*/ ctx[51](value);
     	}
 
     	let slider3_props = {
     		min: "1",
     		step: "1",
-    		max: "1000",
+    		max: "100",
     		disabled: /*running*/ ctx[2] || /*training*/ ctx[3]
     	};
 
@@ -11311,57 +11335,93 @@ var app = (function () {
     	slider3 = new Slider({ props: slider3_props, $$inline: true });
     	binding_callbacks.push(() => bind(slider3, "value", slider3_value_binding));
 
+    	function slider4_value_binding(value) {
+    		/*slider4_value_binding*/ ctx[52](value);
+    	}
+
+    	let slider4_props = {
+    		min: "0",
+    		step: /*stepWeight*/ ctx[39],
+    		max: /*maxWeight*/ ctx[10],
+    		disabled: /*running*/ ctx[2] || /*training*/ ctx[3]
+    	};
+
+    	if (/*minWeight*/ ctx[9] !== void 0) {
+    		slider4_props.value = /*minWeight*/ ctx[9];
+    	}
+
+    	slider4 = new Slider({ props: slider4_props, $$inline: true });
+    	binding_callbacks.push(() => bind(slider4, "value", slider4_value_binding));
+
+    	function slider5_value_binding(value) {
+    		/*slider5_value_binding*/ ctx[53](value);
+    	}
+
+    	let slider5_props = {
+    		min: /*minWeight*/ ctx[9],
+    		step: /*stepWeight*/ ctx[39],
+    		max: ".1",
+    		disabled: /*running*/ ctx[2] || /*training*/ ctx[3]
+    	};
+
+    	if (/*maxWeight*/ ctx[10] !== void 0) {
+    		slider5_props.value = /*maxWeight*/ ctx[10];
+    	}
+
+    	slider5 = new Slider({ props: slider5_props, $$inline: true });
+    	binding_callbacks.push(() => bind(slider5, "value", slider5_value_binding));
+
     	function select0_value_binding(value) {
-    		/*select0_value_binding*/ ctx[45](value);
+    		/*select0_value_binding*/ ctx[54](value);
     	}
 
     	let select0_props = {
-    		label: /*labelActivationFunction*/ ctx[24],
-    		items: /*activationList*/ ctx[35]
+    		label: /*labelActivationFunction*/ ctx[26],
+    		items: /*activationList*/ ctx[40]
     	};
 
-    	if (/*activationFunction*/ ctx[9] !== void 0) {
-    		select0_props.value = /*activationFunction*/ ctx[9];
+    	if (/*activationFunction*/ ctx[11] !== void 0) {
+    		select0_props.value = /*activationFunction*/ ctx[11];
     	}
 
     	select0 = new Select({ props: select0_props, $$inline: true });
     	binding_callbacks.push(() => bind(select0, "value", select0_value_binding));
-    	select0.$on("change", /*change_handler_1*/ ctx[46]);
+    	select0.$on("change", /*change_handler_1*/ ctx[55]);
 
     	function select1_value_binding(value) {
-    		/*select1_value_binding*/ ctx[47](value);
+    		/*select1_value_binding*/ ctx[56](value);
     	}
 
     	let select1_props = {
-    		label: /*labelOptimizer*/ ctx[25],
-    		items: /*optimizerList*/ ctx[36]
+    		label: /*labelOptimizer*/ ctx[27],
+    		items: /*optimizerList*/ ctx[41]
     	};
 
-    	if (/*selectedOptimizer*/ ctx[10] !== void 0) {
-    		select1_props.value = /*selectedOptimizer*/ ctx[10];
+    	if (/*selectedOptimizer*/ ctx[12] !== void 0) {
+    		select1_props.value = /*selectedOptimizer*/ ctx[12];
     	}
 
     	select1 = new Select({ props: select1_props, $$inline: true });
     	binding_callbacks.push(() => bind(select1, "value", select1_value_binding));
-    	select1.$on("change", /*change_handler_2*/ ctx[48]);
+    	select1.$on("change", /*change_handler_2*/ ctx[57]);
 
-    	function slider4_value_binding(value) {
-    		/*slider4_value_binding*/ ctx[49](value);
+    	function slider6_value_binding(value) {
+    		/*slider6_value_binding*/ ctx[58](value);
     	}
 
-    	let slider4_props = {
+    	let slider6_props = {
     		min: ".001",
     		step: ".001",
     		max: ".1",
     		disabled: /*running*/ ctx[2] || /*training*/ ctx[3]
     	};
 
-    	if (/*learningRate*/ ctx[11] !== void 0) {
-    		slider4_props.value = /*learningRate*/ ctx[11];
+    	if (/*learningRate*/ ctx[13] !== void 0) {
+    		slider6_props.value = /*learningRate*/ ctx[13];
     	}
 
-    	slider4 = new Slider({ props: slider4_props, $$inline: true });
-    	binding_callbacks.push(() => bind(slider4, "value", slider4_value_binding));
+    	slider6 = new Slider({ props: slider6_props, $$inline: true });
+    	binding_callbacks.push(() => bind(slider6, "value", slider6_value_binding));
     	const if_block_creators = [create_if_block_1, create_else_block_1];
     	const if_blocks = [];
 
@@ -11375,13 +11435,13 @@ var app = (function () {
 
     	select2 = new Select({
     			props: {
-    				label: /*labelDataset*/ ctx[30],
-    				items: /*datasets*/ ctx[16]
+    				label: /*labelDataset*/ ctx[32],
+    				items: /*datasets*/ ctx[18]
     			},
     			$$inline: true
     		});
 
-    	select2.$on("change", /*change_handler_3*/ ctx[54]);
+    	select2.$on("change", /*change_handler_3*/ ctx[63]);
     	const if_block_creators_1 = [create_if_block, create_else_block];
     	const if_blocks_1 = [];
 
@@ -11396,15 +11456,15 @@ var app = (function () {
     	const block = {
     		c: function create() {
     			h30 = element("h3");
-    			h30.textContent = `${/*labelTraining*/ ctx[22]}`;
+    			h30.textContent = `${/*labelTraining*/ ctx[24]}`;
     			t1 = space();
     			div6 = element("div");
     			div1 = element("div");
     			h50 = element("h5");
-    			h50.textContent = `${/*labelTrainingDataset*/ ctx[33]}`;
+    			h50.textContent = `${/*labelTrainingDataset*/ ctx[37]}`;
     			t3 = space();
     			h60 = element("h6");
-    			t4 = text(/*labelTrainingDatasetSize*/ ctx[34]);
+    			t4 = text(/*labelTrainingDatasetSize*/ ctx[38]);
     			t5 = text(": ");
     			t6 = text(/*trainingDatasetSize*/ ctx[5]);
     			t7 = space();
@@ -11414,118 +11474,147 @@ var app = (function () {
     			t9 = space();
     			div3 = element("div");
     			h51 = element("h5");
-    			h51.textContent = `${/*labelTrainingSettings*/ ctx[32]}`;
+    			h51.textContent = `${/*labelTrainingSettings*/ ctx[36]}`;
     			t11 = space();
     			div2 = element("div");
     			h61 = element("h6");
-    			t12 = text(/*labelBatchSize*/ ctx[27]);
+    			t12 = text(/*labelBatchSize*/ ctx[29]);
     			t13 = text(": ");
     			t14 = text(/*batchSize*/ ctx[6]);
     			t15 = space();
     			create_component(slider1.$$.fragment);
     			t16 = space();
     			h62 = element("h6");
-    			t17 = text(/*labelEpoch*/ ctx[28]);
+    			t17 = text(/*labelEpoch*/ ctx[30]);
     			t18 = text(": ");
     			t19 = text(/*epochs*/ ctx[7]);
     			t20 = space();
     			create_component(slider2.$$.fragment);
     			t21 = space();
     			h63 = element("h6");
-    			t22 = text(/*labelHiddenLayer*/ ctx[29]);
+    			t22 = text(/*labelHiddenLayer*/ ctx[31]);
     			t23 = text(": ");
     			t24 = text(/*hiddenLayerCount*/ ctx[8]);
     			t25 = space();
     			create_component(slider3.$$.fragment);
     			t26 = space();
-    			create_component(select0.$$.fragment);
-    			t27 = space();
-    			create_component(select1.$$.fragment);
-    			t28 = space();
     			h64 = element("h6");
-    			t29 = text(/*labelLearningRate*/ ctx[26]);
-    			t30 = text(": ");
-    			t31 = text(/*learningRate*/ ctx[11]);
-    			t32 = space();
+    			t27 = text(/*labelMinWeight*/ ctx[33]);
+    			t28 = text(": ");
+    			t29 = text(/*minWeight*/ ctx[9]);
+    			t30 = space();
     			create_component(slider4.$$.fragment);
-    			t33 = space();
+    			t31 = space();
+    			h65 = element("h6");
+    			t32 = text(/*labelMaxWeight*/ ctx[34]);
+    			t33 = text(": ");
+    			t34 = text(/*maxWeight*/ ctx[10]);
+    			t35 = space();
+    			create_component(slider5.$$.fragment);
+    			t36 = space();
+    			create_component(select0.$$.fragment);
+    			t37 = space();
+    			create_component(select1.$$.fragment);
+    			t38 = space();
+    			h66 = element("h6");
+    			t39 = text(/*labelLearningRate*/ ctx[28]);
+    			t40 = text(": ");
+    			t41 = text(/*learningRate*/ ctx[13]);
+    			t42 = space();
+    			create_component(slider6.$$.fragment);
+    			t43 = space();
     			if_block0.c();
-    			t34 = space();
+    			t44 = space();
     			div5 = element("div");
     			h52 = element("h5");
-    			h52.textContent = `${/*labelTrainingResult*/ ctx[31]}`;
-    			t36 = space();
+    			h52.textContent = `${/*labelTrainingResult*/ ctx[35]}`;
+    			t46 = space();
     			div4 = element("div");
-    			t37 = space();
+    			t47 = space();
     			br = element("br");
-    			t38 = space();
+    			t48 = space();
     			h31 = element("h3");
-    			h31.textContent = `${/*labelDatasets*/ ctx[21]}`;
-    			t40 = space();
+    			h31.textContent = `${/*labelDatasets*/ ctx[23]}`;
+    			t50 = space();
     			div10 = element("div");
     			div7 = element("div");
-    			t41 = space();
+    			t51 = space();
     			div8 = element("div");
-    			t42 = space();
+    			t52 = space();
     			div9 = element("div");
-    			t43 = space();
+    			t53 = space();
     			h32 = element("h3");
-    			h32.textContent = `${/*labelPrediction*/ ctx[23]}`;
-    			t45 = space();
+    			h32.textContent = `${/*labelPrediction*/ ctx[25]}`;
+    			t55 = space();
     			div14 = element("div");
     			div13 = element("div");
     			div11 = element("div");
     			create_component(select2.$$.fragment);
-    			t46 = space();
+    			t56 = space();
     			if_block1.c();
-    			t47 = space();
+    			t57 = space();
     			div12 = element("div");
-    			add_location(h30, file$1, 413, 0, 12025);
+    			t58 = space();
+    			h33 = element("h3");
+    			h33.textContent = `${/*labelDocumentation*/ ctx[42]}`;
+    			t60 = space();
+    			div15 = element("div");
+    			zero_md = element("zero-md");
+    			add_location(h30, file$1, 458, 0, 13402);
     			attr_dev(h50, "class", "pb-4");
-    			add_location(h50, file$1, 416, 8, 12090);
+    			add_location(h50, file$1, 461, 8, 13467);
     			attr_dev(h60, "class", "pt-6 pb-4");
-    			add_location(h60, file$1, 417, 8, 12144);
+    			add_location(h60, file$1, 462, 8, 13521);
     			attr_dev(div0, "id", "trainingDataChart");
-    			add_location(div0, file$1, 431, 8, 12621);
-    			add_location(div1, file$1, 415, 4, 12075);
+    			add_location(div0, file$1, 477, 8, 14050);
+    			add_location(div1, file$1, 460, 4, 13452);
     			attr_dev(h51, "class", "pb-4");
-    			add_location(h51, file$1, 435, 8, 12716);
+    			add_location(h51, file$1, 481, 8, 14145);
     			attr_dev(h61, "class", "pt-6 pb-4");
-    			add_location(h61, file$1, 437, 12, 12807);
+    			add_location(h61, file$1, 483, 12, 14236);
     			attr_dev(h62, "class", "pt-6 pb-4");
-    			add_location(h62, file$1, 446, 12, 13084);
+    			add_location(h62, file$1, 492, 12, 14513);
     			attr_dev(h63, "class", "pt-6 pb-4");
-    			add_location(h63, file$1, 455, 12, 13351);
+    			add_location(h63, file$1, 501, 12, 14781);
     			attr_dev(h64, "class", "pt-6 pb-4");
-    			add_location(h64, file$1, 500, 12, 14760);
-    			attr_dev(div2, "class", "settings svelte-k82jeo");
-    			add_location(div2, file$1, 436, 8, 12771);
-    			add_location(div3, file$1, 434, 4, 12701);
+    			add_location(h64, file$1, 510, 12, 15072);
+    			attr_dev(h65, "class", "pt-6 pb-4");
+    			add_location(h65, file$1, 519, 12, 15362);
+    			attr_dev(h66, "class", "pt-6 pb-4");
+    			add_location(h66, file$1, 546, 12, 16211);
+    			attr_dev(div2, "class", "settings svelte-nznr5u");
+    			add_location(div2, file$1, 482, 8, 14200);
+    			add_location(div3, file$1, 480, 4, 14130);
     			attr_dev(h52, "class", "pb-4");
-    			add_location(h52, file$1, 525, 8, 15437);
+    			add_location(h52, file$1, 571, 8, 16888);
     			attr_dev(div4, "id", "train_chart");
-    			add_location(div4, file$1, 526, 8, 15490);
-    			add_location(div5, file$1, 524, 4, 15422);
-    			attr_dev(div6, "class", "grid svelte-k82jeo");
-    			add_location(div6, file$1, 414, 0, 12051);
-    			add_location(br, file$1, 530, 0, 15561);
-    			add_location(h31, file$1, 532, 0, 15571);
+    			add_location(div4, file$1, 572, 8, 16941);
+    			add_location(div5, file$1, 570, 4, 16873);
+    			attr_dev(div6, "class", "grid svelte-nznr5u");
+    			add_location(div6, file$1, 459, 0, 13428);
+    			add_location(br, file$1, 576, 0, 17012);
+    			add_location(h31, file$1, 578, 0, 17022);
     			attr_dev(div7, "id", "datasetChart1");
-    			add_location(div7, file$1, 534, 4, 15621);
+    			add_location(div7, file$1, 580, 4, 17072);
     			attr_dev(div8, "id", "datasetChart2");
-    			add_location(div8, file$1, 535, 4, 15679);
+    			add_location(div8, file$1, 581, 4, 17130);
     			attr_dev(div9, "id", "datasetChart3");
-    			add_location(div9, file$1, 536, 4, 15737);
-    			attr_dev(div10, "class", "grid svelte-k82jeo");
-    			add_location(div10, file$1, 533, 0, 15597);
-    			add_location(h32, file$1, 539, 0, 15801);
-    			attr_dev(div11, "class", "settings svelte-k82jeo");
-    			add_location(div11, file$1, 542, 8, 15868);
+    			add_location(div9, file$1, 582, 4, 17188);
+    			attr_dev(div10, "class", "grid svelte-nznr5u");
+    			add_location(div10, file$1, 579, 0, 17048);
+    			add_location(h32, file$1, 585, 0, 17252);
+    			attr_dev(div11, "class", "settings svelte-nznr5u");
+    			add_location(div11, file$1, 588, 8, 17335);
     			attr_dev(div12, "id", "predict_chart");
-    			add_location(div12, file$1, 566, 8, 16558);
-    			add_location(div13, file$1, 541, 4, 15853);
-    			attr_dev(div14, "class", "grid svelte-k82jeo");
-    			add_location(div14, file$1, 540, 0, 15829);
+    			add_location(div12, file$1, 612, 8, 18025);
+    			add_location(div13, file$1, 587, 4, 17320);
+    			attr_dev(div14, "class", "grid prediction-grid svelte-nznr5u");
+    			add_location(div14, file$1, 586, 0, 17280);
+    			add_location(h33, file$1, 616, 0, 18100);
+    			if (zero_md.src !== (zero_md_src_value = /*mdUrl*/ ctx[43])) set_custom_element_data(zero_md, "src", zero_md_src_value);
+    			add_location(zero_md, file$1, 618, 4, 18155);
+    			attr_dev(div15, "class", "grid svelte-nznr5u");
+    			add_location(div15, file$1, 617, 0, 18131);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -11545,7 +11634,7 @@ var app = (function () {
     			mount_component(slider0, div1, null);
     			append_dev(div1, t8);
     			append_dev(div1, div0);
-    			/*div0_binding*/ ctx[41](div0);
+    			/*div0_binding*/ ctx[48](div0);
     			append_dev(div6, t9);
     			append_dev(div6, div3);
     			append_dev(div3, h51);
@@ -11572,50 +11661,69 @@ var app = (function () {
     			append_dev(div2, t25);
     			mount_component(slider3, div2, null);
     			append_dev(div2, t26);
-    			mount_component(select0, div2, null);
-    			append_dev(div2, t27);
-    			mount_component(select1, div2, null);
-    			append_dev(div2, t28);
     			append_dev(div2, h64);
+    			append_dev(h64, t27);
+    			append_dev(h64, t28);
     			append_dev(h64, t29);
-    			append_dev(h64, t30);
-    			append_dev(h64, t31);
-    			append_dev(div2, t32);
+    			append_dev(div2, t30);
     			mount_component(slider4, div2, null);
-    			append_dev(div2, t33);
+    			append_dev(div2, t31);
+    			append_dev(div2, h65);
+    			append_dev(h65, t32);
+    			append_dev(h65, t33);
+    			append_dev(h65, t34);
+    			append_dev(div2, t35);
+    			mount_component(slider5, div2, null);
+    			append_dev(div2, t36);
+    			mount_component(select0, div2, null);
+    			append_dev(div2, t37);
+    			mount_component(select1, div2, null);
+    			append_dev(div2, t38);
+    			append_dev(div2, h66);
+    			append_dev(h66, t39);
+    			append_dev(h66, t40);
+    			append_dev(h66, t41);
+    			append_dev(div2, t42);
+    			mount_component(slider6, div2, null);
+    			append_dev(div2, t43);
     			if_blocks[current_block_type_index].m(div2, null);
-    			append_dev(div6, t34);
+    			append_dev(div6, t44);
     			append_dev(div6, div5);
     			append_dev(div5, h52);
-    			append_dev(div5, t36);
+    			append_dev(div5, t46);
     			append_dev(div5, div4);
-    			/*div4_binding*/ ctx[50](div4);
-    			insert_dev(target, t37, anchor);
+    			/*div4_binding*/ ctx[59](div4);
+    			insert_dev(target, t47, anchor);
     			insert_dev(target, br, anchor);
-    			insert_dev(target, t38, anchor);
+    			insert_dev(target, t48, anchor);
     			insert_dev(target, h31, anchor);
-    			insert_dev(target, t40, anchor);
+    			insert_dev(target, t50, anchor);
     			insert_dev(target, div10, anchor);
     			append_dev(div10, div7);
-    			/*div7_binding*/ ctx[51](div7);
-    			append_dev(div10, t41);
+    			/*div7_binding*/ ctx[60](div7);
+    			append_dev(div10, t51);
     			append_dev(div10, div8);
-    			/*div8_binding*/ ctx[52](div8);
-    			append_dev(div10, t42);
+    			/*div8_binding*/ ctx[61](div8);
+    			append_dev(div10, t52);
     			append_dev(div10, div9);
-    			/*div9_binding*/ ctx[53](div9);
-    			insert_dev(target, t43, anchor);
+    			/*div9_binding*/ ctx[62](div9);
+    			insert_dev(target, t53, anchor);
     			insert_dev(target, h32, anchor);
-    			insert_dev(target, t45, anchor);
+    			insert_dev(target, t55, anchor);
     			insert_dev(target, div14, anchor);
     			append_dev(div14, div13);
     			append_dev(div13, div11);
     			mount_component(select2, div11, null);
-    			append_dev(div11, t46);
+    			append_dev(div11, t56);
     			if_blocks_1[current_block_type_index_1].m(div11, null);
-    			append_dev(div13, t47);
+    			append_dev(div13, t57);
     			append_dev(div13, div12);
-    			/*div12_binding*/ ctx[55](div12);
+    			/*div12_binding*/ ctx[64](div12);
+    			insert_dev(target, t58, anchor);
+    			insert_dev(target, h33, anchor);
+    			insert_dev(target, t60, anchor);
+    			insert_dev(target, div15, anchor);
+    			append_dev(div15, zero_md);
     			current = true;
     		},
     		p: function update(ctx, dirty) {
@@ -11663,35 +11771,59 @@ var app = (function () {
     			}
 
     			slider3.$set(slider3_changes);
+    			if (!current || dirty[0] & /*minWeight*/ 512) set_data_dev(t29, /*minWeight*/ ctx[9]);
+    			const slider4_changes = {};
+    			if (dirty[0] & /*maxWeight*/ 1024) slider4_changes.max = /*maxWeight*/ ctx[10];
+    			if (dirty[0] & /*running, training*/ 12) slider4_changes.disabled = /*running*/ ctx[2] || /*training*/ ctx[3];
+
+    			if (!updating_value_4 && dirty[0] & /*minWeight*/ 512) {
+    				updating_value_4 = true;
+    				slider4_changes.value = /*minWeight*/ ctx[9];
+    				add_flush_callback(() => updating_value_4 = false);
+    			}
+
+    			slider4.$set(slider4_changes);
+    			if (!current || dirty[0] & /*maxWeight*/ 1024) set_data_dev(t34, /*maxWeight*/ ctx[10]);
+    			const slider5_changes = {};
+    			if (dirty[0] & /*minWeight*/ 512) slider5_changes.min = /*minWeight*/ ctx[9];
+    			if (dirty[0] & /*running, training*/ 12) slider5_changes.disabled = /*running*/ ctx[2] || /*training*/ ctx[3];
+
+    			if (!updating_value_5 && dirty[0] & /*maxWeight*/ 1024) {
+    				updating_value_5 = true;
+    				slider5_changes.value = /*maxWeight*/ ctx[10];
+    				add_flush_callback(() => updating_value_5 = false);
+    			}
+
+    			slider5.$set(slider5_changes);
     			const select0_changes = {};
 
-    			if (!updating_value_4 && dirty[0] & /*activationFunction*/ 512) {
-    				updating_value_4 = true;
-    				select0_changes.value = /*activationFunction*/ ctx[9];
-    				add_flush_callback(() => updating_value_4 = false);
+    			if (!updating_value_6 && dirty[0] & /*activationFunction*/ 2048) {
+    				updating_value_6 = true;
+    				select0_changes.value = /*activationFunction*/ ctx[11];
+    				add_flush_callback(() => updating_value_6 = false);
     			}
 
     			select0.$set(select0_changes);
     			const select1_changes = {};
 
-    			if (!updating_value_5 && dirty[0] & /*selectedOptimizer*/ 1024) {
-    				updating_value_5 = true;
-    				select1_changes.value = /*selectedOptimizer*/ ctx[10];
-    				add_flush_callback(() => updating_value_5 = false);
+    			if (!updating_value_7 && dirty[0] & /*selectedOptimizer*/ 4096) {
+    				updating_value_7 = true;
+    				select1_changes.value = /*selectedOptimizer*/ ctx[12];
+    				add_flush_callback(() => updating_value_7 = false);
     			}
 
     			select1.$set(select1_changes);
-    			if (!current || dirty[0] & /*learningRate*/ 2048) set_data_dev(t31, /*learningRate*/ ctx[11]);
-    			const slider4_changes = {};
-    			if (dirty[0] & /*running, training*/ 12) slider4_changes.disabled = /*running*/ ctx[2] || /*training*/ ctx[3];
+    			if (!current || dirty[0] & /*learningRate*/ 8192) set_data_dev(t41, /*learningRate*/ ctx[13]);
+    			const slider6_changes = {};
+    			if (dirty[0] & /*running, training*/ 12) slider6_changes.disabled = /*running*/ ctx[2] || /*training*/ ctx[3];
 
-    			if (!updating_value_6 && dirty[0] & /*learningRate*/ 2048) {
-    				updating_value_6 = true;
-    				slider4_changes.value = /*learningRate*/ ctx[11];
-    				add_flush_callback(() => updating_value_6 = false);
+    			if (!updating_value_8 && dirty[0] & /*learningRate*/ 8192) {
+    				updating_value_8 = true;
+    				slider6_changes.value = /*learningRate*/ ctx[13];
+    				add_flush_callback(() => updating_value_8 = false);
     			}
 
-    			slider4.$set(slider4_changes);
+    			slider6.$set(slider6_changes);
     			let previous_block_index = current_block_type_index;
     			current_block_type_index = select_block_type(ctx);
 
@@ -11719,7 +11851,7 @@ var app = (function () {
     			}
 
     			const select2_changes = {};
-    			if (dirty[0] & /*datasets*/ 65536) select2_changes.items = /*datasets*/ ctx[16];
+    			if (dirty[0] & /*datasets*/ 262144) select2_changes.items = /*datasets*/ ctx[18];
     			select2.$set(select2_changes);
     			let previous_block_index_1 = current_block_type_index_1;
     			current_block_type_index_1 = select_block_type_1(ctx);
@@ -11753,9 +11885,11 @@ var app = (function () {
     			transition_in(slider1.$$.fragment, local);
     			transition_in(slider2.$$.fragment, local);
     			transition_in(slider3.$$.fragment, local);
+    			transition_in(slider4.$$.fragment, local);
+    			transition_in(slider5.$$.fragment, local);
     			transition_in(select0.$$.fragment, local);
     			transition_in(select1.$$.fragment, local);
-    			transition_in(slider4.$$.fragment, local);
+    			transition_in(slider6.$$.fragment, local);
     			transition_in(if_block0);
     			transition_in(select2.$$.fragment, local);
     			transition_in(if_block1);
@@ -11766,9 +11900,11 @@ var app = (function () {
     			transition_out(slider1.$$.fragment, local);
     			transition_out(slider2.$$.fragment, local);
     			transition_out(slider3.$$.fragment, local);
+    			transition_out(slider4.$$.fragment, local);
+    			transition_out(slider5.$$.fragment, local);
     			transition_out(select0.$$.fragment, local);
     			transition_out(select1.$$.fragment, local);
-    			transition_out(slider4.$$.fragment, local);
+    			transition_out(slider6.$$.fragment, local);
     			transition_out(if_block0);
     			transition_out(select2.$$.fragment, local);
     			transition_out(if_block1);
@@ -11779,37 +11915,43 @@ var app = (function () {
     			if (detaching) detach_dev(t1);
     			if (detaching) detach_dev(div6);
     			destroy_component(slider0);
-    			/*div0_binding*/ ctx[41](null);
+    			/*div0_binding*/ ctx[48](null);
     			destroy_component(slider1);
     			destroy_component(slider2);
     			destroy_component(slider3);
+    			destroy_component(slider4);
+    			destroy_component(slider5);
     			destroy_component(select0);
     			destroy_component(select1);
-    			destroy_component(slider4);
+    			destroy_component(slider6);
     			if_blocks[current_block_type_index].d();
-    			/*div4_binding*/ ctx[50](null);
-    			if (detaching) detach_dev(t37);
+    			/*div4_binding*/ ctx[59](null);
+    			if (detaching) detach_dev(t47);
     			if (detaching) detach_dev(br);
-    			if (detaching) detach_dev(t38);
+    			if (detaching) detach_dev(t48);
     			if (detaching) detach_dev(h31);
-    			if (detaching) detach_dev(t40);
+    			if (detaching) detach_dev(t50);
     			if (detaching) detach_dev(div10);
-    			/*div7_binding*/ ctx[51](null);
-    			/*div8_binding*/ ctx[52](null);
-    			/*div9_binding*/ ctx[53](null);
-    			if (detaching) detach_dev(t43);
+    			/*div7_binding*/ ctx[60](null);
+    			/*div8_binding*/ ctx[61](null);
+    			/*div9_binding*/ ctx[62](null);
+    			if (detaching) detach_dev(t53);
     			if (detaching) detach_dev(h32);
-    			if (detaching) detach_dev(t45);
+    			if (detaching) detach_dev(t55);
     			if (detaching) detach_dev(div14);
     			destroy_component(select2);
     			if_blocks_1[current_block_type_index_1].d();
-    			/*div12_binding*/ ctx[55](null);
+    			/*div12_binding*/ ctx[64](null);
+    			if (detaching) detach_dev(t58);
+    			if (detaching) detach_dev(h33);
+    			if (detaching) detach_dev(t60);
+    			if (detaching) detach_dev(div15);
     		}
     	};
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_fragment$2.name,
+    		id: create_fragment$1.name,
     		type: "component",
     		source: "",
     		ctx
@@ -11818,7 +11960,7 @@ var app = (function () {
     	return block;
     }
 
-    function instance$2($$self, $$props, $$invalidate) {
+    function instance$1($$self, $$props, $$invalidate) {
     	let { $$slots: slots = {}, $$scope } = $$props;
     	validate_slots("FFNN", slots, []);
     	const dispatch = createEventDispatcher();
@@ -11840,7 +11982,7 @@ var app = (function () {
     	let labelMinWeight = "min weight";
     	let labelMaxWeight = "max weight";
 
-    	// events
+    	// Events
     	let running = false;
 
     	let itemSelected = false;
@@ -11853,14 +11995,15 @@ var app = (function () {
     	let labelTrainingSettings = "settings";
     	let labelTrainingDataset = "training dataset";
     	let labelTrainingDatasetSize = "training dataset size";
-    	let trainingDatasetSize = 100;
-    	let batchSize = 32; // Neuronen min 32 max 512
-    	let epochs = 10; // Trainings Epochen 50 iterations
-    	let hiddenLayerCount = 1; // Anzahl der hidden Layer
+    	let trainingDatasetSize = 1000;
+    	let batchSize = 100; // Neuronen min 32 max 512
+    	let epochs = 200; // Trainings Epochen 50 iterations
+    	let hiddenLayerCount = 25; // Anzahl der hidden Layer
+    	let stepWeight = 0.001;
     	let minWeight = 0;
-    	let maxWeight = 1;
+    	let maxWeight = 0.2;
     	let activationFunction = "none";
-    	let selectedOptimizer = "adam"; // Optimizer
+    	let selectedOptimizer = "sgd"; // Optimizer
     	let learningRate = 0.001; // Lernrate
 
     	const activationList = [
@@ -11902,9 +12045,14 @@ var app = (function () {
     	// Charts
     	let datasetChart1, datasetChart2, datasetChart3, predictChart;
 
+    	// Documentation
+    	let labelDocumentation = "Documentation";
+
+    	let mdUrl = "./files/documentation.md";
+
     	// lifecycle functions
     	onMount(async () => {
-    		$$invalidate(14, trainingData = getTrainingData(trainingDatasetSize));
+    		$$invalidate(16, trainingData = getTrainingData(trainingDatasetSize));
     		showData(trainingDataChart, trainingData);
     		dataset1 = getRandomData1(0.1, 0.3);
     		dataset2 = getRandomData2(0.4, 0.6);
@@ -11913,7 +12061,7 @@ var app = (function () {
     		showData(datasetChart2, dataset2);
     		showData(datasetChart3, dataset3);
 
-    		$$invalidate(16, datasets = [
+    		$$invalidate(18, datasets = [
     			{
     				value: 0,
     				text: "Training Dataset",
@@ -11943,29 +12091,32 @@ var app = (function () {
     		// Create a sequential model
     		let model = tf.sequential();
 
+    		let weights = [
+    			tf.randomUniform([1, hiddenLayerCount], 1, 1),
+    			tf.randomUniform([hiddenLayerCount], minWeight, maxWeight)
+    		];
+
     		// Add a single input layer
     		let inputConfig = {
+    			name: "hiddenlayer",
     			inputShape: [1],
     			units: hiddenLayerCount,
+    			weights,
     			useBias: true
     		};
 
     		if (activationFunction != "none") inputConfig.activation = activationFunction;
-    		model.add(tf.layers.dense(inputConfig));
+    		let layer = tf.layers.dense(inputConfig);
+    		model.add(layer);
 
-    		// // Add hidden layers
-    		// let hiddenConfig = {
-    		//     units: hiddenLayerCount,
-    		//     useBias: true,
-    		// };
-    		// model.add(tf.layers.dense(hiddenConfig));
-    		// model.add(tf.layers.dense(hiddenConfig));
-    		// model.add(tf.layers.dense(hiddenConfig));
-    		// model.add(tf.layers.dense(hiddenConfig));
     		// Add an output layer
-    		let outputConfig = { units: 1, useBias: false };
+    		let outputConfig = { units: 1, useBias: true };
 
     		model.add(tf.layers.dense(outputConfig));
+
+    		// model.weights.forEach((w) => {
+    		//     console.log(w.name, w.shape, w.read().dataSync());
+    		// });
     		return model;
     	};
 
@@ -12035,8 +12186,8 @@ var app = (function () {
     		let dataArray = [];
 
     		for (let i = 0; i < 1; i += 0.01) {
-    			let x = i; // Math.random() * (nMax - nMin) + nMin;
-    			let y = i + Math.random() * (nMax - nMin) + nMin;
+    			let x = Math.random() * (nMax - nMin) + nMin;
+    			let y = calcY(x); // + Math.random() * (nMax - nMin) + nMin;
     			dataArray.push({ x, y });
     		}
 
@@ -12048,7 +12199,7 @@ var app = (function () {
 
     		for (let i = 0; i < 1; i += 0.01) {
     			let x = i; // Math.random() * (nMax - nMin) + nMin;
-    			let y = x * x * x - 0.1 * x;
+    			let y = Math.sqrt(x) - 0.1 * x * 2;
     			dataArray.push({ x, y });
     		}
 
@@ -12075,7 +12226,7 @@ var app = (function () {
     			// Step 2. Convert data to Tensor
     			const inputs = data.map(d => d.x);
 
-    			const labels = data.map(d => calcYs(d.x));
+    			const labels = data.map(d => calcY(d.x));
     			const inputTensor = tf.tensor2d(inputs, [inputs.length, 1]);
     			const labelTensor = tf.tensor2d(labels, [labels.length, 1]);
 
@@ -12138,17 +12289,39 @@ var app = (function () {
     			metrics: ["mse"]
     		});
 
-    		return await model.fit(inputs, labels, {
+    		// return await model.fit(inputs, labels, {
+    		//     batchSize,
+    		//     epochs,
+    		//     shuffle: true,
+    		//     callbacks: tfvis.show.fitCallbacks(trainChart, ["loss", "mse"], {
+    		//         height: 200,
+    		//         width: 400,
+    		//         callbacks: ["onEpochEnd"],
+    		//     }),
+    		// });
+    		await model.fit(inputs, labels, {
     			batchSize,
     			epochs,
     			shuffle: true,
-    			callbacks: tfvis.show.fitCallbacks(trainChart, ["loss", "mse"], {
+    			validationSplit: 0.2,
+    			validationData: labels,
+    			callbacks: tfvis.show.fitCallbacks(trainChart, ["val_loss", "loss", "val_mse", "mse"], {
     				height: 200,
     				width: 400,
     				callbacks: ["onEpochEnd"]
     			})
     		});
-    	};
+
+    		// const hiddenLayer = model.getLayer("hiddenlayer");
+    		// const [weights, biases] = hiddenLayer.getWeights(true);
+    		// debugger
+    		// console.log(weights.shape);
+    		// console.log(biases.shape);
+    		return model;
+    	}; // return await model.fit(inputs, labels, {
+    	//     batchSize,
+    	//     epochs,
+    	//     shuffle: true,
 
     	async function predict() {
     		$$invalidate(2, running = true);
@@ -12217,14 +12390,15 @@ var app = (function () {
     	}
 
     	const change_handler = () => {
-    		$$invalidate(14, trainingData = getTrainingData(trainingDatasetSize));
+    		$$invalidate(16, trainingData = getTrainingData(trainingDatasetSize));
+    		$$invalidate(18, datasets[0].data = trainingData, datasets);
     		showData(trainingDataChart, trainingData);
     	};
 
     	function div0_binding($$value) {
     		binding_callbacks[$$value ? "unshift" : "push"](() => {
     			trainingDataChart = $$value;
-    			$$invalidate(12, trainingDataChart);
+    			$$invalidate(14, trainingDataChart);
     		});
     	}
 
@@ -12243,66 +12417,76 @@ var app = (function () {
     		$$invalidate(8, hiddenLayerCount);
     	}
 
+    	function slider4_value_binding(value) {
+    		minWeight = value;
+    		$$invalidate(9, minWeight);
+    	}
+
+    	function slider5_value_binding(value) {
+    		maxWeight = value;
+    		$$invalidate(10, maxWeight);
+    	}
+
     	function select0_value_binding(value) {
     		activationFunction = value;
-    		$$invalidate(9, activationFunction);
+    		$$invalidate(11, activationFunction);
     	}
 
     	const change_handler_1 = v => {
-    		$$invalidate(9, activationFunction = v.detail);
+    		$$invalidate(11, activationFunction = v.detail);
     	};
 
     	function select1_value_binding(value) {
     		selectedOptimizer = value;
-    		$$invalidate(10, selectedOptimizer);
+    		$$invalidate(12, selectedOptimizer);
     	}
 
     	const change_handler_2 = v => {
-    		$$invalidate(10, selectedOptimizer = v.detail);
+    		$$invalidate(12, selectedOptimizer = v.detail);
     	};
 
-    	function slider4_value_binding(value) {
+    	function slider6_value_binding(value) {
     		learningRate = value;
-    		$$invalidate(11, learningRate);
+    		$$invalidate(13, learningRate);
     	}
 
     	function div4_binding($$value) {
     		binding_callbacks[$$value ? "unshift" : "push"](() => {
     			trainChart = $$value;
-    			$$invalidate(13, trainChart);
+    			$$invalidate(15, trainChart);
     		});
     	}
 
     	function div7_binding($$value) {
     		binding_callbacks[$$value ? "unshift" : "push"](() => {
     			datasetChart1 = $$value;
-    			$$invalidate(17, datasetChart1);
+    			$$invalidate(19, datasetChart1);
     		});
     	}
 
     	function div8_binding($$value) {
     		binding_callbacks[$$value ? "unshift" : "push"](() => {
     			datasetChart2 = $$value;
-    			$$invalidate(18, datasetChart2);
+    			$$invalidate(20, datasetChart2);
     		});
     	}
 
     	function div9_binding($$value) {
     		binding_callbacks[$$value ? "unshift" : "push"](() => {
     			datasetChart3 = $$value;
-    			$$invalidate(19, datasetChart3);
+    			$$invalidate(21, datasetChart3);
     		});
     	}
 
     	const change_handler_3 = v => {
     		$$invalidate(4, itemSelected = true);
-    		$$invalidate(15, selectedDataset = datasets[v.detail]);
+    		$$invalidate(17, selectedDataset = datasets[v.detail]);
     	};
 
     	function div12_binding($$value) {
     		binding_callbacks[$$value ? "unshift" : "push"](() => {
     			predictChart = $$value;
-    			$$invalidate(20, predictChart);
+    			$$invalidate(22, predictChart);
     		});
     	}
 
@@ -12344,6 +12528,7 @@ var app = (function () {
     		batchSize,
     		epochs,
     		hiddenLayerCount,
+    		stepWeight,
     		minWeight,
     		maxWeight,
     		activationFunction,
@@ -12365,6 +12550,8 @@ var app = (function () {
     		datasetChart2,
     		datasetChart3,
     		predictChart,
+    		labelDocumentation,
+    		mdUrl,
     		createModel,
     		saveModel,
     		loadModel,
@@ -12384,62 +12571,65 @@ var app = (function () {
     	});
 
     	$$self.$inject_state = $$props => {
-    		if ("labelDatasets" in $$props) $$invalidate(21, labelDatasets = $$props.labelDatasets);
+    		if ("labelDatasets" in $$props) $$invalidate(23, labelDatasets = $$props.labelDatasets);
     		if ("labelFFNN" in $$props) labelFFNN = $$props.labelFFNN;
     		if ("labelSettinngs" in $$props) labelSettinngs = $$props.labelSettinngs;
-    		if ("labelTraining" in $$props) $$invalidate(22, labelTraining = $$props.labelTraining);
-    		if ("labelPrediction" in $$props) $$invalidate(23, labelPrediction = $$props.labelPrediction);
-    		if ("labelActivationFunction" in $$props) $$invalidate(24, labelActivationFunction = $$props.labelActivationFunction);
-    		if ("labelOptimizer" in $$props) $$invalidate(25, labelOptimizer = $$props.labelOptimizer);
-    		if ("labelLearningRate" in $$props) $$invalidate(26, labelLearningRate = $$props.labelLearningRate);
-    		if ("labelBatchSize" in $$props) $$invalidate(27, labelBatchSize = $$props.labelBatchSize);
-    		if ("labelEpoch" in $$props) $$invalidate(28, labelEpoch = $$props.labelEpoch);
-    		if ("labelHiddenLayer" in $$props) $$invalidate(29, labelHiddenLayer = $$props.labelHiddenLayer);
-    		if ("labelDataset" in $$props) $$invalidate(30, labelDataset = $$props.labelDataset);
-    		if ("labelMinWeight" in $$props) labelMinWeight = $$props.labelMinWeight;
-    		if ("labelMaxWeight" in $$props) labelMaxWeight = $$props.labelMaxWeight;
+    		if ("labelTraining" in $$props) $$invalidate(24, labelTraining = $$props.labelTraining);
+    		if ("labelPrediction" in $$props) $$invalidate(25, labelPrediction = $$props.labelPrediction);
+    		if ("labelActivationFunction" in $$props) $$invalidate(26, labelActivationFunction = $$props.labelActivationFunction);
+    		if ("labelOptimizer" in $$props) $$invalidate(27, labelOptimizer = $$props.labelOptimizer);
+    		if ("labelLearningRate" in $$props) $$invalidate(28, labelLearningRate = $$props.labelLearningRate);
+    		if ("labelBatchSize" in $$props) $$invalidate(29, labelBatchSize = $$props.labelBatchSize);
+    		if ("labelEpoch" in $$props) $$invalidate(30, labelEpoch = $$props.labelEpoch);
+    		if ("labelHiddenLayer" in $$props) $$invalidate(31, labelHiddenLayer = $$props.labelHiddenLayer);
+    		if ("labelDataset" in $$props) $$invalidate(32, labelDataset = $$props.labelDataset);
+    		if ("labelMinWeight" in $$props) $$invalidate(33, labelMinWeight = $$props.labelMinWeight);
+    		if ("labelMaxWeight" in $$props) $$invalidate(34, labelMaxWeight = $$props.labelMaxWeight);
     		if ("running" in $$props) $$invalidate(2, running = $$props.running);
     		if ("itemSelected" in $$props) $$invalidate(4, itemSelected = $$props.itemSelected);
     		if ("training" in $$props) $$invalidate(3, training = $$props.training);
-    		if ("labelTrainingResult" in $$props) $$invalidate(31, labelTrainingResult = $$props.labelTrainingResult);
-    		if ("labelTrainingSettings" in $$props) $$invalidate(32, labelTrainingSettings = $$props.labelTrainingSettings);
-    		if ("labelTrainingDataset" in $$props) $$invalidate(33, labelTrainingDataset = $$props.labelTrainingDataset);
-    		if ("labelTrainingDatasetSize" in $$props) $$invalidate(34, labelTrainingDatasetSize = $$props.labelTrainingDatasetSize);
+    		if ("labelTrainingResult" in $$props) $$invalidate(35, labelTrainingResult = $$props.labelTrainingResult);
+    		if ("labelTrainingSettings" in $$props) $$invalidate(36, labelTrainingSettings = $$props.labelTrainingSettings);
+    		if ("labelTrainingDataset" in $$props) $$invalidate(37, labelTrainingDataset = $$props.labelTrainingDataset);
+    		if ("labelTrainingDatasetSize" in $$props) $$invalidate(38, labelTrainingDatasetSize = $$props.labelTrainingDatasetSize);
     		if ("trainingDatasetSize" in $$props) $$invalidate(5, trainingDatasetSize = $$props.trainingDatasetSize);
     		if ("batchSize" in $$props) $$invalidate(6, batchSize = $$props.batchSize);
     		if ("epochs" in $$props) $$invalidate(7, epochs = $$props.epochs);
     		if ("hiddenLayerCount" in $$props) $$invalidate(8, hiddenLayerCount = $$props.hiddenLayerCount);
-    		if ("minWeight" in $$props) minWeight = $$props.minWeight;
-    		if ("maxWeight" in $$props) maxWeight = $$props.maxWeight;
-    		if ("activationFunction" in $$props) $$invalidate(9, activationFunction = $$props.activationFunction);
-    		if ("selectedOptimizer" in $$props) $$invalidate(10, selectedOptimizer = $$props.selectedOptimizer);
-    		if ("learningRate" in $$props) $$invalidate(11, learningRate = $$props.learningRate);
-    		if ("trainingDataChart" in $$props) $$invalidate(12, trainingDataChart = $$props.trainingDataChart);
-    		if ("trainChart" in $$props) $$invalidate(13, trainChart = $$props.trainChart);
-    		if ("trainingData" in $$props) $$invalidate(14, trainingData = $$props.trainingData);
+    		if ("stepWeight" in $$props) $$invalidate(39, stepWeight = $$props.stepWeight);
+    		if ("minWeight" in $$props) $$invalidate(9, minWeight = $$props.minWeight);
+    		if ("maxWeight" in $$props) $$invalidate(10, maxWeight = $$props.maxWeight);
+    		if ("activationFunction" in $$props) $$invalidate(11, activationFunction = $$props.activationFunction);
+    		if ("selectedOptimizer" in $$props) $$invalidate(12, selectedOptimizer = $$props.selectedOptimizer);
+    		if ("learningRate" in $$props) $$invalidate(13, learningRate = $$props.learningRate);
+    		if ("trainingDataChart" in $$props) $$invalidate(14, trainingDataChart = $$props.trainingDataChart);
+    		if ("trainChart" in $$props) $$invalidate(15, trainChart = $$props.trainChart);
+    		if ("trainingData" in $$props) $$invalidate(16, trainingData = $$props.trainingData);
     		if ("modelName" in $$props) modelName = $$props.modelName;
     		if ("trainedModel" in $$props) trainedModel = $$props.trainedModel;
     		if ("dataset1" in $$props) dataset1 = $$props.dataset1;
     		if ("dataset2" in $$props) dataset2 = $$props.dataset2;
     		if ("dataset3" in $$props) dataset3 = $$props.dataset3;
-    		if ("selectedDataset" in $$props) $$invalidate(15, selectedDataset = $$props.selectedDataset);
-    		if ("datasets" in $$props) $$invalidate(16, datasets = $$props.datasets);
-    		if ("datasetChart1" in $$props) $$invalidate(17, datasetChart1 = $$props.datasetChart1);
-    		if ("datasetChart2" in $$props) $$invalidate(18, datasetChart2 = $$props.datasetChart2);
-    		if ("datasetChart3" in $$props) $$invalidate(19, datasetChart3 = $$props.datasetChart3);
-    		if ("predictChart" in $$props) $$invalidate(20, predictChart = $$props.predictChart);
+    		if ("selectedDataset" in $$props) $$invalidate(17, selectedDataset = $$props.selectedDataset);
+    		if ("datasets" in $$props) $$invalidate(18, datasets = $$props.datasets);
+    		if ("datasetChart1" in $$props) $$invalidate(19, datasetChart1 = $$props.datasetChart1);
+    		if ("datasetChart2" in $$props) $$invalidate(20, datasetChart2 = $$props.datasetChart2);
+    		if ("datasetChart3" in $$props) $$invalidate(21, datasetChart3 = $$props.datasetChart3);
+    		if ("predictChart" in $$props) $$invalidate(22, predictChart = $$props.predictChart);
+    		if ("labelDocumentation" in $$props) $$invalidate(42, labelDocumentation = $$props.labelDocumentation);
+    		if ("mdUrl" in $$props) $$invalidate(43, mdUrl = $$props.mdUrl);
     		if ("createModel" in $$props) createModel = $$props.createModel;
     		if ("saveModel" in $$props) saveModel = $$props.saveModel;
     		if ("loadModel" in $$props) loadModel = $$props.loadModel;
     		if ("getOptimizer" in $$props) getOptimizer = $$props.getOptimizer;
-    		if ("getTrainingData" in $$props) $$invalidate(37, getTrainingData = $$props.getTrainingData);
+    		if ("getTrainingData" in $$props) $$invalidate(44, getTrainingData = $$props.getTrainingData);
     		if ("calcY" in $$props) calcY = $$props.calcY;
     		if ("calcYs" in $$props) calcYs = $$props.calcYs;
     		if ("getRandomData1" in $$props) getRandomData1 = $$props.getRandomData1;
     		if ("getRandomData2" in $$props) getRandomData2 = $$props.getRandomData2;
     		if ("getRandomData3" in $$props) getRandomData3 = $$props.getRandomData3;
     		if ("prepareData" in $$props) prepareData = $$props.prepareData;
-    		if ("showData" in $$props) $$invalidate(38, showData = $$props.showData);
+    		if ("showData" in $$props) $$invalidate(45, showData = $$props.showData);
     		if ("trainModel" in $$props) trainModel = $$props.trainModel;
     		if ("testModel" in $$props) testModel = $$props.testModel;
     	};
@@ -12468,6 +12658,8 @@ var app = (function () {
     		batchSize,
     		epochs,
     		hiddenLayerCount,
+    		minWeight,
+    		maxWeight,
     		activationFunction,
     		selectedOptimizer,
     		learningRate,
@@ -12490,12 +12682,17 @@ var app = (function () {
     		labelEpoch,
     		labelHiddenLayer,
     		labelDataset,
+    		labelMinWeight,
+    		labelMaxWeight,
     		labelTrainingResult,
     		labelTrainingSettings,
     		labelTrainingDataset,
     		labelTrainingDatasetSize,
+    		stepWeight,
     		activationList,
     		optimizerList,
+    		labelDocumentation,
+    		mdUrl,
     		getTrainingData,
     		showData,
     		slider0_value_binding,
@@ -12504,11 +12701,13 @@ var app = (function () {
     		slider1_value_binding,
     		slider2_value_binding,
     		slider3_value_binding,
+    		slider4_value_binding,
+    		slider5_value_binding,
     		select0_value_binding,
     		change_handler_1,
     		select1_value_binding,
     		change_handler_2,
-    		slider4_value_binding,
+    		slider6_value_binding,
     		div4_binding,
     		div7_binding,
     		div8_binding,
@@ -12521,13 +12720,13 @@ var app = (function () {
     class FFNN extends SvelteComponentDev {
     	constructor(options) {
     		super(options);
-    		init(this, options, instance$2, create_fragment$2, safe_not_equal, { train: 0, predict: 1 }, [-1, -1, -1]);
+    		init(this, options, instance$1, create_fragment$1, safe_not_equal, { train: 0, predict: 1 }, [-1, -1, -1]);
 
     		dispatch_dev("SvelteRegisterComponent", {
     			component: this,
     			tagName: "FFNN",
     			options,
-    			id: create_fragment$2.name
+    			id: create_fragment$1.name
     		});
     	}
 
@@ -12548,379 +12747,10 @@ var app = (function () {
     	}
     }
 
-    /* src\components\TFModel.svelte generated by Svelte v3.37.0 */
-
-    const { console: console_1 } = globals;
-
-    function create_fragment$1(ctx) {
-    	const block = {
-    		c: noop,
-    		l: function claim(nodes) {
-    			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
-    		},
-    		m: noop,
-    		p: noop,
-    		i: noop,
-    		o: noop,
-    		d: noop
-    	};
-
-    	dispatch_dev("SvelteRegisterBlock", {
-    		block,
-    		id: create_fragment$1.name,
-    		type: "component",
-    		source: "",
-    		ctx
-    	});
-
-    	return block;
-    }
-
-    async function show() {
-    	if (!tfvis.visor().isOpen()) tfvis.visor().toggle();
-    }
-
-    function instance$1($$self, $$props, $$invalidate) {
-    	let { $$slots: slots = {}, $$scope } = $$props;
-    	validate_slots("TFModel", slots, []);
-    	const dispatch = createEventDispatcher();
-    	let { modelName } = $$props;
-    	let { batchSize } = $$props; // min 32 max 512
-    	let { epochs } = $$props; // 50 iterations
-    	let { url } = $$props;
-    	let { running } = $$props;
-    	let { opened } = $$props;
-
-    	// $: tfvis.visor().isOpen(), dispatch("opened", tfvis.visor().isOpen());
-    	// Data
-    	let getData = async () => {
-    		const carsDataResponse = await fetch("https://storage.googleapis.com/tfjs-tutorials/carsData.json");
-    		const carsData = await carsDataResponse.json();
-
-    		const cleaned = carsData.map(car => ({
-    			mpg: car.Miles_per_Gallon,
-    			horsepower: car.Horsepower
-    		})).filter(car => car.mpg != null && car.horsepower != null);
-
-    		return cleaned;
-    	};
-
-    	// functions
-    	let createModel = () => {
-    		// Create a sequential model
-    		const model = tf.sequential();
-
-    		// Add a single input layer
-    		model.add(tf.layers.dense({ inputShape: [1], units: 1, useBias: true }));
-
-    		// Add an output layer
-    		model.add(tf.layers.dense({ units: 1, useBias: true }));
-
-    		return model;
-    	};
-
-    	let trainModel = async (model, inputs, labels) => {
-    		// Prepare the model for training.
-    		model.compile({
-    			optimizer: tf.train.adam(),
-    			loss: tf.losses.meanSquaredError,
-    			metrics: ["mse"]
-    		});
-
-    		// return await model.fit(inputs, labels, {
-    		//     batchSize,
-    		//     epochs,
-    		//     shuffle: true,
-    		//     callbacks: dispatch("traning", {done: true, text: "Tarining Done"})
-    		// });
-    		return await model.fit(inputs, labels, {
-    			batchSize,
-    			epochs,
-    			shuffle: true,
-    			callbacks: tfvis.show.fitCallbacks({ name: "Training Performance" }, ["loss", "mse"], { height: 200, callbacks: ["onEpochEnd"] })
-    		});
-    	};
-
-    	let convertToTensor = data => {
-    		// Wrapping these calculations in a tidy will dispose any
-    		// intermediate tensors.
-    		return tf.tidy(() => {
-    			// Step 1. Shuffle the data
-    			tf.util.shuffle(data);
-
-    			// Step 2. Convert data to Tensor
-    			const inputs = data.map(d => d.horsepower);
-
-    			const labels = data.map(d => d.mpg);
-    			const inputTensor = tf.tensor2d(inputs, [inputs.length, 1]);
-    			const labelTensor = tf.tensor2d(labels, [labels.length, 1]);
-
-    			//Step 3. Normalize the data to the range 0 - 1 using min-max scaling
-    			const inputMax = inputTensor.max();
-
-    			const inputMin = inputTensor.min();
-    			const labelMax = labelTensor.max();
-    			const labelMin = labelTensor.min();
-    			const normalizedInputs = inputTensor.sub(inputMin).div(inputMax.sub(inputMin));
-    			const normalizedLabels = labelTensor.sub(labelMin).div(labelMax.sub(labelMin));
-
-    			return {
-    				inputs: normalizedInputs,
-    				labels: normalizedLabels,
-    				// Return the min/max bounds so we can use them later.
-    				inputMax,
-    				inputMin,
-    				labelMax,
-    				labelMin
-    			};
-    		});
-    	};
-
-    	let testModel = (model, inputData, normalizationData) => {
-    		const { inputMax, inputMin, labelMin, labelMax } = normalizationData;
-
-    		// Generate predictions for a uniform range of numbers between 0 and 1;
-    		// We un-normalize the data by doing the inverse of the min-max scaling
-    		// that we did earlier.
-    		const [xs, preds] = tf.tidy(() => {
-    			const xs = tf.linspace(0, 1, 100);
-    			const preds = model.predict(xs.reshape([100, 1]));
-    			const unNormXs = xs.mul(inputMax.sub(inputMin)).add(inputMin);
-    			const unNormPreds = preds.mul(labelMax.sub(labelMin)).add(labelMin);
-
-    			// Un-normalize the data
-    			return [unNormXs.dataSync(), unNormPreds.dataSync()];
-    		});
-
-    		const predictedPoints = Array.from(xs).map((val, i) => {
-    			return { x: val, y: preds[i] };
-    		});
-
-    		const originalPoints = inputData.map(d => ({ x: d.horsepower, y: d.mpg }));
-
-    		tfvis.render.scatterplot(
-    			{
-    				name: "Model Predictions vs Original Data"
-    			},
-    			{
-    				values: [originalPoints, predictedPoints],
-    				series: ["original", "predicted"]
-    			},
-    			{
-    				xLabel: "Horsepower",
-    				yLabel: "MPG",
-    				height: 300
-    			}
-    		);
-    	};
-
-    	async function run() {
-    		$$invalidate(0, running = true);
-
-    		// Create the model
-    		const model = createModel();
-
-    		// tfvis.show.modelSummary({ name: modelName }, model);
-    		// Get Data
-    		const data = await getData(url);
-
-    		// Convert the data to a form we can use for training.
-    		const tensorData = convertToTensor(data);
-
-    		const { inputs, labels } = tensorData;
-
-    		// Train the model
-    		await trainModel(model, inputs, labels);
-
-    		$$invalidate(0, running = false);
-    		console.log("Done Training");
-
-    		// Make some predictions using the model and compare them to the
-    		// original data
-    		testModel(model, data, tensorData);
-    	}
-
-    	const writable_props = ["modelName", "batchSize", "epochs", "url", "running", "opened"];
-
-    	Object.keys($$props).forEach(key => {
-    		if (!~writable_props.indexOf(key) && key.slice(0, 2) !== "$$") console_1.warn(`<TFModel> was created with unknown prop '${key}'`);
-    	});
-
-    	$$self.$$set = $$props => {
-    		if ("modelName" in $$props) $$invalidate(1, modelName = $$props.modelName);
-    		if ("batchSize" in $$props) $$invalidate(2, batchSize = $$props.batchSize);
-    		if ("epochs" in $$props) $$invalidate(3, epochs = $$props.epochs);
-    		if ("url" in $$props) $$invalidate(4, url = $$props.url);
-    		if ("running" in $$props) $$invalidate(0, running = $$props.running);
-    		if ("opened" in $$props) $$invalidate(5, opened = $$props.opened);
-    	};
-
-    	$$self.$capture_state = () => ({
-    		onMount,
-    		createEventDispatcher,
-    		dispatch,
-    		modelName,
-    		batchSize,
-    		epochs,
-    		url,
-    		running,
-    		opened,
-    		getData,
-    		createModel,
-    		trainModel,
-    		convertToTensor,
-    		testModel,
-    		run,
-    		show
-    	});
-
-    	$$self.$inject_state = $$props => {
-    		if ("modelName" in $$props) $$invalidate(1, modelName = $$props.modelName);
-    		if ("batchSize" in $$props) $$invalidate(2, batchSize = $$props.batchSize);
-    		if ("epochs" in $$props) $$invalidate(3, epochs = $$props.epochs);
-    		if ("url" in $$props) $$invalidate(4, url = $$props.url);
-    		if ("running" in $$props) $$invalidate(0, running = $$props.running);
-    		if ("opened" in $$props) $$invalidate(5, opened = $$props.opened);
-    		if ("getData" in $$props) getData = $$props.getData;
-    		if ("createModel" in $$props) createModel = $$props.createModel;
-    		if ("trainModel" in $$props) trainModel = $$props.trainModel;
-    		if ("convertToTensor" in $$props) convertToTensor = $$props.convertToTensor;
-    		if ("testModel" in $$props) testModel = $$props.testModel;
-    	};
-
-    	if ($$props && "$$inject" in $$props) {
-    		$$self.$inject_state($$props.$$inject);
-    	}
-
-    	$$self.$$.update = () => {
-    		if ($$self.$$.dirty & /*running*/ 1) {
-    			// events
-    			(dispatch("running", running));
-    		}
-    	};
-
-    	return [running, modelName, batchSize, epochs, url, opened, run, show];
-    }
-
-    class TFModel extends SvelteComponentDev {
-    	constructor(options) {
-    		super(options);
-
-    		init(this, options, instance$1, create_fragment$1, safe_not_equal, {
-    			modelName: 1,
-    			batchSize: 2,
-    			epochs: 3,
-    			url: 4,
-    			running: 0,
-    			opened: 5,
-    			run: 6,
-    			show: 7
-    		});
-
-    		dispatch_dev("SvelteRegisterComponent", {
-    			component: this,
-    			tagName: "TFModel",
-    			options,
-    			id: create_fragment$1.name
-    		});
-
-    		const { ctx } = this.$$;
-    		const props = options.props || {};
-
-    		if (/*modelName*/ ctx[1] === undefined && !("modelName" in props)) {
-    			console_1.warn("<TFModel> was created without expected prop 'modelName'");
-    		}
-
-    		if (/*batchSize*/ ctx[2] === undefined && !("batchSize" in props)) {
-    			console_1.warn("<TFModel> was created without expected prop 'batchSize'");
-    		}
-
-    		if (/*epochs*/ ctx[3] === undefined && !("epochs" in props)) {
-    			console_1.warn("<TFModel> was created without expected prop 'epochs'");
-    		}
-
-    		if (/*url*/ ctx[4] === undefined && !("url" in props)) {
-    			console_1.warn("<TFModel> was created without expected prop 'url'");
-    		}
-
-    		if (/*running*/ ctx[0] === undefined && !("running" in props)) {
-    			console_1.warn("<TFModel> was created without expected prop 'running'");
-    		}
-
-    		if (/*opened*/ ctx[5] === undefined && !("opened" in props)) {
-    			console_1.warn("<TFModel> was created without expected prop 'opened'");
-    		}
-    	}
-
-    	get modelName() {
-    		throw new Error("<TFModel>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
-    	}
-
-    	set modelName(value) {
-    		throw new Error("<TFModel>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
-    	}
-
-    	get batchSize() {
-    		throw new Error("<TFModel>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
-    	}
-
-    	set batchSize(value) {
-    		throw new Error("<TFModel>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
-    	}
-
-    	get epochs() {
-    		throw new Error("<TFModel>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
-    	}
-
-    	set epochs(value) {
-    		throw new Error("<TFModel>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
-    	}
-
-    	get url() {
-    		throw new Error("<TFModel>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
-    	}
-
-    	set url(value) {
-    		throw new Error("<TFModel>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
-    	}
-
-    	get running() {
-    		throw new Error("<TFModel>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
-    	}
-
-    	set running(value) {
-    		throw new Error("<TFModel>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
-    	}
-
-    	get opened() {
-    		throw new Error("<TFModel>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
-    	}
-
-    	set opened(value) {
-    		throw new Error("<TFModel>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
-    	}
-
-    	get run() {
-    		return this.$$.ctx[6];
-    	}
-
-    	set run(value) {
-    		throw new Error("<TFModel>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
-    	}
-
-    	get show() {
-    		return show;
-    	}
-
-    	set show(value) {
-    		throw new Error("<TFModel>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
-    	}
-    }
-
     /* src\App.svelte generated by Svelte v3.37.0 */
     const file = "src\\App.svelte";
 
-    // (121:0) <Snackbar   bind:value={showSnackbar}   noAction   color={snackbarColor}   timeout={snackbarTimeout}  >
+    // (82:0) <Snackbar   bind:value={showSnackbar}   noAction   color={snackbarColor}   timeout={snackbarTimeout}  >
     function create_default_slot_1(ctx) {
     	let div;
     	let t;
@@ -12929,8 +12759,8 @@ var app = (function () {
     		c: function create() {
     			div = element("div");
     			t = text(/*message*/ ctx[4]);
-    			attr_dev(div, "class", "svelte-2u6epd");
-    			add_location(div, file, 126, 1, 2621);
+    			attr_dev(div, "class", "svelte-1r1fre3");
+    			add_location(div, file, 87, 1, 1632);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -12948,14 +12778,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_1.name,
     		type: "slot",
-    		source: "(121:0) <Snackbar   bind:value={showSnackbar}   noAction   color={snackbarColor}   timeout={snackbarTimeout}  >",
+    		source: "(82:0) <Snackbar   bind:value={showSnackbar}   noAction   color={snackbarColor}   timeout={snackbarTimeout}  >",
     		ctx
     	});
 
     	return block;
     }
 
-    // (129:2) <Button on:click={() => (showSnackbar = false)}>
+    // (90:2) <Button on:click={() => (showSnackbar = false)}>
     function create_default_slot(ctx) {
     	let t;
 
@@ -12975,14 +12805,14 @@ var app = (function () {
     		block,
     		id: create_default_slot.name,
     		type: "slot",
-    		source: "(129:2) <Button on:click={() => (showSnackbar = false)}>",
+    		source: "(90:2) <Button on:click={() => (showSnackbar = false)}>",
     		ctx
     	});
 
     	return block;
     }
 
-    // (128:1) 
+    // (89:1) 
     function create_action_slot(ctx) {
     	let div;
     	let button;
@@ -13003,8 +12833,8 @@ var app = (function () {
     			div = element("div");
     			create_component(button.$$.fragment);
     			attr_dev(div, "slot", "action");
-    			attr_dev(div, "class", "svelte-2u6epd");
-    			add_location(div, file, 127, 1, 2644);
+    			attr_dev(div, "class", "svelte-1r1fre3");
+    			add_location(div, file, 88, 1, 1655);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -13039,7 +12869,7 @@ var app = (function () {
     		block,
     		id: create_action_slot.name,
     		type: "slot",
-    		source: "(128:1) ",
+    		source: "(89:1) ",
     		ctx
     	});
 
@@ -13131,39 +12961,39 @@ var app = (function () {
     			a2 = element("a");
     			p2 = element("p");
     			p2.textContent = "Smeltejs";
-    			attr_dev(h50, "class", "svelte-2u6epd");
-    			add_location(h50, file, 66, 1, 1260);
-    			attr_dev(h3, "class", "svelte-2u6epd");
-    			add_location(h3, file, 67, 1, 1300);
-    			attr_dev(header, "class", "svelte-2u6epd");
-    			add_location(header, file, 65, 0, 1249);
-    			attr_dev(div0, "class", "card svelte-2u6epd");
-    			add_location(div0, file, 72, 2, 1366);
-    			attr_dev(div1, "class", "grid svelte-2u6epd");
-    			add_location(div1, file, 71, 1, 1344);
-    			attr_dev(main, "class", "svelte-2u6epd");
-    			add_location(main, file, 70, 0, 1335);
-    			attr_dev(h51, "class", "svelte-2u6epd");
-    			add_location(h51, file, 134, 2, 2775);
-    			attr_dev(p0, "class", "svelte-2u6epd");
-    			add_location(p0, file, 136, 3, 2851);
+    			attr_dev(h50, "class", "svelte-1r1fre3");
+    			add_location(h50, file, 66, 1, 1263);
+    			attr_dev(h3, "class", "svelte-1r1fre3");
+    			add_location(h3, file, 67, 1, 1303);
+    			attr_dev(header, "class", "svelte-1r1fre3");
+    			add_location(header, file, 65, 0, 1252);
+    			attr_dev(div0, "class", "card svelte-1r1fre3");
+    			add_location(div0, file, 72, 2, 1369);
+    			attr_dev(div1, "class", "grid svelte-1r1fre3");
+    			add_location(div1, file, 71, 1, 1347);
+    			attr_dev(main, "class", "svelte-1r1fre3");
+    			add_location(main, file, 70, 0, 1338);
+    			attr_dev(h51, "class", "svelte-1r1fre3");
+    			add_location(h51, file, 95, 2, 1786);
+    			attr_dev(p0, "class", "svelte-1r1fre3");
+    			add_location(p0, file, 97, 3, 1862);
     			attr_dev(a0, "href", "https://github.com/tonyflow90/dl_ea03");
-    			attr_dev(a0, "class", "svelte-2u6epd");
-    			add_location(a0, file, 135, 2, 2798);
-    			attr_dev(p1, "class", "svelte-2u6epd");
-    			add_location(p1, file, 139, 3, 2922);
+    			attr_dev(a0, "class", "svelte-1r1fre3");
+    			add_location(a0, file, 96, 2, 1809);
+    			attr_dev(p1, "class", "svelte-1r1fre3");
+    			add_location(p1, file, 100, 3, 1933);
     			attr_dev(a1, "href", "https://svelte.dev/");
-    			attr_dev(a1, "class", "svelte-2u6epd");
-    			add_location(a1, file, 138, 2, 2887);
-    			attr_dev(p2, "class", "svelte-2u6epd");
-    			add_location(p2, file, 142, 3, 2984);
+    			attr_dev(a1, "class", "svelte-1r1fre3");
+    			add_location(a1, file, 99, 2, 1898);
+    			attr_dev(p2, "class", "svelte-1r1fre3");
+    			add_location(p2, file, 103, 3, 1995);
     			attr_dev(a2, "href", "https://smeltejs.com/");
-    			attr_dev(a2, "class", "svelte-2u6epd");
-    			add_location(a2, file, 141, 2, 2947);
-    			attr_dev(div2, "class", "svelte-2u6epd");
-    			add_location(div2, file, 133, 1, 2766);
-    			attr_dev(footer, "class", "svelte-2u6epd");
-    			add_location(footer, file, 132, 0, 2755);
+    			attr_dev(a2, "class", "svelte-1r1fre3");
+    			add_location(a2, file, 102, 2, 1958);
+    			attr_dev(div2, "class", "svelte-1r1fre3");
+    			add_location(div2, file, 94, 1, 1777);
+    			attr_dev(footer, "class", "svelte-1r1fre3");
+    			add_location(footer, file, 93, 0, 1766);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -13311,7 +13141,6 @@ var app = (function () {
     		ProgressCircular,
     		onMount,
     		FFNN,
-    		TfModel: TFModel,
     		showSnackbar,
     		snackbarTimeout,
     		model,

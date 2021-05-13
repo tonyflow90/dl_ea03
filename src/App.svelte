@@ -15,7 +15,7 @@
 	import { onMount } from "svelte";
 	import FFNN from "./components/FFNN.svelte";
 
-	import TfModel from "./components/TFModel.svelte";
+	// import TfModel from "./components/TFModel.svelte";
 
 	// libraries
 	// import * as tf from "@tensorflow/tfjs";
@@ -75,45 +75,6 @@
 				on:running={(e) => (running = e.detail)}
 				on:opened={(e) => (opened = e.detail)}
 			/>
-			<!-- <FFNN
-				{batchSize}
-				{epochs}
-				{url}
-				on:running={(e) => (running = e.detail)}
-				on:opened={(e) => (opened = e.detail)}
-			/> -->
-			<!-- <Card.Card>
-				<div slot="title">
-					<Card.Title title={modelName} />
-				</div>
-				<div slot="text" class="p-5 pt-3 text-gray-700 body-2">
-					<h5>{labelBatchSize}</h5>
-					<small>Value: {batchSize}</small>
-					<Slider min="32" max="512" bind:value={batchSize} />
-
-					<h5>{labelEpoch}</h5>
-					<small>Value: {epochs}</small>
-					<Slider min="1" max="1000" bind:value={epochs} />
-				</div>
-				<div slot="actions">
-					<div class="p-2">
-						{#if running}
-							<ProgressCircular />
-						{/if}
-						<Button
-							block
-							outlined
-							on:click={runModel}
-							disabled={running}
-						>
-							start
-						</Button>
-						<Button block outlined on:click={showModel} disabled={running || opened}>
-							show
-						</Button>
-					</div>
-				</div>
-			</Card.Card> -->
 		</div>
 	</div>
 </main>
@@ -155,9 +116,9 @@
 		/* color: var(--color-white-500); */
 	}
 
-	body {
+	/* body {
 		height: 100vh;
-	}
+	} */
 
 	header {
 		display: flex;
