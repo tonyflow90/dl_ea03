@@ -1,4 +1,4 @@
-<script context="module">
+<script>
     // svelte
     import { onMount } from "svelte";
     import { createEventDispatcher } from "svelte";
@@ -9,26 +9,27 @@
     let training = false;
     let error;
 
-    $: training, dispatch("training", training);
-    $: running, dispatch("running", running);
-
     // Props
 
     // Data
     let trainingData;
 
     // Model
-    let modelName = "TFModel";
-    let model;
+    export let modelName = "TFModel";
+    export let model;
 
     // Props training
-    let batchSize = 32; // Neuronen min 32 max 512
-    let epochs = 10; // Trainings Epochen 50 iterations
-    let hiddenLayerCount = 1; // Anzahl der hidden Layer
-    let activationFunction = "none";
-    let selectedOptimizer = "sgd"; // Optimizer
-    let learningRate = 0.001; // Lernrate
-    let neuronCount = 1;
+    export let showTraining = true;
+    export let chart = undefined;
+    export let batchSize = 32; // Neuronen min 32 max 512
+    export let epochs = 10; // Trainings Epochen 50 iterations
+    export let hiddenLayerCount = 1; // Anzahl der hidden Layer
+    export let minWeight = 0;
+    export let maxWeight = 1;
+    export let activationFunction = "none";
+    export let selectedOptimizer = "sgd"; // Optimizer
+    export let learningRate = 0.001; // Lernrate
+    export let neuronCount = 1;
 
     const activationList = [
         "none",
@@ -59,11 +60,13 @@
 
     // lifecycle functions
     onMount(async () => {
-        if (!model && modelName) {
-            model = loadModel(modelName);
-        } else {
-            initModel();
+        try {
+            model = await loadModel(modelName);
+        } catch (error) {
+            console.warn(error);
         }
+
+        if (!model) model = createModel();
     });
 
     // functions
@@ -75,7 +78,7 @@
 
         let weights = [
             tf.randomUniform([1, neuronCount], 0, 1),
-            tf.randomUniform([neuronCount], 0, 1),
+            tf.randomUniform([neuronCount], minWeight, maxWeight),
         ];
 
         // Add a input layer
@@ -193,27 +196,21 @@
         });
     };
 
-    // Model
-    export function initModel() {
-        model = createModel();
-        saveModel(model);
-    }
-
     // Train
-    export async function train() {
+    export async function train(data) {
         dispatch("training", true);
+
+        // create model with new parms
+        model = createModel();
+
+        // set training data
+        trainingData = data;
 
         // Convert the data to a form we can use for training.
         const tensorData = prepareData(trainingData);
         const { inputs, labels } = tensorData;
 
         // Train the model
-        await trainModel(model, inputs, labels);
-        saveModel(model, modelName);
-        dispatch("training", false);
-    }
-
-    let trainModel = async (model, inputs, labels) => {
         const optimizer = getOptimizer(selectedOptimizer, learningRate);
 
         // Prepare the model for training.
@@ -223,12 +220,12 @@
             metrics: ["mse"],
         });
 
-        return await model.fit(inputs, labels, {
+        await model.fit(inputs, labels, {
             batchSize,
             epochs,
             shuffle: true,
-            callbacks: tfvis.show.fitCallbacks(
-                trainChart,
+            callbacks: showTraining ? tfvis.show.fitCallbacks(
+                chart ? chart : { name: "Training Performance" },
                 ["val_loss", "loss", "val_mse", "mse"],
                 {
                     yAxisDomain: [0, 0.1],
@@ -236,89 +233,44 @@
                     width: 400,
                     callbacks: ["onEpochEnd"],
                 }
-            ),
+            ) : undefined
         });
-    };
 
-    // Predict
-    export async function predict(data) {
-        dispatch("predicting", true);
-
-        // Convert the data to a form we can use for training.
-        const tensorData = prepareData(data);
-
-        // Make some predictions using the model and compare them to the
-        // original data
-        testModel(model, data, tensorData);
-        dispatch("predicting", false);
+        saveModel(model, modelName);
+        dispatch("training", false);
     }
 
-    let testModel = (model, inputData, normalizationData) => {
-        const { inputs, inputMax, inputMin, labelMin, labelMax } =
-            normalizationData;
+    // Predict
+    export async function predict(inputData) {
+        dispatch("predicting", true);
+
+        const normalizationData = prepareData(inputData);
+        const { inputMax, inputMin, labelMin, labelMax } = normalizationData;
+
+        const inputs = inputData.map((d) => d.x);
+        const inputTensor = tf.tensor2d(inputs, [inputs.length, 1]);
+
+        const normalizedInputs = inputTensor
+            .sub(inputMin)
+            .div(inputMax.sub(inputMin));
 
         const [x, y] = tf.tidy(() => {
-            // const aInputX = inputData.map((d) => d.x);
-            // const xs = tf.tensor2d(aInputX, [aInputX.length, 1]);
-            // const yun = model.predict(x);
-            const ys = model.predict(inputs);
+            const ys = model.predict(normalizedInputs);
 
-            const unNormXs = inputs.mul(inputMax.sub(inputMin)).add(inputMin);
+            const unNormXs = normalizedInputs
+                .mul(inputMax.sub(inputMin))
+                .add(inputMin);
             const unNormPreds = ys.mul(labelMax.sub(labelMin)).add(labelMin);
 
             // Un-normalize the data
             return [unNormXs.dataSync(), unNormPreds.dataSync()];
         });
 
-        // const aInputX = inputData.map((d) => d.x);
-        // const xTensor = tf.tensor2d(aInputX, [aInputX.length, 1]);
-        // const yTensor = model.predict(xTensor);
-
-        // const x = xTensor.dataSync();
-        // const y = yTensor.dataSync();
-
-        // console.log(x);
-        // console.log(y);
-
-        const predictedPoints = Array.from(x).map((val, i) => {
+        const predictedPoints = await Array.from(x).map((val, i) => {
             return { x: val, y: y[i] };
         });
 
-        const originalPoints = inputData.map((d) => ({
-            x: d.x,
-            y: d.y,
-        }));
-
-        tfvis.render.scatterplot(
-            predictChart,
-            {
-                values: [originalPoints, predictedPoints],
-                series: ["original", "predicted"],
-            },
-            {
-                xLabel: "X",
-                yLabel: "Y",
-                height: 400,
-                width: 600,
-            }
-        );
-    };
+        dispatch("predicting", false);
+        return predictedPoints;
+    }
 </script>
-
-<style>
-    .grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-        column-gap: 20px;
-        row-gap: 20px;
-        justify-items: center;
-    }
-
-    .prediction-grid {
-        min-height: 300px;
-    }
-
-    .settings {
-        width: 300px;
-    }
-</style>

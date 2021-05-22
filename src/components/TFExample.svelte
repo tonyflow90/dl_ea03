@@ -5,10 +5,6 @@
   // svelte
   import { onMount } from "svelte";
 
-  // libraries
-  // import * as tf from "@tensorflow/tfjs";
-  // import * as tfvis from "@tessorflow/tfjs-vis";
-
   // Props
 
   // Data
