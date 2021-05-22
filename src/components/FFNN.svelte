@@ -18,6 +18,7 @@
 
     // Texts & Labels
     let labelDatasets = "Datasets";
+    let labelNeurons = "Neurons";
     let labelFFNN = "Training & Prediction";
     let labelSettinngs = "Settings";
     let labelTraining = "Training";
@@ -49,15 +50,16 @@
     let labelTrainingDatasetSize = "training dataset size";
 
     let trainingDatasetSize = 1000;
-    let batchSize = 100; // Neuronen min 32 max 512
-    let epochs = 200; // Trainings Epochen 50 iterations
+    let batchSize = 32; // Neuronen min 32 max 512
+    let epochs = 50; // Trainings Epochen 50 iterations
     let hiddenLayerCount = 25; // Anzahl der hidden Layer
-    let stepWeight = .001
+    let stepWeight = 0.01;
     let minWeight = 0;
-    let maxWeight = .2;
+    let maxWeight = 1;
     let activationFunction = "none";
     let selectedOptimizer = "sgd"; // Optimizer
     let learningRate = 0.001; // Lernrate
+    let neuronCount = 5;
 
     const activationList = [
         "none",
@@ -111,12 +113,12 @@
 
     // lifecycle functions
     onMount(async () => {
-        trainingData = getTrainingData(trainingDatasetSize);
+        trainingData = getTrainingData(trainingDatasetSize, -1.8, 1.8);
         showData(trainingDataChart, trainingData);
 
-        dataset1 = getRandomData1(0.1, 0.3);
-        dataset2 = getRandomData2(0.4, 0.6);
-        dataset3 = getRandomData3(0.7, 1);
+        dataset1 = getRandomData(1, 10);
+        dataset2 = getRandomData(25, 50);
+        dataset3 = getRandomData(80, 120);
         showData(datasetChart1, dataset1);
         showData(datasetChart2, dataset2);
         showData(datasetChart3, dataset3);
@@ -137,15 +139,15 @@
         let model = tf.sequential();
 
         let weights = [
-            tf.randomUniform([1, hiddenLayerCount], 1, 1),
-            tf.randomUniform([hiddenLayerCount], minWeight, maxWeight),
+            tf.randomUniform([1, neuronCount], 0, 1),
+            tf.randomUniform([neuronCount], 0, 1),
         ];
 
-        // Add a single input layer
+        // Add a input layer
         let inputConfig = {
-            name: "hiddenlayer",
+            name: "inputlayer",
             inputShape: [1],
-            units: hiddenLayerCount,
+            units: neuronCount,
             weights: weights,
             useBias: true,
         };
@@ -155,16 +157,27 @@
         let layer = tf.layers.dense(inputConfig);
         model.add(layer);
 
+        // Add a hidden layer
+        let hiddenConfig = {
+            name: "hiddenlayer",
+            units: neuronCount,
+            // weights: weights,
+            useBias: true,
+        };
+        if (activationFunction != "none")
+            inputConfig.activation = activationFunction;
+
+        let hiddenLayer = tf.layers.dense(hiddenConfig);
+        for (let i = 0; i < hiddenLayerCount; i++) {
+            model.add(hiddenLayer);
+        }
+
         // Add an output layer
         let outputConfig = {
             units: 1,
             useBias: true,
         };
         model.add(tf.layers.dense(outputConfig));
-
-        // model.weights.forEach((w) => {
-        //     console.log(w.name, w.shape, w.read().dataSync());
-        // });
 
         return model;
     };
@@ -210,9 +223,12 @@
     };
 
     // Data
-    let getTrainingData = (nCount = 100) => {
+    let getTrainingData = (nCount = 100, nMin = -1, nMax = 1) => {
         let dataArray = [];
-        for (let i = 0; i < nCount; i++) dataArray.push({ x: i, y: calcY(i) });
+        for (let i = 0; i < nCount; i++) {
+            let x = Math.random() * (nMax - nMin) + nMin;
+            dataArray.push({ x: x, y: calcY(x) });
+        }
         return dataArray;
     };
 
@@ -232,31 +248,11 @@
         return ys.dataSync();
     };
 
-    let getRandomData1 = (nMin, nMax) => {
+    let getRandomData = (nMin, nMax) => {
         let dataArray = [];
-        for (let i = 0; i < 1; i += 0.01) {
-            let x = Math.random() * (nMax - nMin) + nMin;
-            let y = calcY(x); // + Math.random() * (nMax - nMin) + nMin;
-            dataArray.push({ x: x, y: y });
-        }
-        return dataArray;
-    };
-
-    let getRandomData2 = (nMin, nMax) => {
-        let dataArray = [];
-        for (let i = 0; i < 1; i += 0.01) {
-            let x = i; // Math.random() * (nMax - nMin) + nMin;
-            let y = Math.sqrt(x) - 0.1 * x * 2;
-            dataArray.push({ x: x, y: y });
-        }
-        return dataArray;
-    };
-
-    let getRandomData3 = (nMin, nMax) => {
-        let dataArray = [];
-        for (let i = 0; i < 1; i += 0.01) {
-            let x = i; // Math.random() * (nMax - nMin) + nMin;
-            let y = x * x * x * -0.9 + 1 * x;
+        for (let i = nMin; i < nMax; i++) {
+            let x = i;
+            let y = calcY(x);
             dataArray.push({ x: x, y: y });
         }
         return dataArray;
@@ -339,54 +335,21 @@
             metrics: ["mse"],
         });
 
-        // return await model.fit(inputs, labels, {
-        //     batchSize,
-        //     epochs,
-        //     shuffle: true,
-        //     callbacks: tfvis.show.fitCallbacks(trainChart, ["loss", "mse"], {
-        //         height: 200,
-        //         width: 400,
-        //         callbacks: ["onEpochEnd"],
-        //     }),
-        // });
-
-        await model.fit(inputs, labels, {
+        return await model.fit(inputs, labels, {
             batchSize,
             epochs,
             shuffle: true,
-            validationSplit: 0.2,
-            validationData: labels,
             callbacks: tfvis.show.fitCallbacks(
                 trainChart,
                 ["val_loss", "loss", "val_mse", "mse"],
                 {
+                    yAxisDomain: [0,.1],
                     height: 200,
                     width: 400,
                     callbacks: ["onEpochEnd"],
                 }
             ),
         });
-
-        // const hiddenLayer = model.getLayer("hiddenlayer");
-        // const [weights, biases] = hiddenLayer.getWeights(true);
-        // debugger
-        // console.log(weights.shape);
-        // console.log(biases.shape);
-
-        return model;
-
-        // return await model.fit(inputs, labels, {
-        //     batchSize,
-        //     epochs,
-        //     shuffle: true,
-        //     validationSplit: 0.2,
-        //     callbacks: {
-        //         onEpochEnd: async (epoch, logs) => {
-        //             debugger;
-        //             showData(trainChart, epoch);
-        //         }
-        //     }
-        // })
     };
 
     // Predict
@@ -402,6 +365,7 @@
 
         // Convert the data to a form we can use for training.
         const tensorData = prepareData(data);
+        const { inputs } = tensorData;
 
         // Make some predictions using the model and compare them to the
         // original data
@@ -410,26 +374,43 @@
     }
 
     let testModel = (model, inputData, normalizationData) => {
-        const {
-            inputs,
-            labels,
-            inputMax,
-            inputMin,
-            labelMin,
-            labelMax,
-        } = normalizationData;
+        const { inputs, inputMax, inputMin, labelMin, labelMax } =
+            normalizationData;
 
         const [x, y] = tf.tidy(() => {
-            const x = inputs;
-            const y = model.predict(x.reshape([x.size, 1]));
+            const xInputs = inputData.map((d) => d.x);
+            const x = tf.tensor2d(xInputs, [xInputs.length, 1]);
+            const yun = model.predict(x);
+            const y = model.predict(inputs);
 
-            const unNormXs = x.mul(inputMax.sub(inputMin)).add(inputMin);
+            // const x = inputData;
+            // const y = model.predict(x.reshape([x.size, 1]));
 
+            const unNormXs = inputs.mul(inputMax.sub(inputMin)).add(inputMin);
             const unNormPreds = y.mul(labelMax.sub(labelMin)).add(labelMin);
+
+            // console.log(x.dataSync())
+            // console.log(inputs.dataSync())
+            // console.log(unNormXs.dataSync())
+
+            console.log(inputData.map((d) => d.y));
+            console.log(yun.dataSync());
+            console.log(y.dataSync());
+            console.log(unNormPreds.dataSync());
 
             // Un-normalize the data
             return [unNormXs.dataSync(), unNormPreds.dataSync()];
         });
+
+        // const xInputs = inputData.map((d) => d.x);
+        // const xTensor = tf.tensor2d(xInputs, [xInputs.length, 1]);
+        // const yTensor = model.predict(xTensor);
+
+        // const x = xTensor.dataSync();
+        // const y = yTensor.dataSync();
+
+        // console.log(x);
+        // console.log(y);
 
         const predictedPoints = Array.from(x).map((val, i) => {
             return { x: val, y: y[i] };
@@ -499,6 +480,15 @@
                 disabled={running || training}
             />
 
+            <h6 class="pt-6 pb-4">{labelNeurons}: {neuronCount}</h6>
+            <Slider
+                min="1"
+                step="1"
+                max="1000"
+                bind:value={neuronCount}
+                disabled={running || training}
+            />
+
             <h6 class="pt-6 pb-4">{labelHiddenLayer}: {hiddenLayerCount}</h6>
             <Slider
                 min="1"
@@ -521,7 +511,7 @@
             <Slider
                 min={minWeight}
                 step={stepWeight}
-                max=.1
+                max="1"
                 bind:value={maxWeight}
                 disabled={running || training}
             />
