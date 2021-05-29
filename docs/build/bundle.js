@@ -11454,7 +11454,7 @@ var app = (function () {
     	return block;
     }
 
-    // (342:0) <Snackbar   bind:value={showSnackbar}   noAction   color={snackbarColor}   timeout={snackbarTimeout}  >
+    // (344:0) <Snackbar   bind:value={showSnackbar}   noAction   color={snackbarColor}   timeout={snackbarTimeout}  >
     function create_default_slot_1(ctx) {
     	let div;
     	let t;
@@ -11463,8 +11463,8 @@ var app = (function () {
     		c: function create() {
     			div = element("div");
     			t = text(/*message*/ ctx[9]);
-    			attr_dev(div, "class", "svelte-yt82fq");
-    			add_location(div, file, 347, 1, 8048);
+    			attr_dev(div, "class", "svelte-o2brrh");
+    			add_location(div, file, 349, 1, 8080);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -11482,14 +11482,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_1.name,
     		type: "slot",
-    		source: "(342:0) <Snackbar   bind:value={showSnackbar}   noAction   color={snackbarColor}   timeout={snackbarTimeout}  >",
+    		source: "(344:0) <Snackbar   bind:value={showSnackbar}   noAction   color={snackbarColor}   timeout={snackbarTimeout}  >",
     		ctx
     	});
 
     	return block;
     }
 
-    // (350:2) <Button on:click={() => (showSnackbar = false)}>
+    // (352:2) <Button on:click={() => (showSnackbar = false)}>
     function create_default_slot(ctx) {
     	let t;
 
@@ -11509,14 +11509,14 @@ var app = (function () {
     		block,
     		id: create_default_slot.name,
     		type: "slot",
-    		source: "(350:2) <Button on:click={() => (showSnackbar = false)}>",
+    		source: "(352:2) <Button on:click={() => (showSnackbar = false)}>",
     		ctx
     	});
 
     	return block;
     }
 
-    // (349:1) 
+    // (351:1) 
     function create_action_slot(ctx) {
     	let div;
     	let button;
@@ -11537,8 +11537,8 @@ var app = (function () {
     			div = element("div");
     			create_component(button.$$.fragment);
     			attr_dev(div, "slot", "action");
-    			attr_dev(div, "class", "svelte-yt82fq");
-    			add_location(div, file, 348, 1, 8071);
+    			attr_dev(div, "class", "svelte-o2brrh");
+    			add_location(div, file, 350, 1, 8103);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -11573,7 +11573,7 @@ var app = (function () {
     		block,
     		id: create_action_slot.name,
     		type: "slot",
-    		source: "(349:1) ",
+    		source: "(351:1) ",
     		ctx
     	});
 
@@ -11642,25 +11642,29 @@ var app = (function () {
     	let t30;
     	let div4;
     	let t31;
-    	let h31;
+    	let br2;
+    	let t32;
+    	let br3;
     	let t33;
     	let div7;
+    	let h31;
+    	let t35;
     	let zero_md;
     	let zero_md_src_value;
-    	let t34;
+    	let t36;
     	let snackbar;
     	let updating_value_1;
-    	let t35;
+    	let t37;
     	let footer;
     	let div8;
     	let h57;
-    	let t37;
+    	let t39;
     	let a0;
     	let p0;
-    	let t39;
+    	let t41;
     	let a1;
     	let p1;
-    	let t41;
+    	let t43;
     	let a2;
     	let p2;
     	let current;
@@ -11944,99 +11948,107 @@ var app = (function () {
     			t30 = space();
     			div4 = element("div");
     			t31 = space();
-    			h31 = element("h3");
-    			h31.textContent = `${/*labelDocumentation*/ ctx[36]}`;
+    			br2 = element("br");
+    			t32 = space();
+    			br3 = element("br");
     			t33 = space();
     			div7 = element("div");
-    			zero_md = element("zero-md");
-    			t34 = space();
-    			create_component(snackbar.$$.fragment);
+    			h31 = element("h3");
+    			h31.textContent = `${/*labelDocumentation*/ ctx[36]}`;
     			t35 = space();
+    			zero_md = element("zero-md");
+    			t36 = space();
+    			create_component(snackbar.$$.fragment);
+    			t37 = space();
     			footer = element("footer");
     			div8 = element("div");
     			h57 = element("h5");
     			h57.textContent = "Ressourcen";
-    			t37 = space();
+    			t39 = space();
     			a0 = element("a");
     			p0 = element("p");
     			p0.textContent = "Github Repository";
-    			t39 = space();
+    			t41 = space();
     			a1 = element("a");
     			p1 = element("p");
     			p1.textContent = "Svelte";
-    			t41 = space();
+    			t43 = space();
     			a2 = element("a");
     			p2 = element("p");
     			p2.textContent = "Smeltejs";
-    			attr_dev(h50, "class", "svelte-yt82fq");
+    			attr_dev(h50, "class", "svelte-o2brrh");
     			add_location(h50, file, 224, 1, 5339);
-    			attr_dev(h30, "class", "svelte-yt82fq");
+    			attr_dev(h30, "class", "svelte-o2brrh");
     			add_location(h30, file, 225, 1, 5379);
-    			attr_dev(header, "class", "svelte-yt82fq");
+    			attr_dev(header, "class", "svelte-o2brrh");
     			add_location(header, file, 223, 0, 5328);
-    			attr_dev(h51, "class", "pb-4 svelte-yt82fq");
-    			add_location(h51, file, 249, 3, 5838);
-    			attr_dev(div0, "class", "svelte-yt82fq");
+    			attr_dev(h51, "class", "pb-4 svelte-o2brrh");
+    			add_location(h51, file, 249, 3, 5855);
+    			attr_dev(div0, "class", "settings svelte-o2brrh");
     			add_location(div0, file, 248, 2, 5828);
-    			attr_dev(h52, "class", "pb-4 svelte-yt82fq");
-    			add_location(h52, file, 266, 3, 6186);
+    			attr_dev(h52, "class", "pb-4 svelte-o2brrh");
+    			add_location(h52, file, 266, 3, 6203);
     			attr_dev(div1, "id", "train_chart");
-    			attr_dev(div1, "class", "svelte-yt82fq");
-    			add_location(div1, file, 286, 3, 6642);
-    			attr_dev(div2, "class", "svelte-yt82fq");
-    			add_location(div2, file, 265, 2, 6176);
-    			attr_dev(h53, "class", "pb-4 svelte-yt82fq");
-    			add_location(h53, file, 290, 3, 6715);
-    			attr_dev(h54, "class", "pt-6 pb-4 svelte-yt82fq");
-    			add_location(h54, file, 294, 3, 6820);
-    			attr_dev(br0, "class", "svelte-yt82fq");
-    			add_location(br0, file, 310, 3, 7215);
-    			attr_dev(h55, "class", "pt-6 pb-4 svelte-yt82fq");
-    			add_location(h55, file, 312, 3, 7228);
-    			attr_dev(br1, "class", "svelte-yt82fq");
-    			add_location(br1, file, 328, 3, 7624);
-    			attr_dev(h56, "class", "pt-6 pb-4 svelte-yt82fq");
-    			add_location(h56, file, 330, 3, 7637);
+    			attr_dev(div1, "class", "svelte-o2brrh");
+    			add_location(div1, file, 286, 3, 6659);
+    			attr_dev(div2, "class", "svelte-o2brrh");
+    			add_location(div2, file, 265, 2, 6193);
+    			attr_dev(h53, "class", "pb-4 svelte-o2brrh");
+    			add_location(h53, file, 290, 3, 6732);
+    			attr_dev(h54, "class", "pt-6 pb-4 svelte-o2brrh");
+    			add_location(h54, file, 294, 3, 6837);
+    			attr_dev(br0, "class", "svelte-o2brrh");
+    			add_location(br0, file, 310, 3, 7232);
+    			attr_dev(h55, "class", "pt-6 pb-4 svelte-o2brrh");
+    			add_location(h55, file, 312, 3, 7245);
+    			attr_dev(br1, "class", "svelte-o2brrh");
+    			add_location(br1, file, 328, 3, 7641);
+    			attr_dev(h56, "class", "pt-6 pb-4 svelte-o2brrh");
+    			add_location(h56, file, 330, 3, 7654);
     			attr_dev(div3, "id", "trainingDataChart");
-    			attr_dev(div3, "class", "svelte-yt82fq");
-    			add_location(div3, file, 331, 3, 7692);
+    			attr_dev(div3, "class", "svelte-o2brrh");
+    			add_location(div3, file, 331, 3, 7709);
     			attr_dev(div4, "id", "predictionDataChart");
-    			attr_dev(div4, "class", "svelte-yt82fq");
-    			add_location(div4, file, 332, 3, 7757);
-    			attr_dev(div5, "class", "svelte-yt82fq");
-    			add_location(div5, file, 289, 2, 6705);
-    			attr_dev(div6, "class", "grid svelte-yt82fq");
+    			attr_dev(div4, "class", "svelte-o2brrh");
+    			add_location(div4, file, 332, 3, 7774);
+    			attr_dev(div5, "class", "svelte-o2brrh");
+    			add_location(div5, file, 289, 2, 6722);
+    			attr_dev(div6, "class", "grid svelte-o2brrh");
     			add_location(div6, file, 229, 1, 5423);
-    			attr_dev(h31, "class", "svelte-yt82fq");
-    			add_location(h31, file, 335, 1, 7843);
+    			attr_dev(br2, "class", "svelte-o2brrh");
+    			add_location(br2, file, 335, 1, 7860);
+    			attr_dev(br3, "class", "svelte-o2brrh");
+    			add_location(br3, file, 336, 1, 7867);
+    			attr_dev(h31, "class", "svelte-o2brrh");
+    			add_location(h31, file, 338, 2, 7896);
     			if (zero_md.src !== (zero_md_src_value = /*mdUrl*/ ctx[37])) set_custom_element_data(zero_md, "src", zero_md_src_value);
-    			set_custom_element_data(zero_md, "class", "svelte-yt82fq");
-    			add_location(zero_md, file, 337, 2, 7897);
-    			attr_dev(div7, "class", "grid svelte-yt82fq");
-    			add_location(div7, file, 336, 1, 7875);
-    			attr_dev(main, "class", "svelte-yt82fq");
+    			set_custom_element_data(zero_md, "class", "svelte-o2brrh");
+    			add_location(zero_md, file, 339, 2, 7929);
+    			attr_dev(div7, "class", "docu svelte-o2brrh");
+    			add_location(div7, file, 337, 1, 7874);
+    			attr_dev(main, "class", "svelte-o2brrh");
     			add_location(main, file, 228, 0, 5414);
-    			attr_dev(h57, "class", "svelte-yt82fq");
-    			add_location(h57, file, 355, 2, 8202);
-    			attr_dev(p0, "class", "svelte-yt82fq");
-    			add_location(p0, file, 357, 3, 8278);
+    			attr_dev(h57, "class", "svelte-o2brrh");
+    			add_location(h57, file, 357, 2, 8234);
+    			attr_dev(p0, "class", "svelte-o2brrh");
+    			add_location(p0, file, 359, 3, 8310);
     			attr_dev(a0, "href", "https://github.com/tonyflow90/dl_ea03");
-    			attr_dev(a0, "class", "svelte-yt82fq");
-    			add_location(a0, file, 356, 2, 8225);
-    			attr_dev(p1, "class", "svelte-yt82fq");
-    			add_location(p1, file, 360, 3, 8349);
+    			attr_dev(a0, "class", "svelte-o2brrh");
+    			add_location(a0, file, 358, 2, 8257);
+    			attr_dev(p1, "class", "svelte-o2brrh");
+    			add_location(p1, file, 362, 3, 8381);
     			attr_dev(a1, "href", "https://svelte.dev/");
-    			attr_dev(a1, "class", "svelte-yt82fq");
-    			add_location(a1, file, 359, 2, 8314);
-    			attr_dev(p2, "class", "svelte-yt82fq");
-    			add_location(p2, file, 363, 3, 8411);
+    			attr_dev(a1, "class", "svelte-o2brrh");
+    			add_location(a1, file, 361, 2, 8346);
+    			attr_dev(p2, "class", "svelte-o2brrh");
+    			add_location(p2, file, 365, 3, 8443);
     			attr_dev(a2, "href", "https://smeltejs.com/");
-    			attr_dev(a2, "class", "svelte-yt82fq");
-    			add_location(a2, file, 362, 2, 8374);
-    			attr_dev(div8, "class", "svelte-yt82fq");
-    			add_location(div8, file, 354, 1, 8193);
-    			attr_dev(footer, "class", "svelte-yt82fq");
-    			add_location(footer, file, 353, 0, 8182);
+    			attr_dev(a2, "class", "svelte-o2brrh");
+    			add_location(a2, file, 364, 2, 8406);
+    			attr_dev(div8, "class", "svelte-o2brrh");
+    			add_location(div8, file, 356, 1, 8225);
+    			attr_dev(footer, "class", "svelte-o2brrh");
+    			add_location(footer, file, 355, 0, 8214);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -12097,23 +12109,27 @@ var app = (function () {
     			append_dev(div5, div4);
     			/*div4_binding*/ ctx[59](div4);
     			append_dev(main, t31);
-    			append_dev(main, h31);
+    			append_dev(main, br2);
+    			append_dev(main, t32);
+    			append_dev(main, br3);
     			append_dev(main, t33);
     			append_dev(main, div7);
+    			append_dev(div7, h31);
+    			append_dev(div7, t35);
     			append_dev(div7, zero_md);
-    			insert_dev(target, t34, anchor);
+    			insert_dev(target, t36, anchor);
     			mount_component(snackbar, target, anchor);
-    			insert_dev(target, t35, anchor);
+    			insert_dev(target, t37, anchor);
     			insert_dev(target, footer, anchor);
     			append_dev(footer, div8);
     			append_dev(div8, h57);
-    			append_dev(div8, t37);
+    			append_dev(div8, t39);
     			append_dev(div8, a0);
     			append_dev(a0, p0);
-    			append_dev(div8, t39);
+    			append_dev(div8, t41);
     			append_dev(div8, a1);
     			append_dev(a1, p1);
-    			append_dev(div8, t41);
+    			append_dev(div8, t43);
     			append_dev(div8, a2);
     			append_dev(a2, p2);
     			current = true;
@@ -12344,9 +12360,9 @@ var app = (function () {
     			destroy_component(button2);
     			/*div3_binding*/ ctx[58](null);
     			/*div4_binding*/ ctx[59](null);
-    			if (detaching) detach_dev(t34);
+    			if (detaching) detach_dev(t36);
     			destroy_component(snackbar, detaching);
-    			if (detaching) detach_dev(t35);
+    			if (detaching) detach_dev(t37);
     			if (detaching) detach_dev(footer);
     		}
     	};

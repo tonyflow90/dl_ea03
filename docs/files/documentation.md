@@ -9,7 +9,7 @@ Initialisierung der Gewichte
 Aktivierungsfunktionen
 Lernrate und Optimizer 
 Anzahl der Trainings Epochs
-Was ist das beste Ergebnis dass Sie erzielen können?  Dokumentieren und begründen Sie Ihre Parameter und Einstellungen. Erklären Sie in diesem Zusammenhang die Begriffe Bias und Variance. Stellen Sie Ihre Ergebnisse übersichtlich auf einer Webseite da.
+Was ist das beste Ergebnis dass Sie erzielen können?  Dokumentieren und begründen Sie Ihre Parameter und Einstellungen. Erklären Sie in diesem Zusammenhang die Begriffe Bias und Variance. 
 
 ### ***Reellwertigen Funktion*** 
 ![alt text](./../images/wa_plot.PNG "Wolfram Alpha Plot")
@@ -19,7 +19,7 @@ Was ist das beste Ergebnis dass Sie erzielen können?  Dokumentieren und begrün
 * dataset size: Dataset 4 Size: 1000 Range: -1.8 to 1.8
 * batch size: 100
 * epoch: 200
-* neuron count: 1
+* neuron count: 75
 * hidden layer: 25
 * activation: none
 * optimizer: sgd
@@ -69,7 +69,7 @@ Ergebnis ca. .025
 
 ## ***Bias und Variance***
 ### ***Bias***
-Die Verzerrung ist der Fehler ausgehend von falschen Annahmen im Lernalgorithmus. Eine hohe Verzerrung kann einen Algorithmus dazu veranlassen, nicht die entsprechenden Beziehungen zwischen Eingabe und Ausgabe zu modellieren (Unteranpassung).
+Die Bias ist der Fehler ausgehend von falschen Annahmen im Lernalgorithmus. Eine hohe Bias kann dazu führen, dass nicht die entsprechenden Verknüpfungen zwischen Eingabe und Ausgabe hergestellt werden. Daraus folgt Under-Fitting.
 
 ### ***Variance***
 Die Varianz ist der Fehler ausgehend von der Empfindlichkeit auf kleinere Schwankungen in den Trainingsdaten. Eine hohe Varianz verursacht Überanpassung: es wird das Rauschen in den Trainingsdaten statt der vorgesehenen Ausgabe modelliert.
@@ -79,6 +79,22 @@ Die Varianz ist der Fehler ausgehend von der Empfindlichkeit auf kleinere Schwan
 
 Die "Batch size" ist im Zusammenhang mit der Anzahl der Trainingsdaten zu betrachten. Eine zu kleine gewählten "Batch size" kann dazu führen das die "Loss" Funktion größere schwankungen enthält was wiederum dazu führt das der Trainingsprozess mehr Zeit benötigt.
 
+<!-- ## ***Hidden Layer und Neuron***
+
+
+## ***Initialisierung der Gewichte***
+
+
+## ***Aktivierungsfunktionen***
+
+
+## ***Lernrate und Optimizer***
+
+
+## ***Anzahl der Trainings Epochs*** -->
+
+
+<!-- 
 32
 500
 100
@@ -117,19 +133,4 @@ Die "Batch size" ist im Zusammenhang mit der Anzahl der Trainingsdaten zu betrac
 1
 100 0-1.8
 
--> 0.024
-
-
-## ***Hidden Layer und Neuron***
-
-
-## ***Initialisierung der Gewichte***
-
-
-## ***Aktivierungsfunktionen***
-
-
-## ***Lernrate und Optimizer***
-
-
-## ***Anzahl der Trainings Epochs***
+-> 0.024 -->

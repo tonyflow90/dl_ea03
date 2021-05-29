@@ -246,7 +246,7 @@
 			on:training={(e) => (modelIsWorking = e.detail)}
 		/>
 
-		<div>
+		<div class="settings">
 			<h5 class="pb-4">{labelSettings}</h5>
 			<ConfigUI
 				disabled={modelIsWorking}
@@ -333,8 +333,10 @@
 			<div id="predictionDataChart" bind:this={predictionDataChart} />
 		</div>
 	</div>
-	<h3>{labelDocumentation}</h3>
-	<div class="grid">
+	<br>
+	<br>
+	<div class="docu">
+		<h3>{labelDocumentation}</h3>
 		<zero-md src={mdUrl} />
 	</div>
 </main>
@@ -417,9 +419,17 @@
 	.grid * {
 		display: flex;
 		flex-direction: column;
+		/* align-items: center; */
 		width: 100%;
 	}
+	.settings {
+		align-items: center;
+	}
 
+	.docu {
+		align-self: center;
+		max-width: 1000px;
+	}
 	@media (min-width: 640px) {
 		main {
 			max-width: none;
