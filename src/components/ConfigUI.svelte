@@ -63,7 +63,6 @@
 </script>
 
 <div>
-    <h5 class="pb-4">{labelSettings}</h5>
     <div class="settings">
         <h6 class="pt-6 pb-4">{labelBatchSize}: {batchSize}</h6>
         <Slider

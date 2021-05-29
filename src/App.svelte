@@ -5,6 +5,7 @@
 		Tooltip,
 		Slider,
 		Card,
+		TextField,
 		Select,
 		Snackbar,
 		Button,
@@ -22,6 +23,14 @@
 
 	let labelTrainingDataset = "Training Datasets";
 	let labelDataset = "Prediction Datasets";
+	let labelInput = "Prediction input";
+
+	let labelSettings = "Settings";
+	let labelTraining = "Training";
+	let labelPrediction = "Prediction";
+	let labelPredictionDataset = "Dataset";
+	let labelPredictionSingleInput = "Single Input";
+	let labelPredictionResult = "Result";
 
 	// Charts
 	let trainChart, trainingDataChart, predictionDataChart;
@@ -30,6 +39,7 @@
 	let model;
 	let modelName = "FFNN Model";
 	let modelIsWorking = false;
+	let trained = false;
 
 	let showSnackbar = false;
 	let snackbarTimeout = 2000;
@@ -37,8 +47,10 @@
 	let message = "";
 
 	// Data
+	let trainingData100_1, trainingData100_2, trainingData100_3;
 	let trainingData100, trainingData1000, trainingData10000;
 	let dataset1, dataset2, dataset3;
+	let inputSinglePredict = "";
 	let selectedTrainingDataset,
 		selectedDataset = undefined;
 	let trainingDatasets,
@@ -61,30 +73,75 @@
 
 	// lifecycle functions
 	onMount(async () => {
-		trainingData100 = await loadTrainingData(
-			"./data/TrainingData_Size_100.json"
+		trainingData100_1 = await loadTrainingData(
+			"./data/TrainingData_Size_100_Range_-1.8_1.8.json"
 		);
+		trainingData100_2 = await loadTrainingData(
+			"./data/TrainingData_Size_100_Range_-100_100.json"
+		);
+		trainingData100_3 = await loadTrainingData(
+			"./data/TrainingData_Size_100_Range_0_1.8.json"
+		);
+
 		trainingData1000 = await loadTrainingData(
-			"./data/TrainingData_Size_1000.json"
+			"./data/TrainingData_Size_1000_Range_-1.8_1.8.json"
 		);
 		trainingData10000 = await loadTrainingData(
-			"./data/TrainingData_Size_10000.json"
+			"./data/TrainingData_Size_10000_Range_-1.8_1.8.json"
 		);
 
+		let test = await loadTrainingData("./data/test.json");
+
+		let test2 = generateRandomData(1000, -100, 100);
+
 		trainingDatasets = [
-			{ value: 0, text: "Dataset 100", data: trainingData100 },
-			{ value: 1, text: "Dataset 1000", data: trainingData1000 },
-			{ value: 2, text: "Dataset 10000", data: trainingData10000 },
+			{
+				value: 0,
+				text: "Dataset 1 Size: 100 Range: -100 to 100",
+				data: trainingData100_1,
+			},
+			{
+				value: 1,
+				text: "Dataset 2 Size: 100 Range: -1.8 to 1.8",
+				data: trainingData100_2,
+			},
+			{
+				value: 2,
+				text: "Dataset 3 Size: 100 Range: 0 to 1.8",
+				data: trainingData100_3,
+			},
+			{
+				value: 3,
+				text: "Dataset 4 Size: 1000 Range: -1.8 to 1.8",
+				data: trainingData1000,
+			},
+			{
+				value: 4,
+				text: "Dataset 5 Size: 10000 Range: -1.8 to 1.8",
+				data: trainingData10000,
+			},
 		];
 
-		dataset1 = generateRandomData(10, 0, 1.8);
-		dataset2 = generateRandomData(100, -0.5, 0.5);
-		dataset3 = generateRandomData(1000, 0.2, 1.2);
+		dataset1 = generateRandomData(10, -100, 100);
+		dataset2 = generateRandomData(10, -1.8, 1.8);
+		dataset3 = generateRandomData(10, 0, 1.8);
 
 		datasets = [
-			{ value: 0, text: "Dataset 1", data: dataset1 },
-			{ value: 1, text: "Dataset 2", data: dataset2 },
-			{ value: 2, text: "Dataset 3", data: dataset3 },
+			{
+				value: 0,
+				text: "Dataset Size: 100 Range: -100 to 100",
+				data: dataset1,
+			},
+			{
+				value: 1,
+				text: "Dataset Size: 100 Range: -1.8 to 1.8",
+				data: dataset2,
+			},
+			{
+				value: 2,
+				text: "Dataset Size: 100 Range: 0 to 1.8",
+				data: dataset3,
+			},
 		];
 	});
 
@@ -101,7 +158,9 @@
 	}
 
 	let calcY = (x) => {
-		const y = (x + 0.8) * (x - 0.2) * (x - 0.3) * (x - 0.6);
+		let y = (x + 0.8) * (x - 0.2) * (x - 0.3) * (x - 0.6);
+		// let y = (x * x) + 0.6;
+		// const y = (x + 0.8) * (x - 0.2) * (x - 0.3) * (x - 0.6);
 		return y;
 	};
 
@@ -117,16 +176,33 @@
 	// functions
 	let train = async () => {
 		await model.train(selectedTrainingDataset.data);
+		trained = true;
 	};
 
 	let predict = async () => {
-		let predictedData = await model.predict(selectedDataset.data);
-		// console.log(selectedDataset.data);
-		// console.log(predictedData);
+		let predictedData = await model.predict(
+			selectedDataset.data,
+			selectedTrainingDataset.data
+		);
 
 		createChart(
 			predictionDataChart,
 			[selectedDataset.data, predictedData],
+			["original", "predicted"]
+		);
+	};
+
+	let predictSingleInput = async () => {
+		let x = parseFloat(inputSinglePredict);
+		let data = [{ x: x, y: calcY(x) }];
+		let predictedData = await model.predict(
+			data,
+			selectedTrainingDataset.data
+		);
+
+		createChart(
+			predictionDataChart,
+			[data, predictedData],
 			["original", "predicted"]
 		);
 	};
@@ -170,21 +246,25 @@
 			on:training={(e) => (modelIsWorking = e.detail)}
 		/>
 
-		<ConfigUI
-			disabled={modelIsWorking}
-			bind:name={modelName}
-			bind:batchSize
-			bind:epochs
-			bind:minWeight
-			bind:maxWeight
-			bind:hiddenLayerCount
-			bind:activationFunction
-			bind:selectedOptimizer
-			bind:learningRate
-			bind:neuronCount
-		/>
+		<div>
+			<h5 class="pb-4">{labelSettings}</h5>
+			<ConfigUI
+				disabled={modelIsWorking}
+				bind:name={modelName}
+				bind:batchSize
+				bind:epochs
+				bind:minWeight
+				bind:maxWeight
+				bind:hiddenLayerCount
+				bind:activationFunction
+				bind:selectedOptimizer
+				bind:learningRate
+				bind:neuronCount
+			/>
+		</div>
 
 		<div>
+			<h5 class="pb-4">{labelTraining}</h5>
 			{#if modelIsWorking}
 				<ProgressCircular />
 			{/if}
@@ -208,12 +288,15 @@
 		</div>
 
 		<div>
+			<h5 class="pb-4">{labelPrediction}</h5>
 			{#if modelIsWorking}
 				<ProgressCircular />
 			{/if}
+			<h5 class="pt-6 pb-4">{labelPredictionDataset}</h5>
 			<Select
 				label={labelDataset}
 				items={datasets}
+				disabled={!trained || modelIsWorking}
 				on:change={(v) => {
 					selectedDataset = datasets[v.detail];
 				}}
@@ -222,9 +305,30 @@
 				block
 				outlined
 				on:click={predict}
-				disabled={!selectedDataset || modelIsWorking}>predict</Button
+				disabled={!trained || !selectedDataset || modelIsWorking}
+				>predict</Button
 			>
+			<br />
 
+			<h5 class="pt-6 pb-4">{labelPredictionSingleInput}</h5>
+			<TextField
+				label={labelInput}
+				type="number"
+				bind:value={inputSinglePredict}
+				disabled={!trained || modelIsWorking}
+				outlined
+			/>
+			<Button
+				block
+				outlined
+				on:click={predictSingleInput}
+				disabled={!trained ||
+					inputSinglePredict == "" ||
+					modelIsWorking}>predict</Button
+			>
+			<br />
+
+			<h5 class="pt-6 pb-4">{labelPredictionResult}</h5>
 			<div id="trainingDataChart" bind:this={trainingDataChart} />
 			<div id="predictionDataChart" bind:this={predictionDataChart} />
 		</div>
@@ -308,6 +412,12 @@
 		column-gap: 20px;
 		row-gap: 20px;
 		justify-items: center;
+	}
+
+	.grid * {
+		display: flex;
+		flex-direction: column;
+		width: 100%;
 	}
 
 	@media (min-width: 640px) {

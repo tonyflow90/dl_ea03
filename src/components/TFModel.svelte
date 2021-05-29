@@ -60,11 +60,11 @@
 
     // lifecycle functions
     onMount(async () => {
-        try {
-            model = await loadModel(modelName);
-        } catch (error) {
-            console.warn(error);
-        }
+        // try {
+        //     model = await loadModel(modelName);
+        // } catch (error) {
+        //     console.warn(error);
+        // }
 
         if (!model) model = createModel();
     });
@@ -95,6 +95,11 @@
         let layer = tf.layers.dense(inputConfig);
         model.add(layer);
 
+        // weights = [
+        //     tf.randomUniform([1, neuronCount], 0, 1),
+        //     tf.randomUniform([neuronCount], minWeight, maxWeight),
+        // ];
+
         // Add a hidden layer
         let hiddenConfig = {
             name: "hiddenlayer",
@@ -105,8 +110,9 @@
         if (activationFunction != "none")
             inputConfig.activation = activationFunction;
 
-        let hiddenLayer = tf.layers.dense(hiddenConfig);
         for (let i = 0; i < hiddenLayerCount; i++) {
+            hiddenConfig.name = "hiddenlayer_" + i;
+            let hiddenLayer = tf.layers.dense(hiddenConfig);
             model.add(hiddenLayer);
         }
 
@@ -224,24 +230,135 @@
             batchSize,
             epochs,
             shuffle: true,
-            callbacks: showTraining ? tfvis.show.fitCallbacks(
-                chart ? chart : { name: "Training Performance" },
-                ["val_loss", "loss", "val_mse", "mse"],
-                {
-                    yAxisDomain: [0, 0.1],
-                    height: 200,
-                    width: 400,
-                    callbacks: ["onEpochEnd"],
-                }
-            ) : undefined
+            callbacks: showTraining
+                ? tfvis.show.fitCallbacks(
+                      chart ? chart : { name: "Training Performance" },
+                      ["val_loss", "loss", "val_mse", "mse"],
+                      {
+                          yAxisDomain: [0, 0.1],
+                          height: 200,
+                          width: 400,
+                          callbacks: ["onEpochEnd"],
+                      }
+                  )
+                : undefined,
         });
 
-        saveModel(model, modelName);
+        // saveModel(model, modelName);
         dispatch("training", false);
     }
 
     // Predict
-    export async function predict(inputData) {
+    // export async function predict(inputData) {
+    //     dispatch("predicting", true);
+
+    //     const normalizationData = prepareData(inputData);
+    //     const { inputMax, inputMin, labelMin, labelMax } = normalizationData;
+
+    //     // const points = inputData.map((d) => {
+    //     //     let it = tf.tensor2d([d.x], [1, 1]);
+    //     //     let y = model.predict(it);
+    //     //     return {x: d.x, y: y.dataSync()};
+    //     // });
+
+    //     const [x, y] = tf.tidy(() => {
+    //         let ys = [];
+    //         inputData.forEach(d => {
+    //             let it = tf.tensor2d([d.x], [1, 1]);
+    //             let y = model.predict(it);
+    //             ys.push(y.dataSync()[0])
+    //         });
+    //         debugger;
+    //         return [inputData.map((d) => d.x), ys];
+    //     });
+
+    //     debugger;
+    //     const inputs = inputData.map((d) => d.x);
+
+    //     Array.from(inputs)
+    //     const inputTensor = tf.tensor2d(inputs, [inputs.length, 1]);
+
+    //     // const normalizedInputs = inputTensor;
+    //     // .sub(inputMin)
+    //     // .div(inputMax.sub(inputMin));
+
+    //     // const [x, y] = tf.tidy(() => {
+    //     //     debugger;
+    //     //     const ys = model.predict(inputTensor);
+    //     //     return [inputTensor.dataSync(), ys.dataSync()];
+    //     // });
+
+    //     // let points = Array.from(inputTensor.dataSync()).map((val, i) => {
+    //     //     return { x: val, y: model.predict(val) };
+    //     // });
+
+    //     const predictedPoints = await Array.from(x).map((val, i) => {
+    //         return { x: val, y: y[i] };
+    //     });
+
+    //     dispatch("predicting", false);
+    //     return predictedPoints;
+    // }
+
+    // // Predict
+    // export async function predict(inputData) {
+    //     dispatch("predicting", true);
+
+    //     const normalizationData = prepareData(inputData);
+    //     const { inputMax, inputMin, labelMin, labelMax } = normalizationData;
+
+    //     const inputs = inputData.map((d) => d.x);
+    //     const inputTensor = tf.tensor2d(inputs, [inputs.length, 1]);
+
+    //     const [x, y] = tf.tidy(() => {
+    //         const ys = model.predict(inputTensor);
+    //         return [inputTensor.dataSync(), ys.dataSync()];
+    //     });
+
+    //     const predictedPoints = await Array.from(x).map((val, i) => {
+    //         return { x: val, y: y[i] };
+    //     });
+
+    //     dispatch("predicting", false);
+    //     return predictedPoints;
+    // }
+
+    // Predict
+    export async function predict(inputData, trainingData) {
+        dispatch("predicting", true);
+
+        const normalizationData = prepareData(trainingData);
+        const { inputMax, inputMin, labelMin, labelMax } = normalizationData;
+
+        const inputs = inputData.map((d) => d.x);
+        const inputTensor = tf.tensor2d(inputs, [inputs.length, 1]);
+
+        const normalizedInputs = inputTensor
+            .sub(inputMin)
+            .div(inputMax.sub(inputMin));
+
+        const [x, y] = tf.tidy(() => {
+            const ys = model.predict(normalizedInputs);
+
+            const unNormXs = normalizedInputs
+                .mul(inputMax.sub(inputMin))
+                .add(inputMin);
+            const unNormPreds = ys.mul(labelMax.sub(labelMin)).add(labelMin);
+
+            // Un-normalize the data
+            return [unNormXs.dataSync(), unNormPreds.dataSync()];
+        });
+
+        const predictedPoints = await Array.from(x).map((val, i) => {
+            return { x: val, y: y[i] };
+        });
+
+        dispatch("predicting", false);
+        return predictedPoints;
+    }
+
+    // Predict
+    export async function predict2(inputData) {
         dispatch("predicting", true);
 
         const normalizationData = prepareData(inputData);
