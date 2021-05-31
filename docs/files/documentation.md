@@ -40,18 +40,6 @@ Under-Fitting kann auftreten wenn relevante Daten/Variablen beim Training nicht 
 * optimizer: sgd
 * learning rate: .001
 
-<!-- ### ***Parameter:***
-* trainings dataset: Dataset 3 Size: 100 Range: 0 to 1.8
-* batch size: 32
-* epoch: 50
-* neuron count: 1
-* hidden layer: 1
-* activation: none
-* optimizer: sgd
-* learning rate: .001
-
-Ergebnis ca. .195 -->
-
 ## ***Over-Fitting***
 Overfitting bezeichnet eine bestimmte Korrektur eines Modells an einen vorgegebenen Datensatz. In der Statistik bedeutet Überanpassung die Spezifizierung eines Modells, das zu viele erklärende Variablen enthält
 
@@ -78,59 +66,3 @@ Die Varianz ist der Fehler ausgehend von der Empfindlichkeit auf kleinere Schwan
 ## ***Batch size***
 
 Die "Batch size" ist im Zusammenhang mit der Anzahl der Trainingsdaten zu betrachten. Eine zu kleine gewählten "Batch size" kann dazu führen das die "Loss" Funktion größere schwankungen enthält was wiederum dazu führt das der Trainingsprozess mehr Zeit benötigt.
-
-<!-- ## ***Hidden Layer und Neuron***
-
-
-## ***Initialisierung der Gewichte***
-
-
-## ***Aktivierungsfunktionen***
-
-
-## ***Lernrate und Optimizer***
-
-
-## ***Anzahl der Trainings Epochs*** -->
-
-
-<!-- 
-32
-500
-100
-25
-0
-1
-100 0-1.8
-
--> ca. 0.025
-
-32
-100
-100
-25
-0
-1
-100 0-1.8
-
--> 0.028
-
-62
-200
-100
-25
-0
-1
-100 0-1.8
-
--> 0.029
-
-102
-700
-100
-25
-0
-1
-100 0-1.8
-
--> 0.024 -->

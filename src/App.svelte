@@ -2,9 +2,6 @@
 	// ui
 	import "smelte/src/tailwind.css";
 	import {
-		Tooltip,
-		Slider,
-		Card,
 		TextField,
 		Select,
 		Snackbar,
@@ -90,10 +87,6 @@
 			"./data/TrainingData_Size_10000_Range_-1.8_1.8.json"
 		);
 
-		let test = await loadTrainingData("./data/test.json");
-
-		let test2 = generateRandomData(1000, -100, 100);
-
 		trainingDatasets = [
 			{
 				value: 0,
@@ -145,12 +138,7 @@
 		];
 	});
 
-	let onError = (e) => {
-		showSnackbar = true;
-		message = e.detail.message;
-		snackbarColor = "error";
-	};
-
+	// functions
 	async function loadTrainingData(url) {
 		const dataResponse = await fetch(url);
 		const data = await dataResponse.json();
@@ -159,8 +147,6 @@
 
 	let calcY = (x) => {
 		let y = (x + 0.8) * (x - 0.2) * (x - 0.3) * (x - 0.6);
-		// let y = (x * x) + 0.6;
-		// const y = (x + 0.8) * (x - 0.2) * (x - 0.3) * (x - 0.6);
 		return y;
 	};
 
@@ -173,7 +159,6 @@
 		return dataArray;
 	};
 
-	// functions
 	let train = async () => {
 		await model.train(selectedTrainingDataset.data);
 		trained = true;
@@ -397,10 +382,8 @@
 	footer {
 		display: grid;
 		grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-		/* position: fixed; */
 		min-height: var(--footer-height);
 		height: 100%;
-		/* width: 100vw; */
 		bottom: 0;
 		background-color: var(--color-secondary-700);
 		text-align: center;
@@ -419,7 +402,6 @@
 	.grid * {
 		display: flex;
 		flex-direction: column;
-		/* align-items: center; */
 		width: 100%;
 	}
 	.settings {
