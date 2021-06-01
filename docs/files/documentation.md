@@ -23,7 +23,7 @@ Was ist das beste Ergebnis dass Sie erzielen können?  Dokumentieren und begrün
 * batch size: 100
 * epoch: 200
 * neuron count: 100
-* hidden layer: 10
+* hidden layer: 5
 * activation: relu
 * optimizer: adam
 * learning rate: .01

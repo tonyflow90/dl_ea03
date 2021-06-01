@@ -56,7 +56,7 @@
 	// initial Config
 	let batchSize = 100; // Neuronen min 32 max 512
 	let epochs = 200; // Trainings Epochen 50 iterations
-	let hiddenLayerCount = 10; // Anzahl der hidden Layer
+	let hiddenLayerCount = 5; // Anzahl der hidden Layer
 	let activationFunction = "relu";
 	let selectedOptimizer = "adam"; // Optimizer
 	let learningRate = 0.01; // Lernrate
