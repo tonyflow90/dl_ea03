@@ -41,8 +41,8 @@ Under-Fitting kann auftreten wenn relevante Daten/Variablen beim Training nicht 
 * epoch: 10
 * neuron count: 1
 * hidden layer: 1
-* activation: none
-* optimizer: sgd
+* activation: relu
+* optimizer: adam
 * learning rate: .01
 
 ## ***Over-Fitting***
@@ -55,12 +55,10 @@ Overfitting bezeichnet eine bestimmte Korrektur eines Modells an einen vorgegebe
 * batch size: 32
 * epoch: 500
 * neuron count: 100
-* hidden layer: 25
-* activation: none
-* optimizer: sgd
-* learning rate: .001
-
-Ergebnis ca. .025
+* hidden layer: 5
+* activation: relu
+* optimizer: adam
+* learning rate: .01
 
 ## ***Bias und Variance***
 
