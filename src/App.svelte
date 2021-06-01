@@ -46,7 +46,7 @@
 	// Data
 	let trainingData100_1, trainingData100_2, trainingData100_3;
 	let trainingData100, trainingData1000, trainingData10000;
-	let dataset1, dataset2, dataset3;
+	let dataset1, dataset2, dataset3, dataset4, dataset5;
 	let inputSinglePredict = "";
 	let selectedTrainingDataset,
 		selectedDataset = undefined;
@@ -54,14 +54,14 @@
 		datasets = [];
 
 	// initial Config
-	let batchSize = 32; // Neuronen min 32 max 512
-	let epochs = 10; // Trainings Epochen 50 iterations
-	let hiddenLayerCount = 1; // Anzahl der hidden Layer
-	let activationFunction = "none";
-	let selectedOptimizer = "sgd"; // Optimizer
-	let learningRate = 0.001; // Lernrate
-	let neuronCount = 1;
-	let maxWeight = 1;
+	let batchSize = 100; // Neuronen min 32 max 512
+	let epochs = 200; // Trainings Epochen 50 iterations
+	let hiddenLayerCount = 10; // Anzahl der hidden Layer
+	let activationFunction = "relu";
+	let selectedOptimizer = "adam"; // Optimizer
+	let learningRate = 0.01; // Lernrate
+	let neuronCount = 100;
+	let maxWeight = 0;
 	let minWeight = 0;
 
 	// Documentation
@@ -74,9 +74,6 @@
 			"./data/TrainingData_Size_100_Range_-1.8_1.8.json"
 		);
 		trainingData100_2 = await loadTrainingData(
-			"./data/TrainingData_Size_100_Range_-100_100.json"
-		);
-		trainingData100_3 = await loadTrainingData(
 			"./data/TrainingData_Size_100_Range_0_1.8.json"
 		);
 
@@ -87,42 +84,39 @@
 			"./data/TrainingData_Size_10000_Range_-1.8_1.8.json"
 		);
 
+		trainingData100_3 = generateRandomDataWithDistortion(1000, -1.8, 1.8);
+
 		trainingDatasets = [
 			{
 				value: 0,
-				text: "Dataset 1 Size: 100 Range: -100 to 100",
+				text: "Dataset 1 Size: 100 Range: -1.8 to 1.8",
 				data: trainingData100_1,
 			},
 			{
 				value: 1,
-				text: "Dataset 2 Size: 100 Range: -1.8 to 1.8",
+				text: "Dataset 2 Size: 100 Range: 0 to 1.8",
 				data: trainingData100_2,
 			},
 			{
 				value: 2,
-				text: "Dataset 3 Size: 100 Range: 0 to 1.8",
-				data: trainingData100_3,
-			},
-			{
-				value: 3,
-				text: "Dataset 4 Size: 1000 Range: -1.8 to 1.8",
+				text: "Dataset 3 Size: 1000 Range: -1.8 to 1.8",
 				data: trainingData1000,
 			},
 			{
-				value: 4,
-				text: "Dataset 5 Size: 10000 Range: -1.8 to 1.8",
+				value: 3,
+				text: "Dataset 4 Size: 10000 Range: -1.8 to 1.8",
 				data: trainingData10000,
 			},
 		];
 
-		dataset1 = generateRandomData(10, -100, 100);
-		dataset2 = generateRandomData(10, -1.8, 1.8);
-		dataset3 = generateRandomData(10, 0, 1.8);
+		dataset1 = generateRandomData(100, -.4, .4);
+		dataset2 = generateRandomData(100, -1.8, 1.8);
+		dataset3 = generateRandomData(100, 0, 1.8);
 
 		datasets = [
 			{
 				value: 0,
-				text: "Dataset Size: 100 Range: -100 to 100",
+				text: "Dataset Size: 100 Range: -.4 to .4",
 				data: dataset1,
 			},
 			{
@@ -134,7 +128,7 @@
 				value: 2,
 				text: "Dataset Size: 100 Range: 0 to 1.8",
 				data: dataset3,
-			},
+			}
 		];
 	});
 
@@ -155,6 +149,16 @@
 		for (let i = 0; i < nCount; i++) {
 			let x = Math.random() * (nMax - nMin) + nMin;
 			dataArray.push({ x: x, y: calcY(x) });
+		}
+		return dataArray;
+	};
+
+	let generateRandomDataWithDistortion = (nCount = 10, nMin = -1.8, nMax = 1.8) => {
+		let dataArray = [];
+		for (let i = 0; i < nCount; i++) {
+			let x = Math.random() * (nMax - nMin) + nMin;
+			let y = calcY(x) + (Math.random() * (.5 - -.5) + -.5);
+			dataArray.push({ x: x, y: y });
 		}
 		return dataArray;
 	};

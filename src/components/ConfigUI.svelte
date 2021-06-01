@@ -19,17 +19,17 @@
 
     export let name = "Model 1";
     export let disabled = false;
-    export let batchSize = 32; // Neuronen min 32 max 512
-    export let epochs = 10; // Trainings Epochen 50 iterations
-    export let hiddenLayerCount = 1; // Anzahl der hidden Layer
+    export let batchSize = 100; // Neuronen min 32 max 512
+    export let epochs = 200; // Trainings Epochen 50 iterations
+    export let hiddenLayerCount = 10; // Anzahl der hidden Layer
     export let stepWeight = 0.01;
     export let minWeight = 0;
     export let maxWeight = 1;
     export let maxMaxWeight = 1;
     export let activationFunction = "none";
     export let selectedOptimizer = "sgd"; // Optimizer
-    export let learningRate = 0.001; // Lernrate
-    export let neuronCount = 1;
+    export let learningRate = 0.01; // Lernrate
+    export let neuronCount = 100;
 
     const activationList = [
         "none",
